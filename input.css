@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: "Lato", sans-serif;
+  }
+}
+
+/*  */
+:root[style*="overflow: hidden"] {
+  overflow: auto !important;
+  padding-right: 0 !important;
+}
+
+/* Filter to convert image to #ecc450 color on hover */
+.group:hover .hover-filter {
+  filter: brightness(0) saturate(100%) invert(84%) sepia(31%) saturate(1352%) hue-rotate(8deg) brightness(98%) contrast(88%);
+}
+
+/* Smooth transition for the filter */
+.hover-filter {
+  transition: filter 0.3s ease;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  cursor: pointer;
+  width: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.25s;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  width: 20px;
+  height: 2px;
+  background: #fffff0;
+  border-radius: 1px; /* smooth edges */
+  transition: all 0.5s ease;
+}
+
+.open {
+  transform: rotate(90deg);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.open .hamburger-middle {
+  opacity: 0;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* Custom Swiper Navigation Styling */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ecc450;
+  background: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #ecc450;
+  color: white;
+  transform: scale(1.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Hide prev button on mobile */
+@media (max-width: 768px) {
+  .swiper-button-prev {
+    display: none;
+  }
+  .swiper-button-next {
+    right: 10px;
+  }
+}
