@@ -39,7 +39,7 @@
 .hamburger-bottom {
   width: 20px;
   height: 2px;
-  background: #fffff0;
+  background: #000000;
   border-radius: 1px; /* smooth edges */
   transition: all 0.5s ease;
 }
