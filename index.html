@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- CSS style -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/input.css" />
     <title>ETA07</title>
   </head>
   <body class="">
@@ -75,7 +76,7 @@
           </div>
 
           <!-- Desktop: Flash Sale + Search Bar -->
-          <div class="hidden lg:flex flex-1 items-center justify-center mx-8">
+          <div class="hidden lg:flex flex-1 items-center justify-around mx-8">
             <img src="images/flash.svg" alt="Flash Sale" class="mr-3" />
 
             <!-- Desktop Search Bar -->
@@ -233,6 +234,76 @@
         </div>
       </div>
     </header>
+
+    <!-- FEATURES SECTION -->
+    <section class="py-8 sm:py-10 lg:py-12">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-sm border border-[#E4E7E9]">
+          <div class="grid grid-cols-2 lg:grid-cols-4">
+            <!-- Fast Delivery (extra left padding) -->
+            <div class="relative flex items-center justify-center py-8 sm:py-10 lg:py-12 mr-3">
+              <span class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-16 lg:h-20 w-px bg-gray-200"></span>
+              <div class="flex items-center space-x-3 sm:space-x-4">
+                <div class="flex-shrink-0">
+                  <img src="images/package.svg" alt="Package" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+                </div>
+                <div>
+                  <h3 class="text-xs sm:text-sm lg:text-base font-medium text-[#191C1F] uppercase tracking-wide">
+                    Fast Delivery
+                  </h3>
+                  <p class="text-[10px] sm:text-xs lg:text-sm text-[#5F6C72] mt-0.5">Delivery in 24h</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 24 Hours Return -->
+            <div class="relative flex items-center justify-center py-8 sm:py-10 lg:py-12 px-2 sm:px-3 lg:px-4">
+              <span class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-16 lg:h-20 w-px bg-gray-200"></span>
+              <div class="flex items-center space-x-3 sm:space-x-4">
+                <div class="flex-shrink-0">
+                  <img src="images/trophy.svg" alt="Trophy" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+                </div>
+                <div>
+                  <h3 class="text-xs sm:text-sm lg:text-base font-medium text-[#191C1F] uppercase tracking-wide">
+                    24 Hours Return
+                  </h3>
+                  <p class="text-[10px] sm:text-xs lg:text-sm text-[#5F6C72] mt-0.5">100% money-back guarantee</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Secure Payment -->
+            <div class="relative flex items-center justify-center py-8 sm:py-10 lg:py-12 sm:px-3 lg:px-4">
+              <span class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-16 lg:h-20 w-px bg-gray-200"></span>
+              <div class="flex items-center space-x-3 sm:space-x-4">
+                <div class="flex-shrink-0">
+                  <img src="images/creditcard.svg" alt="Credit Card" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+                </div>
+                <div>
+                  <h3 class="text-xs sm:text-sm lg:text-base font-medium text-[#191C1F] uppercase tracking-wide">
+                    Secure Payment
+                  </h3>
+                  <p class="text-[10px] sm:text-xs lg:text-sm text-[#5F6C72] mt-0.5">Your money is safe</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Support 24/7 (extra right padding) -->
+            <div class="flex items-center justify-center py-8 sm:py-10 lg:py-12 pr-6">
+              <div class="flex items-center space-x-3 sm:space-x-4">
+                <div class="flex-shrink-0">
+                  <img src="images/headphones.svg" alt="Headphones" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+                </div>
+                <div>
+                  <h3 class="text-xs sm:text-sm lg:text-base font-medium text-[#191C1F] uppercase tracking-wide">Support 24/7</h3>
+                  <p class="text-[10px] sm:text-xs lg:text-sm text-[#5F6C72] mt-0.5">Live contact / message</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="bg-[#191C1F] text-white">

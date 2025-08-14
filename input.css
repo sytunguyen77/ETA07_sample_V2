@@ -60,37 +60,92 @@
   transform: rotate(-45deg) translate(4px, -4px);
 }
 
-/* Custom Swiper Navigation Styling */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #ecc450;
-  background: white;
-  border-radius: 50%;
+/* Custom Swiper Pagination Styles */
+.hero-swiper .swiper-pagination-bullet {
   width: 40px;
-  height: 40px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
   transition: all 0.3s ease;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background: #ecc450;
-  color: white;
+.hero-swiper .swiper-pagination-bullet-active {
+  background: #ffffff;
+  width: 60px;
+}
+
+/* Custom Navigation Arrows */
+.hero-swiper .swiper-button-next,
+.hero-swiper .swiper-button-prev {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.3);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.hero-swiper .swiper-button-next:hover,
+.hero-swiper .swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0.5);
   transform: scale(1.1);
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 18px;
+.hero-swiper .swiper-button-next:after,
+.hero-swiper .swiper-button-prev:after {
+  font-size: 20px;
   font-weight: bold;
 }
 
-/* Hide prev button on mobile */
-@media (max-width: 768px) {
-  .swiper-button-prev {
-    display: none;
+/* Gradient Overlays */
+.gradient-overlay {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Animation Classes */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
   }
-  .swiper-button-next {
-    right: 10px;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.swiper-slide-active .slide-content {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.swiper-slide-active .slide-image {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.swiper-slide-active .slide-button {
+  animation: fadeInUp 0.8s ease-out 0.3s both;
 }
