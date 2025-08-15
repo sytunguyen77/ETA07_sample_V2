@@ -21,6 +21,58 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/input.css" />
     <title>ETA07</title>
+    <style>
+      /* Pagination */
+      .heroSwiper .swiper-pagination {
+        position: absolute !important;
+        bottom: 1rem !important;
+        left: 50% !important;
+        transform: translateX(-50%);
+        width: auto !important;
+        margin: 0 !important;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        z-index: 10;
+      }
+
+      /* base bullet */
+      .heroSwiper .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.5);
+        opacity: 1;
+        margin: 0 !important;
+        border: 2px solid transparent;
+        border-radius: 9999px;
+        /* smooth slide/resize */
+        transition: width 0.25s ease, height 0.25s ease, background 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+      }
+
+      /* hover effect */
+      .heroSwiper .swiper-pagination-bullet:hover {
+        background: rgba(255, 255, 255, 0.7);
+        transform: scale(1.1);
+      }
+
+      /* active bullet (default/mobile) */
+      .heroSwiper .swiper-pagination-bullet-active {
+        width: 25px; /* small screens */
+        height: 10px;
+        border-radius: 9999px;
+        background: #fff;
+      }
+
+      /* lg and up: active bullet width 26px */
+      @media (min-width: 1024px) {
+        .heroSwiper .swiper-pagination-bullet-active {
+          width: 26px; /* your requested size */
+        }
+      }
+
+      /* Arrow
+      /* Common arrow style */
+    </style>
   </head>
   <body class="">
     <!-- TOP NAVIGATION BAR -->
@@ -64,7 +116,7 @@
     </nav>
 
     <!-- MAIN HEADER -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header id="header" class="bg-white shadow-sm sticky top-0 z-50">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 sm:h-20">
           <!-- Desktop: Logo -->
@@ -235,78 +287,282 @@
       </div>
     </header>
 
-    <!-- FEATURES SECTION -->
-    <section class="py-8 sm:py-10 lg:py-12">
-      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-sm border border-[#E4E7E9]">
-          <div class="grid grid-cols-2 lg:grid-cols-4">
-            <!-- Fast Delivery (extra left padding) -->
-            <div class="relative flex items-center justify-center py-8 sm:py-10 lg:py-12 mr-3">
-              <span class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-16 lg:h-20 w-px bg-gray-200"></span>
-              <div class="flex items-center space-x-3 sm:space-x-4">
-                <div class="flex-shrink-0">
-                  <img src="images/package.svg" alt="Package" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-                </div>
-                <div>
-                  <h3 class="text-xs sm:text-sm lg:text-base font-medium text-[#191C1F] uppercase tracking-wide">
-                    Fast Delivery
-                  </h3>
-                  <p class="text-[10px] sm:text-xs lg:text-sm text-[#5F6C72] mt-0.5">Delivery in 24h</p>
-                </div>
-              </div>
-            </div>
+    <!-- HERO SLIDER -->
+    <section class="relative cursor-pointer">
+      <div class="swiper heroSwiper relative">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <!-- HERO SECTION -->
+            <section id="hero" class="relative w-full">
+              <div class="bg-[#e8c14a] overflow-hidden">
+                <div class="relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="relative flex items-center min-h-[300px] sm:min-h-[350px] md:min-h-[350px] lg:min-h-[450px]">
+                    <!-- Left Content -->
+                    <div class="relative z-10 w-full lg:w-1/2 space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+                      <p class="text-white text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl font-semibold">
+                        Best Deal Online on drones
+                      </p>
+                      <h1
+                        class="text-[#292C2D] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight"
+                      >
+                        DRONE MODEL 1
+                      </h1>
+                      <div class="inline-block">
+                        <p class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+                          UP to 80% OFF
+                        </p>
+                      </div>
+                    </div>
 
-            <!-- 24 Hours Return -->
-            <div class="relative flex items-center justify-center py-8 sm:py-10 lg:py-12 px-2 sm:px-3 lg:px-4">
-              <span class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-16 lg:h-20 w-px bg-gray-200"></span>
-              <div class="flex items-center space-x-3 sm:space-x-4">
-                <div class="flex-shrink-0">
-                  <img src="images/trophy.svg" alt="Trophy" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-                </div>
-                <div>
-                  <h3 class="text-xs sm:text-sm lg:text-base font-medium text-[#191C1F] uppercase tracking-wide">
-                    24 Hours Return
-                  </h3>
-                  <p class="text-[10px] sm:text-xs lg:text-sm text-[#5F6C72] mt-0.5">100% money-back guarantee</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Secure Payment -->
-            <div class="relative flex items-center justify-center py-8 sm:py-10 lg:py-12 sm:px-3 lg:px-4">
-              <span class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-16 lg:h-20 w-px bg-gray-200"></span>
-              <div class="flex items-center space-x-3 sm:space-x-4">
-                <div class="flex-shrink-0">
-                  <img src="images/creditcard.svg" alt="Credit Card" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-                </div>
-                <div>
-                  <h3 class="text-xs sm:text-sm lg:text-base font-medium text-[#191C1F] uppercase tracking-wide">
-                    Secure Payment
-                  </h3>
-                  <p class="text-[10px] sm:text-xs lg:text-sm text-[#5F6C72] mt-0.5">Your money is safe</p>
+                    <!-- Right Content -->
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[60%] sm:w-[55%] lg:w-[50%] xl:w-[45%]">
+                      <img src="images/ellipse-hero.svg" alt="" class="absolute top-1.5" />
+                      <img
+                        src="images/ellipse.svg"
+                        alt=""
+                        class="absolute left-55 bottom-0 translate-y-full lg:translate-y-full xl:translate-y-8"
+                      />
+                      <div class="relative">
+                        <div class="w-[280px] sm:w-[350px] lg:w-[420px] xl:w-[580px]">
+                          <div class="relative">
+                            <img src="images/drone-1.webp" alt="drone" loading="lazy" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /row -->
                 </div>
               </div>
-            </div>
-
-            <!-- Support 24/7 (extra right padding) -->
-            <div class="flex items-center justify-center py-8 sm:py-10 lg:py-12 pr-6">
-              <div class="flex items-center space-x-3 sm:space-x-4">
-                <div class="flex-shrink-0">
-                  <img src="images/headphones.svg" alt="Headphones" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-                </div>
-                <div>
-                  <h3 class="text-xs sm:text-sm lg:text-base font-medium text-[#191C1F] uppercase tracking-wide">Support 24/7</h3>
-                  <p class="text-[10px] sm:text-xs lg:text-sm text-[#5F6C72] mt-0.5">Live contact / message</p>
-                </div>
-              </div>
-            </div>
+            </section>
           </div>
+
+          <!-- Slide 2  -->
+          <div class="swiper-slide">
+            <section class="relative w-full">
+              <div class="bg-[#e8c14a] overflow-hidden">
+                <div class="relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="relative flex items-center min-h-[300px] sm:min-h-[350px] md:min-h-[350px] lg:min-h-[450px]">
+                    <div class="relative z-10 w-full lg:w-1/2 space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+                      <p class="text-white text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl font-semibold">New Arrivals</p>
+                      <h1
+                        class="text-[#292C2D] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight"
+                      >
+                        DRONE MODEL 2
+                      </h1>
+                      <div class="inline-block">
+                        <p class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+                          Save up to 60%
+                        </p>
+                      </div>
+                    </div>
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[60%] sm:w-[55%] lg:w-[50%] xl:w-[45%]">
+                      <img src="images/ellipse-hero.svg" alt="" class="absolute top-1.5" />
+                      <img
+                        src="images/ellipse.svg"
+                        alt=""
+                        class="absolute left-55 bottom-0 translate-y-full lg:translate-y-full xl:translate-y-8"
+                      />
+                      <div class="relative">
+                        <div class="w-[280px] sm:w-[350px] lg:w-[420px] xl:w-[580px]">
+                          <div class="relative">
+                            <img src="images/drone-2.webp" alt="drone 2" loading="lazy" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Slide 3  -->
+          <div class="swiper-slide">
+            <section class="relative w-full">
+              <div class="bg-[#e8c14a] overflow-hidden">
+                <div class="relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="relative flex items-center min-h-[300px] sm:min-h-[350px] md:min-h-[350px] lg:min-h-[450px]">
+                    <div class="relative z-10 w-full lg:w-1/2 space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+                      <p class="text-white text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl font-semibold">New Arrivals</p>
+                      <h1
+                        class="text-[#292C2D] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight"
+                      >
+                        DRONE MODEL 3
+                      </h1>
+                      <div class="inline-block">
+                        <p class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+                          Save up to 60%
+                        </p>
+                      </div>
+                    </div>
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[60%] sm:w-[55%] lg:w-[50%] xl:w-[45%]">
+                      <img src="images/ellipse-hero.svg" alt="" class="absolute top-1.5" />
+                      <img
+                        src="images/ellipse.svg"
+                        alt=""
+                        class="absolute left-55 bottom-0 translate-y-full lg:translate-y-full xl:translate-y-8"
+                      />
+                      <div class="relative">
+                        <div class="w-[280px] sm:w-[350px] lg:w-[420px] xl:w-[580px]">
+                          <div class="relative">
+                            <img src="images/drone-3.webp" alt="drone 2" loading="lazy" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Slide 4  -->
+          <div class="swiper-slide">
+            <section class="relative w-full">
+              <div class="bg-[#e8c14a] overflow-hidden">
+                <div class="relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="relative flex items-center min-h-[300px] sm:min-h-[350px] md:min-h-[350px] lg:min-h-[450px]">
+                    <div class="relative z-10 w-full lg:w-1/2 space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+                      <p class="text-white text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl font-semibold">New Arrivals</p>
+                      <h1
+                        class="text-[#292C2D] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight"
+                      >
+                        DRONE MODEL 4
+                      </h1>
+                      <div class="inline-block">
+                        <p class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+                          Save up to 60%
+                        </p>
+                      </div>
+                    </div>
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[60%] sm:w-[55%] lg:w-[50%] xl:w-[45%]">
+                      <img src="images/ellipse-hero.svg" alt="" class="absolute top-1.5" />
+                      <img
+                        src="images/ellipse.svg"
+                        alt=""
+                        class="absolute left-55 bottom-0 translate-y-full lg:translate-y-full xl:translate-y-8"
+                      />
+                      <div class="relative">
+                        <div class="w-[280px] sm:w-[350px] lg:w-[420px] xl:w-[580px]">
+                          <div class="relative">
+                            <img src="images/drone-4.webp" alt="drone 2" loading="lazy" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Slide 5  -->
+          <div class="swiper-slide">
+            <section class="relative w-full">
+              <div class="bg-[#e8c14a] overflow-hidden">
+                <div class="relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="relative flex items-center min-h-[300px] sm:min-h-[350px] md:min-h-[350px] lg:min-h-[450px]">
+                    <div class="relative z-10 w-full lg:w-1/2 space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+                      <p class="text-white text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl font-semibold">New Arrivals</p>
+                      <h1
+                        class="text-[#292C2D] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight"
+                      >
+                        DRONE MODEL 5
+                      </h1>
+                      <div class="inline-block">
+                        <p class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+                          Save up to 60%
+                        </p>
+                      </div>
+                    </div>
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[60%] sm:w-[55%] lg:w-[50%] xl:w-[45%]">
+                      <img src="images/ellipse-hero.svg" alt="" class="absolute top-1.5" />
+                      <img
+                        src="images/ellipse.svg"
+                        alt=""
+                        class="absolute left-55 bottom-0 translate-y-full lg:translate-y-full xl:translate-y-8"
+                      />
+                      <div class="relative">
+                        <div class="w-[280px] sm:w-[350px] lg:w-[420px] xl:w-[580px]">
+                          <div class="relative">
+                            <img src="images/drone-5.webp" alt="drone 2" loading="lazy" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Slide 6  -->
+          <div class="swiper-slide">
+            <section class="relative w-full">
+              <div class="bg-[#e8c14a] overflow-hidden">
+                <div class="relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="relative flex items-center min-h-[300px] sm:min-h-[350px] md:min-h-[350px] lg:min-h-[450px]">
+                    <div class="relative z-10 w-full lg:w-1/2 space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+                      <p class="text-white text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl font-semibold">New Arrivals</p>
+                      <h1
+                        class="text-[#292C2D] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight"
+                      >
+                        DRONE MODEL 6
+                      </h1>
+                      <div class="inline-block">
+                        <p class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+                          Save up to 60%
+                        </p>
+                      </div>
+                    </div>
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[60%] sm:w-[55%] lg:w-[50%] xl:w-[45%]">
+                      <img src="images/ellipse-hero.svg" alt="" class="absolute top-1.5" />
+                      <img
+                        src="images/ellipse.svg"
+                        alt=""
+                        class="absolute left-55 bottom-0 translate-y-full lg:translate-y-full xl:translate-y-8"
+                      />
+                      <div class="relative">
+                        <div class="w-[280px] sm:w-[350px] lg:w-[420px] xl:w-[580px]">
+                          <div class="relative">
+                            <img src="images/drone-6.webp" alt="drone 2" loading="lazy" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- Pagination with external custom css  -->
+        <div class="swiper-pagination heroPagination !bottom-4 sm:!bottom-6"></div>
+        <!-- Prev -->
+        <div
+          class="heroPrev absolute left-10 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm shadow hidden 2xl:flex items-center justify-center"
+        >
+          <svg class="w-5 h-5 text-[#292C2D]" viewBox="0 0 24 24" fill="none">
+            <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+
+        <!-- Next -->
+        <div
+          class="heroNext absolute right-10 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm shadow hidden 2xl:flex items-center justify-center"
+        >
+          <svg class="w-5 h-5 text-[#292C2D]" viewBox="0 0 24 24" fill="none">
+            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
         </div>
       </div>
     </section>
 
     <!-- FEATURES SECTION -->
-    <section class="py-8 sm:py-10 lg:py-12">
+    <section id="features" class="py-12 sm:py-16 md:py-20 lg:py-12">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-white rounded-sm border border-[#E4E7E9]">
           <div class="grid grid-cols-2 lg:grid-cols-4">
@@ -376,7 +632,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-[#191C1F] text-white">
+    <footer id="footer" class="bg-[#191C1F] text-white">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           <!-- Company Info - Takes full width on mobile, 2 cols on desktop -->
@@ -621,6 +877,24 @@
           btn.classList.remove("open");
           document.body.style.overflow = ""; // unlock scroll
         }
+      });
+
+      // Initialize Swiper
+      const heroSwiper = new Swiper(".heroSwiper", {
+        loop: true,
+        speed: 700,
+        autoplay: { delay: 5000, disableOnInteraction: false },
+        pagination: { el: ".heroPagination", clickable: true },
+        navigation: { nextEl: ".heroNext", prevEl: ".heroPrev" },
+        keyboard: { enabled: true },
+        a11y: { enabled: true },
+        // keep slide height consistent across breakpoints
+        on: {
+          init(sw) {
+            // ensure slides stretch to container height
+            sw.el.querySelectorAll(".swiper-slide").forEach((s) => s.classList.add("h-full"));
+          },
+        },
       });
     </script>
   </body>
