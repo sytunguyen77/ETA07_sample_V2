@@ -948,16 +948,246 @@
       </div>
     </section>
 
+    <!-- HERO VIDEO -->
+    <section id="shop-easy" class="pb-8 sm:pb-12 md:pb-16">
+      <div class="max-w-[1600px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-sm ring-1 ring-black/5">
+          <!-- Video -->
+          <video
+            id="shopEasyVideo"
+            class="block w-full h-auto"
+            autoplay
+            playsinline
+            muted
+            loop
+            preload="metadata"
+            poster="images/shop-easy-poster.jpg"
+          >
+            <source src="videos/shop-easy.webm" type="video/webm" />
+            <source src="video/ETA07_Video.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+
+          <!-- Play/Pause button -->
+          <button
+            id="shopEasyToggle"
+            aria-label="Toggle video"
+            class="absolute bottom-4 left-4 z-10 grid place-items-center h-12 w-12 rounded-full bg-black/60 backdrop-blur text-white hover:bg-black/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
+          >
+            <!-- play icon -->
+            <svg id="iconPlay" class="hidden h-6 w-6 cursor-pointer" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <!-- pause icon -->
+            <svg id="iconPause" class="h-6 w-6 cursor-pointer" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOP CATEGORIES -->
+    <section id="top-categories" class="pb-8 sm:pb-12 md:pb-16 bg-white">
+      <div class="max-w-[1600px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-4 sm:mb-6 md:mb-8">
+          <h2 class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold [#292C2D]">SHOP FROM TOP CATEGORIES</h2>
+          <a
+            href="#"
+            class="bg-[#FDB913] text-[#292C2D] px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:bg-[#ffc42e] transition-colors"
+          >
+            VIEW ALL
+          </a>
+        </div>
+
+        <!-- Divider -->
+        <div class="h-px bg-gray-200 mb-4 sm:mb-6 md:mb-8"></div>
+
+        <!-- Grid: evenly spaced, first/last stick to edges -->
+        <div
+          class="grid justify-between items-start gap-y-8 sm:gap-y-10 grid-cols-[repeat(3,max-content)] md:grid-cols-[repeat(4,max-content)] lg:grid-cols-[repeat(7,max-content)]"
+        >
+          <!-- Category Item -->
+          <a href="#" class="group block">
+            <div class="flex flex-col items-center">
+              <div class="relative mb-3 sm:mb-4">
+                <!-- Hover ring -->
+                <div
+                  class="absolute -inset-2 rounded-full border-[3px] border-[#FDB913] opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200"
+                ></div>
+                <!-- Circle (bigger sizes) -->
+                <div
+                  class="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center overflow-hidden group-hover:bg-gray-100 group-focus-visible:bg-gray-100 transition-colors duration-200"
+                >
+                  <img
+                    src="images/category-1.svg"
+                    alt="category-1"
+                    class="w-16 h-16 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-30 xl:h-30 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
+                  />
+                </div>
+              </div>
+              <span
+                class="text-sm sm:text-base md:text-lg font-medium text-[#292C2D] group-hover:text-[#FDB913] group-focus-visible:text-[#FDB913] transition-colors duration-200 text-center"
+              >
+                Mobile
+              </span>
+            </div>
+          </a>
+
+          <!-- Cosmetics -->
+          <a href="#" class="group block">
+            <div class="flex flex-col items-center">
+              <div class="relative mb-3 sm:mb-4">
+                <div
+                  class="absolute -inset-2 rounded-full border-[3px] border-[#FDB913] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                ></div>
+                <div
+                  class="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-gray-100 transition-colors duration-200"
+                >
+                  <img
+                    src="images/category-2.svg"
+                    alt="category-2"
+                    class="w-16 h-16 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-30 xl:h-30 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
+                  />
+                </div>
+              </div>
+              <span
+                class="text-sm sm:text-base md:text-lg font-medium text-[#292C2D] group-hover:text-[#FDB913] transition-colors duration-200 text-center"
+                >Cosmetics</span
+              >
+            </div>
+          </a>
+
+          <!-- Electronics -->
+          <a href="#" class="group block">
+            <div class="flex flex-col items-center">
+              <div class="relative mb-3 sm:mb-4">
+                <div
+                  class="absolute -inset-2 rounded-full border-[3px] border-[#FDB913] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                ></div>
+                <div
+                  class="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-gray-100 transition-colors duration-200"
+                >
+                  <img
+                    src="images/category-3.svg"
+                    alt="category-3"
+                    class="w-16 h-16 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-30 xl:h-30 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
+                  />
+                </div>
+              </div>
+              <span
+                class="text-sm sm:text-base md:text-lg font-medium text-[#292C2D] group-hover:text-[#FDB913] transition-colors duration-200 text-center"
+                >Electronics</span
+              >
+            </div>
+          </a>
+
+          <!-- Furniture -->
+          <a href="#" class="group block">
+            <div class="flex flex-col items-center">
+              <div class="relative mb-3 sm:mb-4">
+                <div
+                  class="absolute -inset-2 rounded-full border-[3px] border-[#FDB913] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                ></div>
+                <div
+                  class="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-gray-100 transition-colors duration-200"
+                >
+                  <img
+                    src="images/category-4.svg"
+                    alt="category-4"
+                    class="w-16 h-16 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-30 xl:h-30 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
+                  />
+                </div>
+              </div>
+              <span
+                class="text-sm sm:text-base md:text-lg font-medium text-[#292C2D] group-hover:text-[#FDB913] transition-colors duration-200 text-center"
+                >Furniture</span
+              >
+            </div>
+          </a>
+
+          <!-- Watches -->
+          <a href="#" class="group block">
+            <div class="flex flex-col items-center">
+              <div class="relative mb-3 sm:mb-4">
+                <div
+                  class="absolute -inset-2 rounded-full border-[3px] border-[#FDB913] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                ></div>
+                <div
+                  class="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-gray-100 transition-colors duration-200"
+                >
+                  <img
+                    src="images/category-5.svg"
+                    alt="category-5"
+                    class="w-16 h-16 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-30 xl:h-30 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
+                  />
+                </div>
+              </div>
+              <span
+                class="text-sm sm:text-base md:text-lg font-medium text-[#292C2D] group-hover:text-[#FDB913] transition-colors duration-200 text-center"
+                >Watches</span
+              >
+            </div>
+          </a>
+
+          <!-- Decor -->
+          <a href="#" class="group block">
+            <div class="flex flex-col items-center">
+              <div class="relative mb-3 sm:mb-4">
+                <div
+                  class="absolute -inset-2 rounded-full border-[3px] border-[#FDB913] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                ></div>
+                <div
+                  class="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-gray-100 transition-colors duration-200"
+                >
+                  <img
+                    src="images/category-6.svg"
+                    alt="category-6"
+                    class="w-16 h-16 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-30 xl:h-30 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
+                  />
+                </div>
+              </div>
+              <span
+                class="text-sm sm:text-base md:text-lg font-medium text-[#292C2D] group-hover:text-[#FDB913] transition-colors duration-200 text-center"
+                >Decor</span
+              >
+            </div>
+          </a>
+
+          <!-- Accessories -->
+          <a href="#" class="group block">
+            <div class="flex flex-col items-center">
+              <div class="relative mb-3 sm:mb-4">
+                <div
+                  class="absolute -inset-2 rounded-full border-[3px] border-[#FDB913] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                ></div>
+                <div
+                  class="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-gray-100 transition-colors duration-200"
+                >
+                  <img
+                    src="images/category-7.svg"
+                    alt="category-7"
+                    class="w-16 h-16 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-30 xl:h-30 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
+                  />
+                </div>
+              </div>
+              <span
+                class="text-sm sm:text-base md:text-lg font-medium text-[#292C2D] group-hover:text-[#FDB913] transition-colors duration-200 text-center"
+                >Accessories</span
+              >
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- TOP ELECTRONICS BRANDS SECTION -->
     <section id="top-brand" class="pb-8 sm:pb-12 md:pb-16 bg-white">
       <div class="max-w-[1600px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="flex items-center justify-between mb-4 sm:mb-6 md:mb-7">
-          <h2 class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold">
-            <span class="text-[#292C2D]">TOP</span>
-            <span class="text-[#FDB913] ml-1 sm:ml-2">ELECTRONICS</span>
-            <span class="text-[#FDB913] ml-1 sm:ml-2">BRANDS</span>
-          </h2>
+          <h2 class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold [#292C2D]">TOP ELECTRONICS BRANDS</h2>
           <a
             href="#"
             class="bg-[#FDB913] text-[#292C2D] px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:bg-[#ffc42e] transition-colors"
@@ -1135,6 +1365,426 @@
 
           <!-- Pagination -->
           <div class="brandPagination mt-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FREQUENTLY BOUGHT TOGETHER -->
+    <section id="products" class="pb-8 sm:pb-12 md:pb-16 bg-white">
+      <div class="max-w-[1600px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-4 sm:mb-6 md:mb-8">
+          <h2 class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#292C2D]">FREQUENLY BOUGHT TOGETHER</h2>
+        </div>
+
+        <!-- Swiper -->
+        <div class="swiper productsSwiper relative">
+          <div class="swiper-wrapper">
+            <!-- CARD 1 -->
+            <div class="swiper-slide">
+              <div
+                class="group relative block bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-[#E4E7E9] overflow-hidden cursor-pointer"
+              >
+                <!-- Image -->
+                <div class="relative p-4">
+                  <span class="absolute left-4 top-4 text-[11px] font-semibold bg-gray-300 text-gray-800 px-2.5 py-1 rounded">
+                    SOLD OUT
+                  </span>
+                  <div class="bg-[#F3F4F6] rounded-lg h-40 sm:h-44 md:h-48 flex items-center justify-center overflow-hidden">
+                    <img src="images/drone-1.webp" alt="Bose Sport Earbuds" class="max-h-full max-w-full object-contain" />
+
+                    <!-- Hover Action Buttons -->
+                    <div
+                      class="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                    >
+                      <!-- Wishlist -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                          />
+                        </svg>
+                      </button>
+
+                      <!-- Add to Cart -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2m0 0H21l-2 9H7L5.4 5z" />
+                          <circle cx="9" cy="20" r="1" />
+                          <circle cx="17" cy="20" r="1" />
+                        </svg>
+                      </button>
+
+                      <!-- View -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M1.5 12s4.5-7.5 10.5-7.5S22.5 12 22.5 12s-4.5 7.5-10.5 7.5S1.5 12 1.5 12z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Content -->
+                <div class="px-4 pb-4">
+                  <h3 class="text-sm md:text-base text-[#292C2D] line-clamp-2">VoltWing</h3>
+                  <div class="mt-2 text-[#292C2D] font-semibold">$2,300</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="swiper-slide">
+              <div
+                class="group relative block bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-[#E4E7E9] overflow-hidden cursor-pointer"
+              >
+                <!-- Image -->
+                <div class="relative p-4">
+                  <div class="bg-[#F3F4F6] rounded-lg h-40 sm:h-44 md:h-48 flex items-center justify-center overflow-hidden">
+                    <img src="images/drone-2.webp" alt="Bose Sport Earbuds" class="max-h-full max-w-full object-contain" />
+
+                    <!-- Hover Action Buttons -->
+                    <div
+                      class="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                    >
+                      <!-- Wishlist -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                          />
+                        </svg>
+                      </button>
+
+                      <!-- Add to Cart -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2m0 0H21l-2 9H7L5.4 5z" />
+                          <circle cx="9" cy="20" r="1" />
+                          <circle cx="17" cy="20" r="1" />
+                        </svg>
+                      </button>
+
+                      <!-- View -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M1.5 12s4.5-7.5 10.5-7.5S22.5 12 22.5 12s-4.5 7.5-10.5 7.5S1.5 12 1.5 12z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Content -->
+                <div class="px-4 pb-4">
+                  <h3 class="text-sm md:text-base text-[#292C2D] line-clamp-2">FalconEye</h3>
+                  <div class="mt-2 text-[#292C2D] font-semibold">$300</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="swiper-slide">
+              <div
+                class="group relative block bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-[#E4E7E9] overflow-hidden cursor-pointer"
+              >
+                <!-- Image -->
+                <div class="relative p-4">
+                  <span class="absolute left-4 top-4 text-[11px] font-semibold bg-yellow-300 text-gray-800 px-2.5 py-1 rounded">
+                    19% OFF
+                  </span>
+                  <div class="bg-[#f5f6f3] rounded-lg h-40 sm:h-44 md:h-48 flex items-center justify-center overflow-hidden">
+                    <img src="images/drone-3.webp" alt="Bose Sport Earbuds" class="max-h-full max-w-full object-contain" />
+
+                    <!-- Hover Action Buttons -->
+                    <div
+                      class="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                    >
+                      <!-- Wishlist -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                          />
+                        </svg>
+                      </button>
+
+                      <!-- Add to Cart -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2m0 0H21l-2 9H7L5.4 5z" />
+                          <circle cx="9" cy="20" r="1" />
+                          <circle cx="17" cy="20" r="1" />
+                        </svg>
+                      </button>
+
+                      <!-- View -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M1.5 12s4.5-7.5 10.5-7.5S22.5 12 22.5 12s-4.5 7.5-10.5 7.5S1.5 12 1.5 12z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Content -->
+                <div class="px-4 pb-4">
+                  <h3 class="text-sm md:text-base text-[#292C2D] line-clamp-2">HawkLite</h3>
+                  <div class="mt-2 text-[#292C2D] font-semibold">$1,300</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="swiper-slide">
+              <div
+                class="group relative block bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-[#E4E7E9] overflow-hidden cursor-pointer"
+              >
+                <!-- Image -->
+                <div class="relative p-4">
+                  <div class="bg-[#F3F4F6] rounded-lg h-40 sm:h-44 md:h-48 flex items-center justify-center overflow-hidden">
+                    <img src="images/drone-4.webp" alt="Bose Sport Earbuds" class="max-h-full max-w-full object-contain" />
+
+                    <!-- Hover Action Buttons -->
+                    <div
+                      class="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                    >
+                      <!-- Wishlist -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                          />
+                        </svg>
+                      </button>
+
+                      <!-- Add to Cart -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2m0 0H21l-2 9H7L5.4 5z" />
+                          <circle cx="9" cy="20" r="1" />
+                          <circle cx="17" cy="20" r="1" />
+                        </svg>
+                      </button>
+
+                      <!-- View -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M1.5 12s4.5-7.5 10.5-7.5S22.5 12 22.5 12s-4.5 7.5-10.5 7.5S1.5 12 1.5 12z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Content -->
+                <div class="px-4 pb-4">
+                  <h3 class="text-sm md:text-base text-[#292C2D] line-clamp-2">SkyWhisper</h3>
+                  <div class="mt-2 text-[#292C2D] font-semibold">$500</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="swiper-slide">
+              <div
+                class="group relative block bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-[#E4E7E9] overflow-hidden cursor-pointer"
+              >
+                <!-- Image -->
+                <div class="relative p-4">
+                  <span class="absolute left-4 top-4 text-[11px] font-semibold bg-red-500 text-gray-800 px-2.5 py-1 rounded">
+                    HOT
+                  </span>
+                  <div class="bg-[#f5f6f3] rounded-lg h-40 sm:h-44 md:h-48 flex items-center justify-center overflow-hidden">
+                    <img src="images/drone-5.webp" alt="Bose Sport Earbuds" class="max-h-full max-w-full object-contain" />
+
+                    <!-- Hover Action Buttons -->
+                    <div
+                      class="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                    >
+                      <!-- Wishlist -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                          />
+                        </svg>
+                      </button>
+
+                      <!-- Add to Cart -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2m0 0H21l-2 9H7L5.4 5z" />
+                          <circle cx="9" cy="20" r="1" />
+                          <circle cx="17" cy="20" r="1" />
+                        </svg>
+                      </button>
+
+                      <!-- View -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M1.5 12s4.5-7.5 10.5-7.5S22.5 12 22.5 12s-4.5 7.5-10.5 7.5S1.5 12 1.5 12z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Content -->
+                <div class="px-4 pb-4">
+                  <h3 class="text-sm md:text-base text-[#292C2D] line-clamp-2">WindRider</h3>
+                  <div class="mt-2 text-[#292C2D] font-semibold">$1,300</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="swiper-slide">
+              <div
+                class="group relative block bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-[#E4E7E9] overflow-hidden cursor-pointer"
+              >
+                <!-- Image -->
+                <div class="relative p-4">
+                  <div class="bg-[#F3F4F6] rounded-lg h-40 sm:h-44 md:h-48 flex items-center justify-center overflow-hidden">
+                    <img src="images/drone-6.webp" alt="Bose Sport Earbuds" class="max-h-full max-w-full object-contain" />
+
+                    <!-- Hover Action Buttons -->
+                    <div
+                      class="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                    >
+                      <!-- Wishlist -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                          />
+                        </svg>
+                      </button>
+
+                      <!-- Add to Cart -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2m0 0H21l-2 9H7L5.4 5z" />
+                          <circle cx="9" cy="20" r="1" />
+                          <circle cx="17" cy="20" r="1" />
+                        </svg>
+                      </button>
+
+                      <!-- View -->
+                      <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-black/80 text-white hover:bg-black transition cursor-pointer"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M1.5 12s4.5-7.5 10.5-7.5S22.5 12 22.5 12s-4.5 7.5-10.5 7.5S1.5 12 1.5 12z"
+                          />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Content -->
+                <div class="px-4 pb-4">
+                  <h3 class="text-sm md:text-base text-[#292C2D] line-clamp-2">StormWing</h3>
+                  <div class="mt-2 text-[#292C2D] font-semibold">$1000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Left Arrow -->
+          <div
+            class="productsPrev absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow flex items-center justify-center cursor-pointer hover:bg-gray-100"
+          >
+            <svg class="w-5 h-5 text-gray-700" viewBox="0 0 24 24" fill="none">
+              <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+
+          <!-- Right Arrow -->
+          <div
+            class="productsNext absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow flex items-center justify-center cursor-pointer hover:bg-gray-100"
+          >
+            <svg class="w-5 h-5 text-gray-700" viewBox="0 0 24 24" fill="none">
+              <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
         </div>
       </div>
     </section>
@@ -1418,6 +2068,49 @@
           640: { slidesPerView: 2, spaceBetween: 16 },
           1024: { slidesPerView: 3, spaceBetween: 24 },
         },
+      });
+
+      // Products Swiper (peek carousel)
+      const productsSwiper = new Swiper(".productsSwiper", {
+        slidesPerView: 1.15, // default (mobile-first)
+        spaceBetween: 12,
+        centeredSlides: false,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0,
+        breakpoints: {
+          0: { slidesPerView: 1.15, spaceBetween: 12 }, // mobile
+          480: { slidesPerView: 1.5, spaceBetween: 14 }, // small mobile / portrait
+          640: { slidesPerView: 2.5, spaceBetween: 20 }, // tablet
+          1024: { slidesPerView: 3.5, spaceBetween: 24 }, // desktop
+          1280: { slidesPerView: 4.5, spaceBetween: 28 }, // large desktop
+        },
+        navigation: { nextEl: ".productsNext", prevEl: ".productsPrev" },
+        pagination: { el: ".productsPagination", clickable: true },
+      });
+
+      // Play/paude button for hero video
+      const video = document.getElementById("shopEasyVideo");
+      const toggle = document.getElementById("shopEasyToggle");
+      const iconPlay = document.getElementById("iconPlay");
+      const iconPause = document.getElementById("iconPause");
+
+      // Ensure autoplay starts with pause icon visible
+      video.addEventListener("play", () => {
+        iconPlay.classList.add("hidden");
+        iconPause.classList.remove("hidden");
+      });
+
+      video.addEventListener("pause", () => {
+        iconPause.classList.add("hidden");
+        iconPlay.classList.remove("hidden");
+      });
+
+      toggle.addEventListener("click", () => {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
       });
     </script>
   </body>
