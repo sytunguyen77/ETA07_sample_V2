@@ -711,16 +711,16 @@
           <!-- Timer and View All -->
           <div class="flex w-full justify-between lg:justify-end items-center gap-4 sm:gap-6">
             <!-- Timer -->
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2" data-countdown data-hours="384">
               <span class="text-sm sm:text-base text-[#666666]">Deals ends in</span>
               <div class="bg-[#FDB913] px-3 sm:px-4 py-0.5 sm:py-2.5 rounded-lg flex items-center gap-1 sm:gap-2">
-                <span class="text-[#292C2D] font-extrabold text-sm sm:text-base">16d</span>
+                <span class="cd-days text-[#292C2D] font-extrabold text-sm sm:text-base">16d</span>
                 <span class="text-[#292C2D]">:</span>
-                <span class="text-[#292C2D] font-extrabold text-sm sm:text-base">21h</span>
+                <span class="cd-hours text-[#292C2D] font-extrabold text-sm sm:text-base">00h</span>
                 <span class="text-[#292C2D]">:</span>
-                <span class="text-[#292C2D] font-extrabold text-sm sm:text-base">57m</span>
+                <span class="cd-mins text-[#292C2D] font-extrabold text-sm sm:text-base">00m</span>
                 <span class="text-[#292C2D]">:</span>
-                <span class="text-[#292C2D] font-extrabold text-sm sm:text-base">23s</span>
+                <span class="cd-secs text-[#292C2D] font-extrabold text-sm sm:text-base">00s</span>
               </div>
             </div>
 
@@ -2061,7 +2061,7 @@
         }
       });
 
-      // Hero Swiper
+      // HERO SWIPER
       const heroSwiper = new Swiper(".heroSwiper", {
         loop: true,
         speed: 700,
@@ -2079,7 +2079,7 @@
         },
       });
 
-      // Play/Pause Toggle for Hero Slider
+      // PLAY / PAUSE BUTTON FOR HERO SLIDER
       const playPauseBtn = document.getElementById("heroPlayPause");
       const playIcon = document.getElementById("playIcon");
       const pauseIcon = document.getElementById("pauseIcon");
@@ -2099,7 +2099,7 @@
         isPlaying = !isPlaying;
       });
 
-      // Brand Swiper
+      // BRAND SWIPER
       const brandSwiper = new Swiper(".brandSwiper", {
         loop: true,
         slidesPerView: 2,
@@ -2114,7 +2114,7 @@
         },
       });
 
-      // Products Swiper (peek carousel)
+      // PRODUCT SWIPER (peek carousel)
       const productsSwiper = new Swiper(".productsSwiper", {
         slidesPerView: 1.15, // default (mobile-first)
         spaceBetween: 12,
@@ -2132,7 +2132,7 @@
         pagination: { el: ".productsPagination", clickable: true },
       });
 
-      // Play/pause button for hero video
+      // PLAY / PAUSE BUTTON FOR HERO VIDEO
       const video = document.getElementById("shopEasyVideo");
       const toggle = document.getElementById("shopEasyToggle");
       const iconPlay = document.getElementById("iconPlay");
@@ -2156,6 +2156,25 @@
         } else {
           video.pause();
         }
+      });
+
+      // COUNTDOWN TIMER
+      document.querySelectorAll("[data-countdown]").forEach((el) => {
+        const end = Date.now() + el.dataset.hours * 3600 * 1000;
+
+        setInterval(() => {
+          let diff = Math.max(0, end - Date.now());
+
+          const d = Math.floor(diff / 86400000);
+          const h = Math.floor(diff / 3600000) % 24;
+          const m = Math.floor(diff / 60000) % 60;
+          const s = Math.floor(diff / 1000) % 60;
+
+          el.querySelector(".cd-days").textContent = d + "d";
+          el.querySelector(".cd-hours").textContent = h.toString().padStart(2, "0") + "h";
+          el.querySelector(".cd-mins").textContent = m.toString().padStart(2, "0") + "m";
+          el.querySelector(".cd-secs").textContent = s.toString().padStart(2, "0") + "s";
+        }, 1000);
       });
     </script>
   </body>
