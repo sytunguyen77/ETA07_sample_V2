@@ -962,16 +962,15 @@
     <section id="shop-easy" class="pb-8 sm:pb-12 md:pb-16">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-sm ring-1 ring-black/5">
-          <!-- Video -->
+          <!-- Video with max height constraint -->
           <video
             id="shopEasyVideo"
-            class="block w-full h-auto"
-            autoplay
+            class="block w-full h-auto md:max-h-[500px] lg:max-h-[600px] xl:max-h-[750px] object-cover"
             playsinline
             muted
             loop
             preload="metadata"
-            poster="images/shop-easy-poster.jpg"
+            poster="images/video.png"
           >
             <source src="videos/shop-easy.webm" type="video/webm" />
             <source src="video/ETA07_Video.mp4" type="video/mp4" />
@@ -984,12 +983,12 @@
             aria-label="Toggle video"
             class="absolute bottom-4 left-4 z-10 grid place-items-center h-12 w-12 rounded-full bg-black/60 backdrop-blur text-white hover:bg-black/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
           >
-            <!-- play icon -->
-            <svg id="iconPlay" class="hidden h-6 w-6 cursor-pointer" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <!-- play icon (visible by default) -->
+            <svg id="iconPlay" class="h-6 w-6 cursor-pointer" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M8 5v14l11-7z" />
             </svg>
-            <!-- pause icon -->
-            <svg id="iconPause" class="h-6 w-6 cursor-pointer" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <!-- pause icon (hidden by default) -->
+            <svg id="iconPause" class="hidden h-6 w-6 cursor-pointer" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
             </svg>
           </button>
@@ -2133,13 +2132,13 @@
         pagination: { el: ".productsPagination", clickable: true },
       });
 
-      // Play/paude button for hero video
+      // Play/pause button for hero video
       const video = document.getElementById("shopEasyVideo");
       const toggle = document.getElementById("shopEasyToggle");
       const iconPlay = document.getElementById("iconPlay");
       const iconPause = document.getElementById("iconPause");
 
-      // Ensure autoplay starts with pause icon visible
+      // Update icons based on video state
       video.addEventListener("play", () => {
         iconPlay.classList.add("hidden");
         iconPause.classList.remove("hidden");
@@ -2150,6 +2149,7 @@
         iconPlay.classList.remove("hidden");
       });
 
+      // Toggle play/pause on button click
       toggle.addEventListener("click", () => {
         if (video.paused) {
           video.play();

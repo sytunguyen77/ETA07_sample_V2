@@ -93,6 +93,7 @@
     --blur-md: 12px;
     --blur-2xl: 40px;
     --blur-3xl: 64px;
+    --aspect-video: 16 / 9;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -487,6 +488,9 @@
   }
   .table {
     display: table;
+  }
+  .aspect-video {
+    aspect-ratio: var(--aspect-video);
   }
   .h-0 {
     height: calc(var(--spacing) * 0);
@@ -983,6 +987,9 @@
   }
   .object-contain {
     object-fit: contain;
+  }
+  .object-cover {
+    object-fit: cover;
   }
   .p-0 {
     padding: calc(var(--spacing) * 0);
@@ -2063,6 +2070,11 @@
       height: 300px;
     }
   }
+  .md\:max-h-\[500px\] {
+    @media (width >= 48rem) {
+      max-height: 500px;
+    }
+  }
   .md\:min-h-\[350px\] {
     @media (width >= 48rem) {
       min-height: 350px;
@@ -2267,6 +2279,11 @@
       height: 240px;
     }
   }
+  .lg\:max-h-\[600px\] {
+    @media (width >= 64rem) {
+      max-height: 600px;
+    }
+  }
   .lg\:min-h-\[450px\] {
     @media (width >= 64rem) {
       min-height: 450px;
@@ -2461,6 +2478,21 @@
   .xl\:h-full {
     @media (width >= 80rem) {
       height: 100%;
+    }
+  }
+  .xl\:max-h-\[700px\] {
+    @media (width >= 80rem) {
+      max-height: 700px;
+    }
+  }
+  .xl\:max-h-\[750px\] {
+    @media (width >= 80rem) {
+      max-height: 750px;
+    }
+  }
+  .xl\:max-h-\[800px\] {
+    @media (width >= 80rem) {
+      max-height: 800px;
     }
   }
   .xl\:w-30 {
