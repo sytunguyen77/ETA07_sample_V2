@@ -1751,6 +1751,11 @@
       top: calc(var(--spacing) * 10);
     }
   }
+  .sm\:top-15 {
+    @media (width >= 40rem) {
+      top: calc(var(--spacing) * 15);
+    }
+  }
   .sm\:right-4 {
     @media (width >= 40rem) {
       right: calc(var(--spacing) * 4);
