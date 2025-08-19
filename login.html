@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sy Tu Nguyen" />
+    <title>Login - ETA07</title>
+
+    <!-- Google Fonts - Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+      }
+
+      /* Custom animation for the illustration */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .float-animation {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body class="">
+    <!-- TOP NAVIGATION BAR -->
+    <nav id="top" class="bg-[#292C2D] text-white">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-12 sm:h-10 md:h-12">
+          <!-- Left Side - Welcome Message -->
+          <div class="text-xs sm:text-sm md:text-sm">Welcome to ETA07!</div>
+
+          <!-- Right Side - Navigation Links -->
+          <div class="flex items-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-5">
+            <!-- Deliver to -->
+            <div class="flex items-center space-x-1 sm:space-x-2">
+              <img src="images/location.svg" alt="location" class="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5" />
+              <span class="text-xs sm:text-sm lg:text-sm hidden sm:inline">Deliver to</span>
+              <span class="text-xs sm:text-sm lg:text-sm">423651</span>
+            </div>
+
+            <!-- Separator -->
+            <span class="text-gray-400 hidden sm:inline-block h-5 w-px bg-[#D9D9D9]"></span>
+
+            <!-- Track your order -->
+            <a href="#" class="flex items-center space-x-1 sm:space-x-2 hover:text-[#929FA5] transition-colors">
+              <img src="images/delivery-truck.svg" alt="delivery-truck" class="h-4 w-4 sm:h-4 sm:w-4 lg:h-6 lg:w-6" />
+              <span class="text-xs sm:text-sm lg:text-sm hidden sm:inline">Track your order</span>
+              <span class="text-xs sm:hidden">Track</span>
+            </a>
+
+            <!-- Separator -->
+            <span class="text-gray-400 hidden sm:inline-block h-5 w-px bg-[#D9D9D9]"></span>
+
+            <!-- All Offers -->
+            <a href="#" class="flex items-center hover:text-gray-300 transition-colors">
+              <img src="images/discount.svg" alt="discount" class="h-4 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 mx-1 sm:mx-2" />
+              <span class="text-xs sm:text-sm lg:text-sm hidden sm:inline">All Offers</span>
+              <span class="text-xs sm:hidden">Offers</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN HEADER -->
+    <header id="header" class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 sm:h-20">
+          <!-- Desktop: Logo -->
+          <div class="flex items-center">
+            <!-- Logo -->
+            <a href="index.html">
+              <img src="images/eta07-nav.svg" alt="ETA07 Logo" class="h-8 w-auto cursor-pointer sm:h-10 md:h-11 lg:h-12" />
+            </a>
+          </div>
+
+          <!-- Desktop: Flash Sale + Search Bar -->
+          <div class="hidden lg:flex flex-1 items-center justify-center mx-8">
+            <img src="images/flash.svg" alt="Flash Sale" class="mr-3" />
+
+            <!-- Desktop Search Bar -->
+            <div class="flex-1 max-w-xl">
+              <div class="relative">
+                <input
+                  type="text"
+                  placeholder="Search essentials, groceries and more..."
+                  class="w-full px-4 py-3.5 pl-10 pr-4 text-sm bg-[#F2F2F2] text-[#666666] rounded-lg focus:outline-none focus:border-[#FDB913] focus:ring-1 focus:ring-[#FDB913]"
+                />
+                <img src="images/search.svg" alt="search" class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile:  Cart + Hamburger -->
+          <!-- Desktop: Full Right Section -->
+          <div class="flex items-center">
+            <!-- Desktop Only: My Deals -->
+            <a href="#" class="hidden lg:flex items-center space-x-2 px-3 hover:opacity-80 transition-opacity">
+              <div class="flex items-center">
+                <img src="images/deal.svg" alt="deal" class="h-6 w-6" />
+                <span class="text-base font-bold text-[#FC7901] ml-1">My Deals</span>
+              </div>
+            </a>
+
+            <!-- Desktop Vertical Divider -->
+            <div class="hidden lg:block h-6 w-px bg-gray-300 mx-2"></div>
+
+            <!-- Desktop Only: Sign Up/Sign In -->
+            <div class="hidden lg:flex items-center space-x-2 px-3">
+              <img src="images/user.svg" alt="user" class="h-6 w-6" />
+              <div class="flex items-center space-x-1">
+                <a href="#" class="text-base text-[#666666] font-bold hover:opacity-80 transition-opacity">Sign Up</a>
+                <span class="text-base text-[#666666] font-bold">/</span>
+                <a href="#" class="text-base text-[#FDB913] font-bold hover:opacity-80 transition-opacity">Sign In</a>
+              </div>
+            </div>
+
+            <!-- Desktop Vertical Divider -->
+            <div class="hidden lg:block h-6 w-px bg-gray-300 mx-2"></div>
+
+            <!-- Cart (Always Visible) -->
+            <a href="#" class="flex items-center space-x-2 pl-2 lg:pl-3 hover:opacity-80 transition-opacity">
+              <div class="relative">
+                <img src="images/cart.svg" alt="cart" class="h-5 w-5 sm:h-6 sm:w-6" />
+                <span
+                  class="absolute -top-2 -right-2 h-4 w-4 sm:h-5 sm:w-5 flex items-center justify-center bg-red-500 text-white text-xs font-bold rounded-full"
+                >
+                  0
+                </span>
+              </div>
+              <span class="text-sm sm:text-base text-[#666666] font-bold hidden lg:inline">Cart</span>
+            </a>
+
+            <!-- Hamburger Menu Button (Mobile Only)  -->
+            <button
+              id="menu-btn"
+              class="lg:hidden ml-3 p-1 rounded-sm relative z-[9999] hover:bg-gray-200 focus:outline-none transition-colors cursor-pointer"
+              style="
+                background: rgba(156, 163, 175, 0.15);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border: 1px solid rgba(156, 163, 175, 0.2);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+              "
+              aria-label="Toggle menu"
+            >
+              <div class="flex flex-col justify-center items-center w-6 h-6 space-y-1">
+                <span class="hamburger-top block h-0.5 bg-gray-700 transition-all duration-300"></span>
+                <span class="hamburger-middle block h-0.5 bg-gray-700 transition-all duration-300"></span>
+                <span class="hamburger-bottom block h-0.5 bg-gray-700 transition-all duration-300"></span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- MOBILE MENU OVERLAY (hidden by default) -->
+        <div id="menu" class="hidden fixed inset-0 z-[1000] bg-white overflow-hidden flex-col">
+          <!-- Menu Container -->
+          <div class="flex flex-col h-full">
+            <!-- Menu Content -->
+            <div class="flex-1 px-6 py-40">
+              <!-- Search Bar Section -->
+              <div class="mb-6">
+                <div class="relative">
+                  <input
+                    type="text"
+                    placeholder="Search essentials, groceries and more..."
+                    class="w-full px-4 py-3.5 pl-10 pr-4 text-sm bg-[#F2F2F2] text-[#666666] rounded-lg focus:outline-none focus:border-[#FDB913] focus:ring-2 focus:ring-[#FDB913]"
+                  />
+                  <img src="images/search.svg" alt="search" class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5" />
+                </div>
+              </div>
+
+              <!-- Divider -->
+              <div class="h-px bg-gray-200 mb-4"></div>
+
+              <!-- Main Navigation Links -->
+              <div class="">
+                <!-- My Deals -->
+                <a href="#" class="flex items-center px-4 rounded-lg transition-colors">
+                  <img src="images/deal.svg" alt="deals" class="h-6 w-6 mr-4" />
+                  <span class="text-sm font-semibold text-[#FC7901] hover:text-[#E67A00] transition-colors">My Deals</span>
+                </a>
+
+                <!-- Sign In/Sign Up -->
+                <div class="flex items-center p-4 rounded-lg">
+                  <img src="images/user.svg" alt="user" class="h-6 w-6 mr-4" />
+                  <div class="flex items-center space-x-2">
+                    <span class="text-sm font-medium text-[#FDB913]">Sign In</span>
+                    <span class="text-sm font-medium text-gray-400">or</span>
+                    <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Sign Up</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Divider -->
+              <div class="h-px bg-gray-200 my-3"></div>
+
+              <!-- Secondary Links -->
+              <div class="">
+                <!-- About Us -->
+                <a href="#" class="flex items-center p-4 rounded-lg transition-colors">
+                  <svg class="h-6 w-6 mr-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">About Us</span>
+                </a>
+
+                <!-- Support -->
+                <a href="#" class="flex items-center px-4 rounded-lg transition-colors">
+                  <svg class="h-6 w-6 mr-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                  <span class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Support</span>
+                </a>
+              </div>
+
+              <!-- Divider -->
+              <div class="h-px bg-gray-200 my-6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- LOGIN FORM SECTION -->
+    <section class="py-12 sm:py-16 bg-gray-50 min-h-[calc(100vh-500px)]">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Back to Home Button -->
+        <div class="mb-8">
+          <a
+            href="/"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#292C2D] rounded-lg font-medium text-sm transition-all duration-300 hover:bg-[#FDB913] hover:text-[#292C2D] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(253,185,19,0.3)] border border-gray-200 hover:border-[#FDB913]"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            <span>Back to Home</span>
+          </a>
+        </div>
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+          <!-- Left Side - Illustration -->
+          <div class="w-full lg:w-1/2 max-w-xl">
+            <div class="bg-gradient-to-br p-8 lg:p-12">
+              <!-- Text Content -->
+              <div class="text-left">
+                <h1 class="text-2xl lg:text-3xl font-bold text-[#292C2D] mb-2">Welcome Back</h1>
+                <p class="text-gray-600">Login to your account to continue shopping</p>
+              </div>
+              <!-- Image  -->
+              <div class="hidden md:flex relative mb-8">
+                <div class="float-animation">
+                  <img
+                    src="images/login.webp"
+                    alt="Shopping illustration"
+                    class="w-full h-auto max-w-md mx-auto"
+                    onerror="this.style.display='none'; document.getElementById('placeholder').style.display='block';"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side - Login Form -->
+          <div class="w-full lg:w-1/2 max-w-md">
+            <div class="bg-white rounded-2xl shadow-sm border border-[#E4E7E9] p-8">
+              <!-- Login Form -->
+              <form class="space-y-5">
+                <!-- Email Field -->
+                <div>
+                  <label for="email" class="block text-sm font-semibold text-[#292C2D] mb-2"> Email </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    class="w-full px-4 py-3.5 bg-[#F2F2F2] text-[#666666] rounded-lg focus:outline-none focus:bg-white focus:text-[#292C2D] border-2 border-transparent transition-all placeholder-[#666666] focus:border-[#fdb913] focus:shadow-[0_0_0_3px_rgba(253,185,19,0.1)]"
+                    required
+                  />
+                </div>
+
+                <!-- Password Field -->
+                <div>
+                  <label for="password" class="block text-sm font-semibold text-[#292C2D] mb-2"> Password </label>
+                  <div class="relative">
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      placeholder="Enter your password"
+                      class="w-full px-4 py-3.5 pr-12 bg-[#F2F2F2] text-[#666666] rounded-lg focus:outline-none focus:bg-white focus:text-[#292C2D] border-2 border-transparent transition-all placeholder-[#666666] focus:border-[#fdb913] focus:shadow-[0_0_0_3px_rgba(253,185,19,0.1)]"
+                      required
+                    />
+                    <button
+                      type="button"
+                      onclick="togglePassword()"
+                      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-[#292C2D] transition-colors"
+                    >
+                      <svg id="eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
+                      </svg>
+                      <svg id="eye-closed" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="flex items-center justify-between">
+                  <label class="flex items-center cursor-pointer">
+                    <input type="checkbox" class="w-4 h-4 text-[#FDB913] rounded border-gray-300 focus:ring-[#FDB913]" />
+                    <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                  </label>
+                  <a href="#" class="text-sm text-[#FDB913] hover:text-[#ffc42e] font-medium transition-colors">
+                    Forgot password?
+                  </a>
+                </div>
+
+                <!-- Login Button -->
+                <button
+                  type="submit"
+                  class="w-full py-3.5 bg-[#FDB913] text-[#292C2D] rounded-lg font-bold text-base transition-all duration-300 hover:bg-[#ffc42e] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(253,185,19,0.3)]"
+                >
+                  Login
+                </button>
+
+                <!-- OR Divider -->
+                <div class="relative my-6">
+                  <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-300"></div>
+                  </div>
+                  <div class="relative flex justify-center text-sm">
+                    <span class="px-4 bg-white text-gray-500">Or</span>
+                  </div>
+                </div>
+
+                <!-- Social Login Buttons -->
+                <div class="space-y-3">
+                  <!-- Google Login -->
+                  <button
+                    type="button"
+                    class="w-full py-3.5 px-4 border border-gray-300 rounded-lg flex items-center justify-center gap-3 bg-white transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
+                  >
+                    <img src="images/logos_google-icon.svg" alt="google icon" class="w-5 h-5" />
+                    <span class="text-gray-700 font-medium">Login with Google</span>
+                  </button>
+
+                  <!-- Facebook Login -->
+                  <button
+                    type="button"
+                    class="w-full py-3.5 px-4 bg-[#1877F2] rounded-lg flex items-center justify-center gap-3 text-white transition-all duration-300 hover:bg-[#166FE5] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
+                  >
+                    <img src="images/facebook-icon.svg" alt="facebook icon" class="w-5 h-5" />
+                    <span class="font-medium">Login with Facebook</span>
+                  </button>
+                </div>
+
+                <!-- Sign Up Link -->
+                <p class="text-center text-gray-600 mt-6">
+                  First time here?
+                  <a href="#" class="text-[#292C2D] font-semibold hover:text-[#FDB913] transition-colors underline"> Signup </a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
