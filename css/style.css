@@ -594,6 +594,9 @@
   .w-30 {
     width: calc(var(--spacing) * 30);
   }
+  .w-40 {
+    width: calc(var(--spacing) * 40);
+  }
   .w-\[70\%\] {
     width: 70%;
   }
@@ -1668,6 +1671,13 @@
       }
     }
   }
+  .hover\:opacity-90 {
+    &:hover {
+      @media (hover: hover) {
+        opacity: 90%;
+      }
+    }
+  }
   .hover\:shadow-\[0_4px_12px_rgba\(0\,0\,0\,0\.1\)\] {
     &:hover {
       @media (hover: hover) {
@@ -1746,6 +1756,14 @@
   .focus\:ring-\[\#FDB913\]\/20 {
     &:focus {
       --tw-ring-color: color-mix(in oklab, #FDB913 20%, transparent);
+    }
+  }
+  .focus\:ring-white\/30 {
+    &:focus {
+      --tw-ring-color: color-mix(in srgb, #fff 30%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        --tw-ring-color: color-mix(in oklab, var(--color-white) 30%, transparent);
+      }
     }
   }
   .focus\:outline-none {
@@ -1875,6 +1893,11 @@
       height: calc(var(--spacing) * 10);
     }
   }
+  .sm\:h-12 {
+    @media (width >= 40rem) {
+      height: calc(var(--spacing) * 12);
+    }
+  }
   .sm\:h-18 {
     @media (width >= 40rem) {
       height: calc(var(--spacing) * 18);
@@ -1955,6 +1978,11 @@
       width: calc(var(--spacing) * 30);
     }
   }
+  .sm\:w-44 {
+    @media (width >= 40rem) {
+      width: calc(var(--spacing) * 44);
+    }
+  }
   .sm\:w-\[45\%\] {
     @media (width >= 40rem) {
       width: 45%;
@@ -1990,9 +2018,29 @@
       width: auto;
     }
   }
+  .sm\:max-w-\[100px\] {
+    @media (width >= 40rem) {
+      max-width: 100px;
+    }
+  }
+  .sm\:max-w-\[120px\] {
+    @media (width >= 40rem) {
+      max-width: 120px;
+    }
+  }
   .sm\:max-w-\[160px\] {
     @media (width >= 40rem) {
       max-width: 160px;
+    }
+  }
+  .sm\:max-w-\[180px\] {
+    @media (width >= 40rem) {
+      max-width: 180px;
+    }
+  }
+  .sm\:max-w-\[200px\] {
+    @media (width >= 40rem) {
+      max-width: 200px;
     }
   }
   .sm\:-translate-x-1 {
@@ -2074,6 +2122,11 @@
   .sm\:flex-row {
     @media (width >= 40rem) {
       flex-direction: row;
+    }
+  }
+  .sm\:items-center {
+    @media (width >= 40rem) {
+      align-items: center;
     }
   }
   .sm\:gap-2 {
@@ -2316,6 +2369,11 @@
   .md\:h-12 {
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 12);
+    }
+  }
+  .md\:h-14 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 14);
     }
   }
   .md\:h-22 {
