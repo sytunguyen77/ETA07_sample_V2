@@ -426,6 +426,9 @@
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
+  }
   .mr-3 {
     margin-right: calc(var(--spacing) * 3);
   }
@@ -516,6 +519,9 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
   .h-24 {
     height: calc(var(--spacing) * 24);
   }
@@ -576,11 +582,17 @@
   .w-16 {
     width: calc(var(--spacing) * 16);
   }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
   .w-22 {
     width: calc(var(--spacing) * 22);
   }
   .w-24 {
     width: calc(var(--spacing) * 24);
+  }
+  .w-30 {
+    width: calc(var(--spacing) * 30);
   }
   .w-\[70\%\] {
     width: 70%;
@@ -605,6 +617,9 @@
   }
   .max-w-2xl {
     max-width: var(--container-2xl);
+  }
+  .max-w-\[140px\] {
+    max-width: 140px;
   }
   .max-w-\[1600px\] {
     max-width: 1600px;
@@ -1132,11 +1147,18 @@
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
+  .text-\[8px\] {
+    font-size: 8px;
+  }
   .text-\[10px\] {
     font-size: 10px;
   }
   .text-\[11px\] {
     font-size: 11px;
+  }
+  .leading-none {
+    --tw-leading: 1;
+    line-height: 1;
   }
   .leading-tight {
     --tw-leading: var(--leading-tight);
@@ -1552,6 +1574,13 @@
       }
     }
   }
+  .hover\:bg-gray-900 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-900);
+      }
+    }
+  }
   .hover\:bg-white\/30 {
     &:hover {
       @media (hover: hover) {
@@ -1961,6 +1990,11 @@
       width: auto;
     }
   }
+  .sm\:max-w-\[160px\] {
+    @media (width >= 40rem) {
+      max-width: 160px;
+    }
+  }
   .sm\:-translate-x-1 {
     @media (width >= 40rem) {
       --tw-translate-x: calc(var(--spacing) * -1);
@@ -2227,6 +2261,11 @@
     @media (width >= 40rem) {
       font-size: var(--text-xs);
       line-height: var(--tw-leading, var(--text-xs--line-height));
+    }
+  }
+  .sm\:text-\[9px\] {
+    @media (width >= 40rem) {
+      font-size: 9px;
     }
   }
   .md\:right-6 {
