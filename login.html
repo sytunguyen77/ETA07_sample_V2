@@ -14,8 +14,9 @@
       rel="stylesheet"
     />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS style -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/input.css" />
 
     <style>
       body {
@@ -82,61 +83,66 @@
     <!-- MAIN HEADER -->
     <header id="header" class="bg-white shadow-sm sticky top-0 z-50">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16 sm:h-20">
-          <!-- Desktop: Logo -->
-          <div class="flex items-center">
-            <!-- Logo -->
-            <a href="index.html">
-              <img src="images/eta07-nav.svg" alt="ETA07 Logo" class="h-8 w-auto cursor-pointer sm:h-10 md:h-11 lg:h-12" />
+        <div class="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-3">
+          <!-- Logo -->
+          <div class="flex items-center flex-shrink-0">
+            <a href="#top">
+              <img src="images/eta07-nav.svg" alt="ETA07 Logo" class="h-8 w-auto sm:h-10 md:h-11 lg:h-12" />
             </a>
           </div>
 
-          <!-- Desktop: Flash Sale + Search Bar -->
-          <div class="hidden lg:flex flex-1 items-center justify-center mx-8">
-            <img src="images/flash.svg" alt="Flash Sale" class="mr-3" />
+          <!-- Search Bar (Visible on all screens - Made Longer) -->
+          <div class="flex-1 max-w-2xl lg:max-w-3xl mx-1 sm:mx-2">
+            <div class="flex items-center gap-2">
+              <!-- Flash icon (hidden on very small screens) -->
+              <img src="images/flash.svg" alt="Flash Sale" class="hidden sm:block flex-shrink-0" />
 
-            <!-- Desktop Search Bar -->
-            <div class="flex-1 max-w-xl">
-              <div class="relative">
-                <input
-                  type="text"
-                  placeholder="Search essentials, groceries and more..."
-                  class="w-full px-4 py-3.5 pl-10 pr-4 text-sm bg-[#F2F2F2] text-[#666666] rounded-lg focus:outline-none focus:border-[#FDB913] focus:ring-1 focus:ring-[#FDB913]"
-                />
-                <img src="images/search.svg" alt="search" class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5" />
+              <!-- Search Input -->
+              <div class="flex-1">
+                <div class="relative">
+                  <input
+                    type="text"
+                    placeholder="Search for anything..."
+                    class="w-full px-3 py-2 sm:px-4 sm:py-3 lg:py-3.5 pl-8 sm:pl-10 pr-3 sm:pr-4 text-xs sm:text-sm bg-[#F8F8F8] text-[#666666] rounded-lg border-2 border-[#E4E7E9] focus:outline-none focus:border-[#FDB913] focus:ring-2 focus:ring-[#FDB913]/20 transition-all duration-200 placeholder:text-[#999999]"
+                  />
+                  <img
+                    src="images/search.svg"
+                    alt="search"
+                    class="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5"
+                  />
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Mobile:  Cart + Hamburger -->
-          <!-- Desktop: Full Right Section -->
-          <div class="flex items-center">
-            <!-- Desktop Only: My Deals -->
-            <a href="#" class="hidden lg:flex items-center space-x-2 px-3 hover:opacity-80 transition-opacity">
-              <div class="flex items-center">
-                <img src="images/deal.svg" alt="deal" class="h-6 w-6" />
-                <span class="text-base font-bold text-[#FC7901] ml-1">My Deals</span>
-              </div>
+          <!-- Right Section -->
+          <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+            <!-- My Deals (hidden on mobile) -->
+            <a href="#" class="hidden lg:flex items-center space-x-1 sm:space-x-2 hover:opacity-80 transition-opacity">
+              <img src="images/deal.svg" alt="deal" class="h-5 sm:h-6 w-5 sm:w-6" />
+              <span class="text-sm sm:text-base font-bold text-[#FC7901] whitespace-nowrap">My Deals</span>
             </a>
 
             <!-- Desktop Vertical Divider -->
-            <div class="hidden lg:block h-6 w-px bg-gray-300 mx-2"></div>
+            <div class="hidden lg:block h-6 w-px bg-gray-300"></div>
 
-            <!-- Desktop Only: Sign Up/Sign In -->
-            <div class="hidden lg:flex items-center space-x-2 px-3">
-              <img src="images/user.svg" alt="user" class="h-6 w-6" />
+            <!-- Sign Up/Sign In (hidden on mobile) -->
+            <div class="hidden md:flex items-center space-x-1 sm:space-x-2">
+              <img src="images/user.svg" alt="user" class="h-5 sm:h-6 w-5 sm:w-6" />
               <div class="flex items-center space-x-1">
-                <a href="#" class="text-base text-[#666666] font-bold hover:opacity-80 transition-opacity">Sign Up</a>
-                <span class="text-base text-[#666666] font-bold">/</span>
-                <a href="#" class="text-base text-[#FDB913] font-bold hover:opacity-80 transition-opacity">Sign In</a>
+                <a href="#" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity">Sign Up</a>
+                <span class="text-sm sm:text-base text-[#666666] font-bold">/</span>
+                <a href="login.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity"
+                  >Sign In</a
+                >
               </div>
             </div>
 
             <!-- Desktop Vertical Divider -->
-            <div class="hidden lg:block h-6 w-px bg-gray-300 mx-2"></div>
+            <div class="hidden md:block h-6 w-px bg-gray-300"></div>
 
             <!-- Cart (Always Visible) -->
-            <a href="#" class="flex items-center space-x-2 pl-2 lg:pl-3 hover:opacity-80 transition-opacity">
+            <a href="#" class="flex items-center hover:opacity-80 transition-opacity">
               <div class="relative">
                 <img src="images/cart.svg" alt="cart" class="h-5 w-5 sm:h-6 sm:w-6" />
                 <span
@@ -145,26 +151,19 @@
                   0
                 </span>
               </div>
-              <span class="text-sm sm:text-base text-[#666666] font-bold hidden lg:inline">Cart</span>
+              <span class="text-sm sm:text-base text-[#666666] font-bold hidden lg:inline ml-1">Cart</span>
             </a>
 
-            <!-- Hamburger Menu Button (Mobile Only)  -->
+            <!-- Hamburger Menu Button (Mobile Only - Updated) -->
             <button
               id="menu-btn"
-              class="lg:hidden ml-3 p-1 rounded-sm relative z-[9999] hover:bg-gray-200 focus:outline-none transition-colors cursor-pointer"
-              style="
-                background: rgba(156, 163, 175, 0.15);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                border: 1px solid rgba(156, 163, 175, 0.2);
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-              "
+              class="md:hidden p-0 relative z-[9999] hover:opacity-70 focus:outline-none transition-opacity cursor-pointer"
               aria-label="Toggle menu"
             >
-              <div class="flex flex-col justify-center items-center w-6 h-6 space-y-1">
-                <span class="hamburger-top block h-0.5 bg-gray-700 transition-all duration-300"></span>
-                <span class="hamburger-middle block h-0.5 bg-gray-700 transition-all duration-300"></span>
-                <span class="hamburger-bottom block h-0.5 bg-gray-700 transition-all duration-300"></span>
+              <div class="flex flex-col justify-center items-center w-5 h-5 sm:w-6 sm:h-6 space-y-1">
+                <span class="hamburger-top block w-full h-0.5 bg-gray-700 transition-all duration-300"></span>
+                <span class="hamburger-middle block w-full h-0.5 bg-gray-700 transition-all duration-300"></span>
+                <span class="hamburger-bottom block w-full h-0.5 bg-gray-700 transition-all duration-300"></span>
               </div>
             </button>
           </div>
@@ -176,22 +175,7 @@
           <div class="flex flex-col h-full">
             <!-- Menu Content -->
             <div class="flex-1 px-6 py-40">
-              <!-- Search Bar Section -->
-              <div class="mb-6">
-                <div class="relative">
-                  <input
-                    type="text"
-                    placeholder="Search essentials, groceries and more..."
-                    class="w-full px-4 py-3.5 pl-10 pr-4 text-sm bg-[#F2F2F2] text-[#666666] rounded-lg focus:outline-none focus:border-[#FDB913] focus:ring-2 focus:ring-[#FDB913]"
-                  />
-                  <img src="images/search.svg" alt="search" class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5" />
-                </div>
-              </div>
-
-              <!-- Divider -->
-              <div class="h-px bg-gray-200 mb-4"></div>
-
-              <!-- Main Navigation Links -->
+              <!-- Main Navigation Links (No search bar here anymore) -->
               <div class="">
                 <!-- My Deals -->
                 <a href="#" class="flex items-center px-4 rounded-lg transition-colors">
@@ -203,7 +187,7 @@
                 <div class="flex items-center p-4 rounded-lg">
                   <img src="images/user.svg" alt="user" class="h-6 w-6 mr-4" />
                   <div class="flex items-center space-x-2">
-                    <span class="text-sm font-medium text-[#FDB913]">Sign In</span>
+                    <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Sign In</a>
                     <span class="text-sm font-medium text-gray-400">or</span>
                     <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Sign Up</a>
                   </div>
@@ -251,36 +235,39 @@
     </header>
 
     <!-- LOGIN FORM SECTION -->
-    <section class="py-12 sm:py-16 bg-gray-50 min-h-[calc(100vh-500px)]">
+    <section
+      class="py-8 sm:py-12 lg:py-16 bg-gray-50 min-h-[calc(100vh-200px)] sm:min-h-[calc(100vh-400px)] lg:min-h-[calc(100vh-500px)]"
+    >
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Back to Home Button -->
-        <div class="mb-8">
+        <div class="mb-4 sm:mb-6 lg:mb-8">
           <a
             href="/"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#292C2D] rounded-lg font-medium text-sm transition-all duration-300 hover:bg-[#FDB913] hover:text-[#292C2D] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(253,185,19,0.3)] border border-gray-200 hover:border-[#FDB913]"
+            class="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white text-[#292C2D] rounded-lg font-medium text-xs sm:text-sm transition-all duration-300 hover:bg-[#FDB913] hover:text-[#292C2D] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(253,185,19,0.3)] border border-gray-200 hover:border-[#FDB913]"
           >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
             <span>Back to Home</span>
           </a>
         </div>
-        <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-16">
           <!-- Left Side - Illustration -->
           <div class="w-full lg:w-1/2 max-w-xl">
-            <div class="bg-gradient-to-br p-8 lg:p-12">
+            <div class="bg-gradient-to-br p-4 sm:p-8 lg:p-12">
               <!-- Text Content -->
-              <div class="text-left">
-                <h1 class="text-2xl lg:text-3xl font-bold text-[#292C2D] mb-2">Welcome Back</h1>
-                <p class="text-gray-600">Login to your account to continue shopping</p>
+              <div class="text-center lg:text-left">
+                <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-[#292C2D] mb-1 sm:mb-2">Welcome Back</h1>
+                <p class="text-sm sm:text-base text-gray-600">Login to your account to continue shopping</p>
               </div>
-              <!-- Image  -->
-              <div class="hidden md:flex relative mb-8">
+              <!-- Image -->
+              <div class="hidden md:flex relative mt-4 sm:mt-6 lg:mt-8">
                 <div class="float-animation">
                   <img
                     src="images/login.webp"
                     alt="Shopping illustration"
-                    class="w-full h-auto max-w-md mx-auto"
+                    class="w-full h-auto max-w-sm lg:max-w-md mx-auto"
                     onerror="this.style.display='none'; document.getElementById('placeholder').style.display='block';"
                   />
                 </div>
@@ -290,40 +277,42 @@
 
           <!-- Right Side - Login Form -->
           <div class="w-full lg:w-1/2 max-w-md">
-            <div class="bg-white rounded-2xl shadow-sm border border-[#E4E7E9] p-8">
+            <div class="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-[#E4E7E9] p-6 sm:p-8">
               <!-- Login Form -->
-              <form class="space-y-5">
+              <form class="space-y-4 sm:space-y-5">
                 <!-- Email Field -->
                 <div>
-                  <label for="email" class="block text-sm font-semibold text-[#292C2D] mb-2"> Email </label>
+                  <label for="email" class="block text-xs sm:text-sm font-semibold text-[#292C2D] mb-1.5 sm:mb-2"> Email </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     placeholder="Enter your email address"
-                    class="w-full px-4 py-3.5 bg-[#F2F2F2] text-[#666666] rounded-lg focus:outline-none focus:bg-white focus:text-[#292C2D] border-2 border-transparent transition-all placeholder-[#666666] focus:border-[#fdb913] focus:shadow-[0_0_0_3px_rgba(253,185,19,0.1)]"
+                    class="w-full px-3 sm:px-4 py-2.5 sm:py-3.5 bg-[#F2F2F2] text-[#666666] text-sm sm:text-base rounded-lg focus:outline-none focus:bg-white focus:text-[#292C2D] border-2 border-transparent transition-all placeholder-[#666666] placeholder:text-xs sm:placeholder:text-sm focus:border-[#fdb913] focus:shadow-[0_0_0_3px_rgba(253,185,19,0.1)]"
                     required
                   />
                 </div>
 
                 <!-- Password Field -->
                 <div>
-                  <label for="password" class="block text-sm font-semibold text-[#292C2D] mb-2"> Password </label>
+                  <label for="password" class="block text-xs sm:text-sm font-semibold text-[#292C2D] mb-1.5 sm:mb-2">
+                    Password
+                  </label>
                   <div class="relative">
                     <input
                       type="password"
                       id="password"
                       name="password"
                       placeholder="Enter your password"
-                      class="w-full px-4 py-3.5 pr-12 bg-[#F2F2F2] text-[#666666] rounded-lg focus:outline-none focus:bg-white focus:text-[#292C2D] border-2 border-transparent transition-all placeholder-[#666666] focus:border-[#fdb913] focus:shadow-[0_0_0_3px_rgba(253,185,19,0.1)]"
+                      class="w-full px-3 sm:px-4 py-2.5 sm:py-3.5 pr-10 sm:pr-12 bg-[#F2F2F2] text-[#666666] text-sm sm:text-base rounded-lg focus:outline-none focus:bg-white focus:text-[#292C2D] border-2 border-transparent transition-all placeholder-[#666666] placeholder:text-xs sm:placeholder:text-sm focus:border-[#fdb913] focus:shadow-[0_0_0_3px_rgba(253,185,19,0.1)]"
                       required
                     />
                     <button
                       type="button"
                       onclick="togglePassword()"
-                      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-[#292C2D] transition-colors"
+                      class="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-[#292C2D] transition-colors p-1"
                     >
-                      <svg id="eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg id="eye-open" class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                           stroke-linecap="round"
                           stroke-linejoin="round"
@@ -337,7 +326,13 @@
                           d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                         />
                       </svg>
-                      <svg id="eye-closed" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg
+                        id="eye-closed"
+                        class="w-4 h-4 sm:w-5 sm:h-5 hidden"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
                         <path
                           stroke-linecap="round"
                           stroke-linejoin="round"
@@ -352,10 +347,13 @@
                 <!-- Remember Me & Forgot Password -->
                 <div class="flex items-center justify-between">
                   <label class="flex items-center cursor-pointer">
-                    <input type="checkbox" class="w-4 h-4 text-[#FDB913] rounded border-gray-300 focus:ring-[#FDB913]" />
-                    <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                    <input
+                      type="checkbox"
+                      class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FDB913] rounded border-gray-300 focus:ring-[#FDB913]"
+                    />
+                    <span class="ml-1.5 sm:ml-2 text-xs sm:text-sm text-gray-600">Remember me</span>
                   </label>
-                  <a href="#" class="text-sm text-[#FDB913] hover:text-[#ffc42e] font-medium transition-colors">
+                  <a href="#" class="text-xs sm:text-sm text-[#FDB913] hover:text-[#ffc42e] font-medium transition-colors">
                     Forgot password?
                   </a>
                 </div>
@@ -363,44 +361,44 @@
                 <!-- Login Button -->
                 <button
                   type="submit"
-                  class="w-full py-3.5 bg-[#FDB913] text-[#292C2D] rounded-lg font-bold text-base transition-all duration-300 hover:bg-[#ffc42e] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(253,185,19,0.3)]"
+                  class="w-full py-2.5 sm:py-3.5 bg-[#FDB913] text-[#292C2D] rounded-lg font-bold text-sm sm:text-base transition-all duration-300 hover:bg-[#ffc42e] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(253,185,19,0.3)]"
                 >
                   Login
                 </button>
 
                 <!-- OR Divider -->
-                <div class="relative my-6">
+                <div class="relative my-4 sm:my-6">
                   <div class="absolute inset-0 flex items-center">
                     <div class="w-full border-t border-gray-300"></div>
                   </div>
-                  <div class="relative flex justify-center text-sm">
-                    <span class="px-4 bg-white text-gray-500">Or</span>
+                  <div class="relative flex justify-center text-xs sm:text-sm">
+                    <span class="px-3 sm:px-4 bg-white text-gray-500">Or</span>
                   </div>
                 </div>
 
                 <!-- Social Login Buttons -->
-                <div class="space-y-3">
+                <div class="space-y-2.5 sm:space-y-3">
                   <!-- Google Login -->
                   <button
                     type="button"
-                    class="w-full py-3.5 px-4 border border-gray-300 rounded-lg flex items-center justify-center gap-3 bg-white transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
+                    class="w-full py-2.5 sm:py-3.5 px-3 sm:px-4 border border-gray-300 rounded-lg flex items-center justify-center gap-2 sm:gap-3 bg-white transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
                   >
-                    <img src="images/logos_google-icon.svg" alt="google icon" class="w-5 h-5" />
-                    <span class="text-gray-700 font-medium">Login with Google</span>
+                    <img src="images/logos_google-icon.svg" alt="google icon" class="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span class="text-gray-700 font-medium text-xs sm:text-base">Login with Google</span>
                   </button>
 
                   <!-- Facebook Login -->
                   <button
                     type="button"
-                    class="w-full py-3.5 px-4 bg-[#1877F2] rounded-lg flex items-center justify-center gap-3 text-white transition-all duration-300 hover:bg-[#166FE5] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
+                    class="w-full py-2.5 sm:py-3.5 px-3 sm:px-4 bg-[#1877F2] rounded-lg flex items-center justify-center gap-2 sm:gap-3 text-white transition-all duration-300 hover:bg-[#166FE5] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
                   >
-                    <img src="images/facebook-icon.svg" alt="facebook icon" class="w-5 h-5" />
-                    <span class="font-medium">Login with Facebook</span>
+                    <img src="images/facebook-icon.svg" alt="facebook icon" class="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span class="font-medium text-xs sm:text-base">Login with Facebook</span>
                   </button>
                 </div>
 
                 <!-- Sign Up Link -->
-                <p class="text-center text-gray-600 mt-6">
+                <p class="text-center text-gray-600 mt-4 sm:mt-6 text-xs sm:text-base">
                   First time here?
                   <a href="#" class="text-[#292C2D] font-semibold hover:text-[#FDB913] transition-colors underline"> Signup </a>
                 </p>
@@ -410,5 +408,243 @@
         </div>
       </div>
     </section>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="bg-[#191C1F] text-white">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+          <!-- Company Info - Takes full width on mobile, 2 cols on desktop -->
+          <div class="sm:col-span-2 lg:col-span-1">
+            <!-- Logo -->
+            <a href="#top">
+              <img src="images/eta07-footer.svg" alt="ETA07" class="h-8 w-auto sm:h-10 md:h-11 lg:h-12 mb-6" />
+            </a>
+
+            <!-- Customer Support -->
+            <div class="space-y-3 text-gray-300">
+              <p class="text-xs font-medium text-[#929FA5]">Customer Supports:</p>
+              <p class="text-base font-medium text-[#ffffff]">(832) 932-6279</p>
+
+              <div class="text-sm space-y-1 text-[#929FA5]">
+                <p>396 Greens Rd Ste 200</p>
+                <p>Houston, Tx 77067</p>
+              </div>
+
+              <p class="text-sm text-[#ffffff]">info@eta07.com</p>
+            </div>
+          </div>
+
+          <!-- Mobile: Grid container for Top Category and Quick Links side by side -->
+          <div class="grid grid-cols-2 gap-8 sm:grid-cols-1 lg:grid-cols-2 sm:col-span-2 lg:col-span-2">
+            <!-- Top Category -->
+            <div>
+              <h3 class="text-base font-medium mb-4 uppercase">Top Category</h3>
+              <ul class="space-y-2">
+                <li><a href="#" class="text-xs text-[#929FA5] hover:text-white transition-colors">Computer & Laptop</a></li>
+                <li><a href="#" class="text-xs text-[#929FA5] hover:text-white transition-colors">SmartPhone</a></li>
+                <li><a href="#" class="text-xs text-[#929FA5] hover:text-white transition-colors">Headphone</a></li>
+                <li><a href="#" class="text-xs text-[#929FA5] hover:text-white transition-colors">Accessories</a></li>
+                <li><a href="#" class="text-xs text-[#929FA5] hover:text-white transition-colors">Camera & Photo</a></li>
+                <li><a href="#" class="text-xs text-[#929FA5] hover:text-white transition-colors">TV & Homes</a></li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-flex items-center text-xs text-[#FDB913] hover:text-[#ffc740] font-medium transition-colors"
+                  >
+                    Browse All Product
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-base font-medium mb-4 uppercase">Quick Links</h3>
+              <ul class="space-y-2">
+                <li><a href="#" class="text-xs text-[#929FA5] hover:text-white transition-colors">About Us</a></li>
+                <li><a href="#" class="text-xs text-[#929FA5] hover:text-white transition-colors">Careers</a></li>
+                <li><a href="#" class="text-xs text-[#929FA5] hover:text-white transition-colors">Shopping Cart</a></li>
+                <li><a href="#" class="text-xs text-[#929FA5] hover:text-white transition-colors">Refund Policy</a></li>
+                <li><a href="#" class="text-xs text-[#929FA5] hover:text-white transition-colors">Shipping Policy</a></li>
+                <li><a href="#" class="text-xs text-[#929FA5] hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="#" class="text-xs text-[#929FA5] hover:text-white transition-colors">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Mobile: Grid container for Download App and Popular Tags side by side -->
+          <div class="grid grid-cols-2 gap-8 sm:grid-cols-1 lg:grid-cols-2 sm:col-span-2 lg:col-span-2">
+            <!-- Download App -->
+            <div>
+              <h3 class="text-base font-medium mb-4 uppercase">Download App</h3>
+              <div class="flex flex-col space-y-3">
+                <!-- Google Play Button -->
+                <a href="#" class="inline-flex items-center justify-center transition-colors duration-200 group w-40 sm:w-44">
+                  <img src="images/google-playstore.svg" alt="Google Store" class="w-full h-auto" />
+                </a>
+
+                <!-- App Store Button -->
+                <a href="#" class="inline-flex items-center justify-center transition-colors duration-200 group w-40 sm:w-44">
+                  <img src="images/apple-store.svg" alt="Apple Store" class="w-full h-auto" />
+                </a>
+              </div>
+            </div>
+
+            <!-- Popular Tags -->
+            <div>
+              <h3 class="text-base font-medium mb-4 uppercase">Popular Tag</h3>
+              <div class="flex flex-wrap gap-2">
+                <a
+                  href="#"
+                  class="px-3 py-1.5 border border-[#303639] hover:bg-[#4a5052] hover:border-[#ffffff] text-xs text-[#FFFFFF] rounded-xs transition-colors"
+                  >Game</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1.5 border border-[#303639] hover:bg-[#4a5052] hover:border-[#ffffff] text-xs text-[#FFFFFF] rounded-xs transition-colors"
+                  >iPhone</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1.5 border border-[#303639] hover:bg-[#4a5052] hover:border-[#ffffff] text-xs text-[#FFFFFF] rounded-xs transition-colors"
+                  >TV</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1.5 border border-[#303639] hover:bg-[#4a5052] hover:border-[#ffffff] text-xs text-[#FFFFFF] rounded-xs transition-colors"
+                  >Asus Laptops</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1.5 border border-[#303639] hover:bg-[#4a5052] hover:border-[#ffffff] text-xs text-[#FFFFFF] rounded-xs transition-colors"
+                  >Macbook</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1.5 border border-[#303639] hover:bg-[#4a5052] hover:border-[#ffffff] text-xs text-[#FFFFFF] rounded-xs transition-colors"
+                  >SSD</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1.5 border border-[#303639] hover:bg-[#4a5052] hover:border-[#ffffff] text-xs text-[#FFFFFF] rounded-xs transition-colors"
+                  >Graphics Card</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1.5 border border-[#303639] hover:bg-[#4a5052] hover:border-[#ffffff] text-xs text-[#FFFFFF] rounded-xs transition-colors"
+                  >Power Bank</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1.5 border border-[#303639] hover:bg-[#4a5052] hover:border-[#ffffff] text-xs text-[#FFFFFF] rounded-xs transition-colors"
+                  >Smart TV</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1.5 border border-[#303639] hover:bg-[#4a5052] hover:border-[#ffffff] text-xs text-[#FFFFFF] rounded-xs transition-colors"
+                  >Speaker</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1.5 border border-[#303639] hover:bg-[#4a5052] hover:border-[#ffffff] text-xs text-[#FFFFFF] rounded-xs transition-colors"
+                  >Tablet</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1.5 border border-[#303639] hover:bg-[#4a5052] hover:border-[#ffffff] text-xs text-[#FFFFFF] rounded-xs transition-colors"
+                  >Microwave</a
+                >
+                <a
+                  href="#"
+                  class="px-3 py-1.5 border border-[#303639] hover:bg-[#4a5052] hover:border-[#ffffff] text-xs text-[#FFFFFF] rounded-xs transition-colors"
+                  >Samsung</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="mt-8 pt-8 border-t border-gray-700">
+          <div class="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+            <p class="text-xs text-gray-400">© 2025 ETA07. All rights reserved.</p>
+
+            <!-- Social Links -->
+            <div class="flex items-center space-x-4">
+              <!-- Facebook -->
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-110 hover:-translate-y-0.5"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-label="Facebook">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+              </a>
+
+              <!-- X -->
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-110 hover:-translate-y-0.5"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+              </a>
+
+              <!-- LinkedIn -->
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-110 hover:-translate-y-0.5"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // For mobile menu
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      btn.addEventListener("click", navToggle);
+
+      function navToggle() {
+        btn.classList.toggle("open");
+        menu.classList.toggle("flex");
+        menu.classList.toggle("hidden");
+
+        // Prevent page scroll when menu is open
+        if (menu.classList.contains("flex")) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
+      }
+
+      // Close menu on resize to desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 1024) {
+          // Tailwind's lg breakpoint
+          menu.classList.add("hidden");
+          menu.classList.remove("flex");
+          btn.classList.remove("open");
+          document.body.style.overflow = ""; // unlock scroll
+        }
+      });
+    </script>
   </body>
 </html>
