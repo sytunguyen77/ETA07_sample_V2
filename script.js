@@ -146,39 +146,94 @@ document.querySelectorAll("[data-countdown]").forEach((el) => {
 
 // ================================= AUTOCOMPLETE SEARCH DROP DOWN  ==================== //
 // Keywords
-// Popular Toy Keywords
 const keywords = [
-  "Drones",
+  // Building & Construction
   "LEGO Sets",
+  "Lego Star Wars",
+  "Lego Technic",
+  "Mega Bloks",
+  "Building Blocks",
+
+  // Dolls & Figures
   "Barbie Dolls",
-  "Hot Wheels Cars",
-  "NERF Guns",
-  "Play-Doh",
+  "Disney Princess Dolls",
+  "Baby Dolls",
+  "American Girl Dolls",
+  "Marvel Superhero Figures",
+  "DC Superhero Figures",
+  "Transformers",
   "Action Figures",
+  "Funko Pop Figures",
+  "Toy Story Figures",
+  "Doll Houses",
+  "Stuffed Animals",
+  "Plush Toys",
+
+  // Vehicles & RC
+  "Hot Wheels Cars",
+  "Matchbox Cars",
+  "Monster Trucks",
   "Remote Control Cars",
+  "RC Boats",
+  "RC Helicopters",
+  "Drones",
+  "Toy Trains",
+  "Race Tracks",
+  "Scooters",
+  "Ride-On Cars",
+
+  // Games & Puzzles
   "Board Games",
   "Monopoly",
   "Uno Cards",
   "Jenga",
+  "Connect 4",
+  "Chess Sets",
+  "Checkers",
   "Puzzle Sets",
-  "Dinosaur Toys",
-  "Stuffed Animals",
-  "Doll Houses",
-  "Toy Kitchen Sets",
-  "Lego Star Wars",
-  "Lego Technic",
-  "Disney Princess Dolls",
-  "Marvel Superhero Figures",
-  "Transformers",
-  "Pokemon Cards",
+  "Rubik's Cube",
   "Beyblade Burst",
-  "Funko Pop Figures",
-  "Toy Trains",
-  "Playmobil",
-  "Toy Story Figures",
-  "Baby Dolls",
+  "Pokemon Cards",
+  "Trading Card Games",
+
+  // Creative & Learning
+  "Play-Doh",
+  "Kinetic Sand",
+  "Arts and Crafts Kits",
+  "STEM Toys",
+  "Science Kits",
+  "Microscopes for Kids",
+  "Magic Kits",
+  "Musical Instruments for Kids",
+
+  // Outdoor & Sports
+  "NERF Guns",
+  "Water Guns",
+  "Bubble Machines",
+  "Sports Balls",
+  "Frisbees",
+  "Trampolines",
+  "Swing Sets",
+  "Slides",
+  "Bicycles for Kids",
   "Scooters",
-  "Building Blocks",
+
+  // Popular Brands
+  "L.O.L. Surprise Dolls",
+  "Hatchimals",
+  "Paw Patrol Toys",
+  "Peppa Pig Toys",
+  "Cocomelon Toys",
+  "Bluey Toys",
+  "Frozen Dolls",
+  "Jurassic World Dinosaurs",
+  "Minecraft Toys",
+  "Roblox Figures",
+  "Sonic the Hedgehog Toys",
+  "Mario Toys",
+  "Pokemon Plush",
+  "Zhu Zhu Pets",
+  "Tamagotchi",
 ];
 
 // Default suggestions (top toys)
@@ -189,9 +244,10 @@ const defaults = [
   "Hot Wheels Cars",
   "NERF Guns",
   "Play-Doh",
-  "Action Figures",
-  "Board Games",
-  "Stuffed Animals",
+  "Funko Pop Figures",
+  "Pokemon Cards",
+  "L.O.L. Surprise Dolls",
+  "Paw Patrol Toys",
 ];
 
 const input = document.getElementById("search-input");
