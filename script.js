@@ -300,3 +300,21 @@ document.addEventListener("click", (e) => {
     box.classList.add("hidden");
   }
 });
+
+// ============================ ALERT MODAL FOR EMPTY LINKS ========================= //
+const alertModal = document.getElementById("alertModal");
+const closeAlert = document.getElementById("closeAlert");
+
+// Catch all empty links
+document.querySelectorAll('a[href="#"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    alertModal.classList.remove("hidden");
+    alertModal.classList.add("flex");
+  });
+});
+
+// Close button
+closeAlert.addEventListener("click", () => {
+  alertModal.classList.add("hidden");
+});

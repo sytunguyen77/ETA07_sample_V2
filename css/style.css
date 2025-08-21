@@ -579,6 +579,9 @@
   .w-40 {
     width: calc(var(--spacing) * 40);
   }
+  .w-80 {
+    width: calc(var(--spacing) * 80);
+  }
   .w-\[70\%\] {
     width: 70%;
   }
@@ -922,6 +925,12 @@
   }
   .bg-black {
     background-color: var(--color-black);
+  }
+  .bg-black\/40 {
+    background-color: color-mix(in srgb, #000 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 40%, transparent);
+    }
   }
   .bg-black\/60 {
     background-color: color-mix(in srgb, #000 60%, transparent);
