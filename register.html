@@ -710,36 +710,7 @@
       </div>
     </footer>
 
-    <script>
-      // For mobile menu
-      const btn = document.getElementById("menu-btn");
-      const menu = document.getElementById("menu");
-
-      btn.addEventListener("click", navToggle);
-
-      function navToggle() {
-        btn.classList.toggle("open");
-        menu.classList.toggle("flex");
-        menu.classList.toggle("hidden");
-
-        // Prevent page scroll when menu is open
-        if (menu.classList.contains("flex")) {
-          document.body.style.overflow = "hidden";
-        } else {
-          document.body.style.overflow = "";
-        }
-      }
-
-      // Close menu on resize to desktop
-      window.addEventListener("resize", () => {
-        if (window.innerWidth >= 1024) {
-          // Tailwind's lg breakpoint
-          menu.classList.add("hidden");
-          menu.classList.remove("flex");
-          btn.classList.remove("open");
-          document.body.style.overflow = ""; // unlock scroll
-        }
-      });
-    </script>
+    <!-- Main JS -->
+    <script src="script.js"></script>
   </body>
 </html>
