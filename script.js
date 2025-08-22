@@ -305,16 +305,27 @@ document.addEventListener("click", (e) => {
 const alertModal = document.getElementById("alertModal");
 const closeAlert = document.getElementById("closeAlert");
 
-// Catch all empty links
-document.querySelectorAll('a[href="#"]').forEach((link) => {
-  link.addEventListener("click", (e) => {
+// Placeholder links
+document.querySelectorAll('a[href="#"]').forEach((el) => {
+  el.addEventListener("click", (e) => {
     e.preventDefault();
-    alertModal.classList.remove("hidden");
-    alertModal.classList.add("flex");
+    showAlert();
   });
 });
 
-// Close button
+// Placeholder buttons
+document.querySelectorAll("[data-alert]").forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    showAlert();
+  });
+});
+
+function showAlert() {
+  alertModal.classList.remove("hidden");
+  alertModal.classList.add("flex");
+}
+
 closeAlert.addEventListener("click", () => {
   alertModal.classList.add("hidden");
 });
