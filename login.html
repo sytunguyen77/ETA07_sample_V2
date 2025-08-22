@@ -4,25 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Sy Tu Nguyen" />
-    <title>Login - ETA07</title>
-
     <!-- Google Fonts - Lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
+    <!-- Iconify -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.1.1/iconify.min.js"></script>
+    <!-- Tailwind CSS Plus Elements for Dropdown -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <!-- Linking  Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- CSS style -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/input.css" />
 
     <style>
-      body {
-        font-family: "Lato", sans-serif;
-      }
-
       /* Custom animation for the illustration */
       @keyframes float {
         0%,
@@ -91,25 +90,37 @@
             </a>
           </div>
 
-          <!-- Search Bar (Visible on all screens - Made Longer) -->
+          <!-- Search Bar with Autocomplete -->
           <div class="flex-1 max-w-2xl lg:max-w-3xl mx-1 sm:mx-2">
             <div class="flex items-center gap-2">
-              <!-- Flash icon (hidden on very small screens) -->
+              <!-- Flash icon -->
               <img src="images/flash.svg" alt="Flash Sale" class="hidden sm:block flex-shrink-0" />
 
               <!-- Search Input -->
-              <div class="flex-1">
-                <div class="relative">
-                  <input
-                    type="text"
-                    placeholder="Search for anything..."
-                    class="w-full px-3 py-2 sm:px-4 sm:py-3 lg:py-3.5 pl-8 sm:pl-10 pr-3 sm:pr-4 text-xs sm:text-sm bg-[#F8F8F8] text-[#666666] rounded-lg border-2 border-[#E4E7E9] focus:outline-none focus:border-[#FDB913] focus:ring-2 focus:ring-[#FDB913]/20 transition-all duration-200 placeholder:text-[#999999]"
-                  />
-                  <img
-                    src="images/search.svg"
-                    alt="search"
-                    class="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5"
-                  />
+              <div class="flex-1 relative">
+                <input
+                  id="search-input"
+                  type="text"
+                  placeholder="Search for anything..."
+                  class="w-full px-3 py-2 sm:px-4 sm:py-3 lg:py-3.5 pl-8 sm:pl-10 pr-3 sm:pr-4 text-xs sm:text-sm bg-[#F8F8F8] text-[#666666] rounded-lg border-2 border-[#E4E7E9] focus:outline-none focus:border-[#FDB913] focus:ring-2 focus:ring-[#FDB913]/20 transition-all duration-200 placeholder:text-[#999999]"
+                  autocomplete="off"
+                  aria-autocomplete="list"
+                  aria-expanded="false"
+                  aria-controls="search-listbox"
+                  role="combobox"
+                />
+                <img
+                  src="images/search.svg"
+                  alt="search"
+                  class="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5"
+                />
+
+                <!-- Autocomplete dropdown -->
+                <div
+                  id="search-autocomplete"
+                  class="absolute left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-auto z-[1100] hidden"
+                >
+                  <ul id="search-listbox" role="listbox" class="py-1"></ul>
                 </div>
               </div>
             </div>
@@ -623,6 +634,22 @@
       </div>
     </footer>
 
+    <!-- Alert Modal -->
+    <div id="alertModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
+      <div class="bg-white rounded-lg shadow-lg p-6 w-80 text-center">
+        <h2 class="text-lg font-semibold text-[#292C2D] mb-3">Coming Soon 🚀</h2>
+        <p class="text-sm text-gray-600 mb-4">This feature is not available yet. Stay tuned!</p>
+        <button
+          id="closeAlert"
+          class="bg-[#FDB913] px-4 py-2 rounded-lg font-semibold text-[#292C2D] hover:bg-[#ffc42e] cursor-pointer"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+
+    <!-- Linking Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Main JS -->
     <script src="script.js"></script>
   </body>

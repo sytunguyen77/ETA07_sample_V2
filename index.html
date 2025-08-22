@@ -962,35 +962,79 @@
     <section id="shop-easy" class="pb-8 sm:pb-12 md:pb-16">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-sm ring-1 ring-black/5">
-          <!-- Video with max height constraint -->
+          <!-- Video -->
           <video
             id="shopEasyVideo"
             class="block w-full h-auto md:max-h-[500px] lg:max-h-[600px] xl:max-h-[750px] object-cover"
             playsinline
+            autoplay
+            muted
             loop
             preload="metadata"
-            poster="images/video.png"
           >
             <source src="videos/shop-easy.webm" type="video/webm" />
             <source src="video/ETA07_Video.mp4" type="video/mp4" />
             Your browser does not support HTML5 video.
           </video>
 
-          <!-- Play/Pause button -->
-          <button
-            id="shopEasyToggle"
-            aria-label="Toggle video"
-            class="absolute bottom-4 left-4 z-10 grid place-items-center h-12 w-12 rounded-full bg-black/60 backdrop-blur text-white hover:bg-black/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
-          >
-            <!-- play icon (visible by default) -->
-            <svg id="iconPlay" class="h-6 w-6 cursor-pointer" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-            <!-- pause icon (hidden by default) -->
-            <svg id="iconPause" class="hidden h-6 w-6 cursor-pointer" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
-            </svg>
-          </button>
+          <!-- Controls -->
+          <div id="shopEasyControls" class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-10 flex gap-2 sm:gap-3">
+            <!-- Play/Pause -->
+            <button
+              id="shopEasyToggle"
+              aria-label="Pause video"
+              class="grid place-items-center h-7 w-7 sm:h-12 sm:w-12 rounded-full bg-black/55 backdrop-blur text-white hover:bg-black/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
+            >
+              <svg id="iconPlay" class="hidden h-5 w-5 sm:h-6 sm:w-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              <svg id="iconPause" class="h-5 w-5 sm:h-6 sm:w-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+              </svg>
+            </button>
+
+            <!-- Mute/Unmute -->
+            <button
+              id="shopEasyMute"
+              aria-label="Unmute video"
+              aria-pressed="true"
+              class="grid place-items-center h-7 w-7 sm:h-12 sm:w-12 rounded-full bg-black/55 backdrop-blur text-white hover:bg-black/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
+            >
+              <!-- Muted icon (default) -->
+              <svg
+                id="iconMute"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="h-5 w-5 sm:h-6 sm:w-6"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 9.5v5h3.2L12 19V5L7.2 9.5H4z" />
+                <path d="M15 9l6 6M21 9l-6 6" />
+              </svg>
+              <!-- Unmuted icon -->
+              <svg
+                id="iconUnmute"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="hidden h-4 w-4 sm:h-6 sm:w-6"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 9.5v5h3.2L12 19V5L7.2 9.5H4z" />
+                <path d="M16 8a4 4 0 0 1 0 8" />
+                <path d="M19 5a8 8 0 0 1 0 14" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

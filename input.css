@@ -22,7 +22,7 @@
   transition: filter 0.3s ease;
 }
 
-/* Hamburger Menu */
+/* ========== HAMBURGER MENU ====================== */
 .hamburger {
   cursor: pointer;
   width: 20px;
