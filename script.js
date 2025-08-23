@@ -125,6 +125,34 @@ toggle.addEventListener("click", () => {
   }
 });
 
+// ============================ MUTE / UNMUTE BUTTON ================== //
+const muteBtn = document.getElementById("shopEasyMute");
+const iconMute = document.getElementById("iconMute");
+const iconUnmute = document.getElementById("iconUnmute");
+
+// Set initial state (muted by default)
+video.muted = true;
+
+// Update icons when mute/unmute
+function updateMuteIcons() {
+  if (video.muted) {
+    iconMute.classList.remove("hidden");
+    iconUnmute.classList.add("hidden");
+  } else {
+    iconMute.classList.add("hidden");
+    iconUnmute.classList.remove("hidden");
+  }
+}
+
+// Toggle mute/unmute on button click
+muteBtn.addEventListener("click", () => {
+  video.muted = !video.muted;
+  updateMuteIcons();
+});
+
+// Run once on load to sync state
+updateMuteIcons();
+
 // ================================  COUNTDOWN TIMER =========================== //
 document.querySelectorAll("[data-countdown]").forEach((el) => {
   const end = Date.now() + el.dataset.hours * 3600 * 1000;
