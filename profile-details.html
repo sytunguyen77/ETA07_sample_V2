@@ -4,40 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Sy Tu Nguyen" />
-    <title>Login - ETA07</title>
-
     <!-- Google Fonts - Lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
+    <!-- Iconify -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.1.1/iconify.min.js"></script>
+    <!-- Tailwind CSS Plus Elements for Dropdown -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <!-- Linking  Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- CSS style -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/input.css" />
 
-    <style>
-      body {
-        font-family: "Lato", sans-serif;
-      }
-
-      /* Custom animation for the illustration */
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
-      .float-animation {
-        animation: float 3s ease-in-out infinite;
-      }
-    </style>
+    <style></style>
   </head>
   <body class="">
     <!-- TOP NAVIGATION BAR -->
@@ -252,13 +236,11 @@
       </div>
     </header>
 
-    <!-- REGISTER FORM SECTION -->
-    <section
-      class="py-8 sm:py-12 lg:py-16 bg-gray-50 min-h-[calc(100vh-200px)] sm:min-h-[calc(100vh-400px)] lg:min-h-[calc(100vh-500px)]"
-    >
+    <!-- PROFILE SECTION -->
+    <main class="min-h-screen bg-gray-50 py-8 sm:py-12">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Back to Home Button -->
-        <div class="mb-4 sm:mb-6 lg:mb-8">
+        <!-- Back Button and Share -->
+        <div class="flex items-center justify-between mb-8">
           <a href="index.html" class="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors">
             <div
               class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center bg-white hover:bg-gray-50 transition-colors"
@@ -269,253 +251,238 @@
             </div>
             <span class="text-base sm:text-lg font-medium">Back</span>
           </a>
+
+          <a href="#">
+            <img src="images/share.svg" alt="share" class="w-5 h-5 cursor-pointer" />
+          </a>
         </div>
 
-        <div class="flex flex-col lg:flex-row justify-center gap-6 sm:gap-8 lg:gap-16">
-          <!-- Left Side - Illustration -->
-          <div class="w-full lg:w-1/2 max-w-xl">
-            <div class="bg-gradient-to-br">
-              <!-- Text Content -->
-              <div class="text-center lg:text-left">
-                <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-[#292C2D] mb-1 sm:mb-2">Create Account</h1>
-                <p class="text-sm sm:text-base text-gray-600">Register to start shopping with us</p>
-              </div>
-              <!-- Image -->
-              <div class="hidden md:flex relative mt-4 sm:mt-6 lg:mt-8">
-                <div class="float-animation">
-                  <img
-                    src="images/login.webp"
-                    alt="Shopping illustration"
-                    class="w-full h-auto max-w-sm lg:max-w-md mx-auto"
-                    onerror="this.style.display='none'; document.getElementById('placeholder').style.display='block';"
-                  />
+        <!-- Page Title -->
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8">MY PROFILE</h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Left Sidebar -->
+          <div class="lg:col-span-1">
+            <div class="bg-white rounded-2xl shadow-sm p-4 sm:p-6">
+              <!-- Profile Image and Name -->
+              <div class="flex flex-col items-center mb-8">
+                <div class="relative mb-4">
+                  <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-black"></div>
+                  <button
+                    class="absolute bottom-0 right-0 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                  >
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                      />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </button>
                 </div>
+                <h2 class="text-xl sm:text-2xl font-bold text-gray-900">Paul Bryant</h2>
+              </div>
+
+              <!-- Navigation Menu -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <a
+                  href="#"
+                  class="flex items-center gap-3 px-3 py-3 sm:px-5 sm:py-4 text-sm sm:text-base text-gray-900 bg-gray-50 font-medium border-b border-gray-200"
+                >
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                  </svg>
+                  Account Details
+                </a>
+
+                <a
+                  href="#"
+                  class="flex items-center gap-3 px-3 py-3 sm:px-5 sm:py-4 text-sm sm:text-base text-gray-500 hover:bg-gray-50 transition-colors border-b border-gray-200"
+                >
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
+                    />
+                  </svg>
+                  Order History
+                </a>
+
+                <a
+                  href="#"
+                  class="flex items-center gap-3 px-3 py-3 sm:px-5 sm:py-4 text-sm sm:text-base text-gray-500 hover:bg-gray-50 transition-colors"
+                >
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Address
+                </a>
+              </div>
+
+              <!-- Logout Button (separate) -->
+              <div class="mt-4">
+                <a
+                  href="#"
+                  class="flex items-center gap-3 px-3 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-base text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                >
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                    />
+                  </svg>
+                  Logout
+                </a>
+              </div>
+
+              <!-- Sign Up Link -->
+              <div class="mt-8 pt-8 border-t border-gray-200 text-center">
+                <p class="text-sm sm:text-base text-gray-600">
+                  Don't have an account?
+                  <a href="register.html" class="font-semibold text-gray-900 hover:text-[#FDB913] transition-colors">Sign Up</a>
+                </p>
               </div>
             </div>
           </div>
 
-          <!-- Right Side - Register Form -->
-          <div class="w-full lg:w-1/2 max-w-md">
-            <div class="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-[#E4E7E9] p-6 sm:p-8">
-              <!-- Register Form -->
-              <form class="space-y-4 sm:space-y-5">
-                <!-- Name Field -->
+          <!-- Right Content Area -->
+          <div class="lg:col-span-2">
+            <div class="bg-white rounded-2xl shadow-sm p-4 sm:p-6 md:p-8">
+              <!-- Account Details Section -->
+              <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Account Details</h2>
+
+              <form class="space-y-4 sm:space-y-6">
+                <!-- First Name -->
                 <div>
-                  <label for="name" class="block text-xs sm:text-sm font-semibold text-[#292C2D] mb-1.5 sm:mb-2">
-                    Full Name
+                  <label for="firstName" class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                    FIRST NAME <span class="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your full name"
-                    class="w-full px-3 sm:px-4 py-2.5 sm:py-3.5 bg-[#F2F2F2] text-[#666666] text-sm sm:text-base rounded-lg focus:outline-none focus:bg-white focus:text-[#292C2D] border-2 border-transparent transition-all placeholder-[#666666] placeholder:text-xs sm:placeholder:text-sm focus:border-[#fdb913] focus:shadow-[0_0_0_3px_rgba(253,185,19,0.1)]"
-                    required
+                    id="firstName"
+                    name="firstName"
+                    placeholder="Enter your first name"
+                    class="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FDB913] focus:border-[#FDB913] transition-colors placeholder:text-gray-400"
                   />
                 </div>
 
-                <!-- Email Field -->
+                <!-- Last Name -->
                 <div>
-                  <label for="email" class="block text-xs sm:text-sm font-semibold text-[#292C2D] mb-1.5 sm:mb-2"> Email </label>
+                  <label for="lastName" class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                    LAST NAME <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Enter your last name"
+                    class="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FDB913] focus:border-[#FDB913] transition-colors placeholder:text-gray-400"
+                  />
+                </div>
+
+                <!-- Display Name -->
+                <div>
+                  <label for="displayName" class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                    DISPLAY NAME <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="displayName"
+                    name="displayName"
+                    placeholder="Enter your display name"
+                    class="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FDB913] focus:border-[#FDB913] transition-colors placeholder:text-gray-400"
+                  />
+                  <p class="mt-1 sm:mt-2 text-xs sm:text-sm text-gray-500 italic">
+                    This will be how your name will be displayed in the account section and in reviews
+                  </p>
+                </div>
+
+                <!-- Email -->
+                <div>
+                  <label for="email" class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                    EMAIL <span class="text-red-500">*</span>
+                  </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     placeholder="Enter your email address"
-                    class="w-full px-3 sm:px-4 py-2.5 sm:py-3.5 bg-[#F2F2F2] text-[#666666] text-sm sm:text-base rounded-lg focus:outline-none focus:bg-white focus:text-[#292C2D] border-2 border-transparent transition-all placeholder-[#666666] placeholder:text-xs sm:placeholder:text-sm focus:border-[#fdb913] focus:shadow-[0_0_0_3px_rgba(253,185,19,0.1)]"
-                    required
+                    class="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FDB913] focus:border-[#FDB913] transition-colors placeholder:text-gray-400"
                   />
                 </div>
 
-                <!-- Phone Number Field -->
-                <div>
-                  <label for="phone" class="block text-xs sm:text-sm font-semibold text-[#292C2D] mb-1.5 sm:mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="Enter your phone number"
-                    class="w-full px-3 sm:px-4 py-2.5 sm:py-3.5 bg-[#F2F2F2] text-[#666666] text-sm sm:text-base rounded-lg focus:outline-none focus:bg-white focus:text-[#292C2D] border-2 border-transparent transition-all placeholder-[#666666] placeholder:text-xs sm:placeholder:text-sm focus:border-[#fdb913] focus:shadow-[0_0_0_3px_rgba(253,185,19,0.1)]"
-                    required
-                  />
-                </div>
+                <!-- Password Section -->
+                <div class="pt-4 sm:pt-6 border-t border-gray-200">
+                  <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Password</h3>
 
-                <!-- Password Field -->
-                <div>
-                  <label for="password" class="block text-xs sm:text-sm font-semibold text-[#292C2D] mb-1.5 sm:mb-2">
-                    Password
-                  </label>
-                  <div class="relative">
+                  <!-- Old Password -->
+                  <div class="mb-4 sm:mb-6">
+                    <label for="oldPassword" class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                      OLD PASSWORD
+                    </label>
                     <input
                       type="password"
-                      id="password"
-                      name="password"
-                      placeholder="Enter your password"
-                      class="w-full px-3 sm:px-4 py-2.5 sm:py-3.5 pr-10 sm:pr-12 bg-[#F2F2F2] text-[#666666] text-sm sm:text-base rounded-lg focus:outline-none focus:bg-white focus:text-[#292C2D] border-2 border-transparent transition-all placeholder-[#666666] placeholder:text-xs sm:placeholder:text-sm focus:border-[#fdb913] focus:shadow-[0_0_0_3px_rgba(253,185,19,0.1)]"
-                      required
+                      id="oldPassword"
+                      name="oldPassword"
+                      placeholder="Old password"
+                      class="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FDB913] focus:border-[#FDB913] transition-colors placeholder:text-gray-400"
                     />
-                    <button
-                      type="button"
-                      onclick="togglePasswordField('password', 'eye-open-pass', 'eye-closed-pass')"
-                      class="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-[#292C2D] transition-colors p-1"
-                    >
-                      <svg id="eye-open-pass" class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                        />
-                      </svg>
-                      <svg
-                        id="eye-closed-pass"
-                        class="w-4 h-4 sm:w-5 sm:h-5 hidden"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
-                        />
-                      </svg>
-                    </button>
+                  </div>
+
+                  <!-- New Password -->
+                  <div class="mb-4 sm:mb-6">
+                    <label for="newPassword" class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                      NEW PASSWORD
+                    </label>
+                    <input
+                      type="password"
+                      id="newPassword"
+                      name="newPassword"
+                      placeholder="New password"
+                      class="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FDB913] focus:border-[#FDB913] transition-colors placeholder:text-gray-400"
+                    />
+                  </div>
+
+                  <!-- Repeat New Password -->
+                  <div class="mb-4 sm:mb-6">
+                    <label for="repeatPassword" class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                      REPEAT NEW PASSWORD
+                    </label>
+                    <input
+                      type="password"
+                      id="repeatPassword"
+                      name="repeatPassword"
+                      placeholder="Repeat new password"
+                      class="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FDB913] focus:border-[#FDB913] transition-colors placeholder:text-gray-400"
+                    />
                   </div>
                 </div>
 
-                <!-- Confirm Password Field -->
-                <div>
-                  <label for="confirm-password" class="block text-xs sm:text-sm font-semibold text-[#292C2D] mb-1.5 sm:mb-2">
-                    Confirm Password
-                  </label>
-                  <div class="relative">
-                    <input
-                      type="password"
-                      id="confirm-password"
-                      name="confirm-password"
-                      placeholder="Confirm your password"
-                      class="w-full px-3 sm:px-4 py-2.5 sm:py-3.5 pr-10 sm:pr-12 bg-[#F2F2F2] text-[#666666] text-sm sm:text-base rounded-lg focus:outline-none focus:bg-white focus:text-[#292C2D] border-2 border-transparent transition-all placeholder-[#666666] placeholder:text-xs sm:placeholder:text-sm focus:border-[#fdb913] focus:shadow-[0_0_0_3px_rgba(253,185,19,0.1)]"
-                      required
-                    />
-                    <button
-                      type="button"
-                      onclick="togglePasswordField('confirm-password', 'eye-open-confirm', 'eye-closed-confirm')"
-                      class="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-[#292C2D] transition-colors p-1"
-                    >
-                      <svg
-                        id="eye-open-confirm"
-                        class="w-4 h-4 sm:w-5 sm:h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                        />
-                      </svg>
-                      <svg
-                        id="eye-closed-confirm"
-                        class="w-4 h-4 sm:w-5 sm:h-5 hidden"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Terms & Conditions -->
-                <div class="flex items-start">
-                  <input
-                    type="checkbox"
-                    id="terms"
-                    class="w-3.5 h-3.5 sm:w-4 sm:h-4 mt-0.5 text-[#FDB913] rounded border-gray-300 focus:ring-[#FDB913]"
-                    required
-                  />
-                  <label for="terms" class="ml-1.5 sm:ml-2 text-xs sm:text-sm text-gray-600">
-                    I agree to the <a href="#" class="text-[#FDB913] hover:text-[#ffc42e] underline">Terms & Conditions</a> and
-                    <a href="#" class="text-[#FDB913] hover:text-[#ffc42e] underline">Privacy Policy</a>
-                  </label>
-                </div>
-
-                <!-- Register Button -->
+                <!-- Save Button -->
                 <button
                   type="submit"
-                  class="w-full py-2.5 sm:py-3.5 bg-[#FDB913] text-[#292C2D] rounded-lg font-bold text-sm sm:text-base transition-all duration-300 hover:bg-[#ffc42e] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(253,185,19,0.3)]"
+                  class="px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base bg-[#292C2D] text-white font-semibold rounded-lg hover:bg-[#1a1d1e] transition-colors"
                 >
-                  Create Account
+                  Save changes
                 </button>
-
-                <!-- OR Divider -->
-                <div class="relative my-4 sm:my-6">
-                  <div class="absolute inset-0 flex items-center">
-                    <div class="w-full border-t border-gray-300"></div>
-                  </div>
-                  <div class="relative flex justify-center text-xs sm:text-sm">
-                    <span class="px-3 sm:px-4 bg-white text-gray-500">Or</span>
-                  </div>
-                </div>
-
-                <!-- Social Register Buttons -->
-                <div class="space-y-2.5 sm:space-y-3">
-                  <!-- Google Register -->
-                  <button
-                    type="button"
-                    class="w-full py-2.5 sm:py-3.5 px-3 sm:px-4 border border-gray-300 rounded-lg flex items-center justify-center gap-2 sm:gap-3 bg-white transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
-                  >
-                    <img src="images/logos_google-icon.svg" alt="google icon" class="w-4 h-4 sm:w-5 sm:h-5" />
-                    <span class="text-gray-700 font-medium text-xs sm:text-base">Sign up with Google</span>
-                  </button>
-
-                  <!-- Facebook Register -->
-                  <button
-                    type="button"
-                    class="w-full py-2.5 sm:py-3.5 px-3 sm:px-4 bg-[#1877F2] rounded-lg flex items-center justify-center gap-2 sm:gap-3 text-white transition-all duration-300 hover:bg-[#166FE5] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
-                  >
-                    <img src="images/facebook-icon.svg" alt="facebook icon" class="w-4 h-4 sm:w-5 sm:h-5" />
-                    <span class="font-medium text-xs sm:text-base">Sign up with Facebook</span>
-                  </button>
-                </div>
-
-                <!-- Sign In Link -->
-                <p class="text-center text-gray-600 mt-4 sm:mt-6 text-xs sm:text-base">
-                  Already have an account?
-                  <a href="login.html" class="text-[#292C2D] font-semibold hover:text-[#FDB913] transition-colors underline">
-                    Sign In
-                  </a>
-                </p>
               </form>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </main>
 
     <!-- FOOTER -->
     <footer id="footer" class="bg-[#191C1F] text-white">
@@ -723,6 +690,22 @@
       </div>
     </footer>
 
+    <!-- Alert Modal -->
+    <div id="alertModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
+      <div class="bg-white rounded-lg shadow-lg p-6 w-80 text-center">
+        <h2 class="text-lg font-semibold text-[#292C2D] mb-3">Coming Soon 🚀</h2>
+        <p class="text-sm text-gray-600 mb-4">This feature is not available yet. Stay tuned!</p>
+        <button
+          id="closeAlert"
+          class="bg-[#FDB913] px-4 py-2 rounded-lg font-semibold text-[#292C2D] hover:bg-[#ffc42e] cursor-pointer"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+
+    <!-- Linking Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Main JS -->
     <script src="script.js"></script>
   </body>
