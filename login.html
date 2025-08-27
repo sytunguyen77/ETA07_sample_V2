@@ -128,18 +128,19 @@
 
           <!-- Right Section -->
           <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            <!-- My Deals (hidden on mobile) -->
+            <!-- My Deals -->
             <a href="#" class="hidden lg:flex items-center space-x-1 sm:space-x-2 hover:opacity-80 transition-opacity">
               <img src="images/deal.svg" alt="deal" class="h-5 sm:h-6 w-5 sm:w-6" />
               <span class="text-sm sm:text-base font-bold text-[#FC7901] whitespace-nowrap">My Deals</span>
             </a>
 
-            <!-- Desktop Vertical Divider -->
             <div class="hidden lg:block h-6 w-px bg-gray-300"></div>
 
-            <!-- Sign Up/Sign In (hidden on mobile) -->
-            <div class="hidden md:flex items-center space-x-1 sm:space-x-2">
-              <img src="images/user.svg" alt="user" class="h-5 sm:h-6 w-5 sm:w-6" />
+            <!-- Sign Up/Sign In -->
+            <div id="authDesktop" class="hidden md:flex items-center space-x-1 sm:space-x-2">
+              <a href="profile-details.html">
+                <img src="images/user.svg" alt="user" class="h-5 sm:h-6 w-5 sm:w-6" />
+              </a>
               <div class="flex items-center space-x-1">
                 <a href="register.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity"
                   >Sign Up</a
@@ -151,23 +152,31 @@
               </div>
             </div>
 
-            <!-- Desktop Vertical Divider -->
             <div class="hidden md:block h-6 w-px bg-gray-300"></div>
 
-            <!-- Cart (Always Visible) -->
+            <!-- Become a seller -->
+            <a
+              href="become-seller.html"
+              class="hidden lg:flex items-center space-x-1 sm:space-x-2 hover:opacity-80 transition-opacity"
+            >
+              <span class="text-sm sm:text-base text-[#666666] font-bold whitespace-nowrap">Become a seller</span>
+            </a>
+
+            <div class="hidden md:block h-6 w-px bg-gray-300"></div>
+
+            <!-- Cart -->
             <a href="#" class="flex items-center hover:opacity-80 transition-opacity">
               <div class="relative">
                 <img src="images/cart.svg" alt="cart" class="h-5 w-5 sm:h-6 sm:w-6" />
                 <span
                   class="absolute -top-2 -right-2 h-4 w-4 sm:h-5 sm:w-5 flex items-center justify-center bg-red-500 text-white text-xs font-bold rounded-full"
+                  >0</span
                 >
-                  0
-                </span>
               </div>
               <span class="text-sm sm:text-base text-[#666666] font-bold hidden lg:inline ml-1">Cart</span>
             </a>
 
-            <!-- Hamburger Menu Button (Mobile Only - Updated) -->
+            <!-- Hamburger Menu -->
             <button
               id="menu-btn"
               class="md:hidden p-0 relative z-[9999] hover:opacity-70 focus:outline-none transition-opacity cursor-pointer"
@@ -182,21 +191,15 @@
           </div>
         </div>
 
-        <!-- MOBILE MENU OVERLAY (hidden by default) -->
+        <!-- MOBILE MENU -->
         <div id="menu" class="hidden fixed inset-0 z-[1000] bg-white overflow-hidden flex-col">
-          <!-- Menu Container -->
           <div class="flex flex-col h-full">
-            <!-- Menu Content -->
             <div class="flex-1 px-6 py-40">
-              <!-- Main Navigation Links (No search bar here anymore) -->
-              <div class="">
-                <!-- My Deals -->
+              <div>
                 <a href="#" class="flex items-center px-4 rounded-lg transition-colors">
                   <img src="images/deal.svg" alt="deals" class="h-6 w-6 mr-4" />
                   <span class="text-sm font-semibold text-[#FC7901] hover:text-[#E67A00] transition-colors">My Deals</span>
                 </a>
-
-                <!-- Sign In/Sign Up -->
                 <div class="flex items-center p-4 rounded-lg">
                   <img src="images/user.svg" alt="user" class="h-6 w-6 mr-4" />
                   <div class="flex items-center space-x-2">
@@ -209,14 +212,24 @@
                     >
                   </div>
                 </div>
+
+                <!-- Become a seller -->
+                <a href="become-seller.html" class="flex items-center px-4 pb-4 rounded-lg transition-colors">
+                  <svg class="h-6 w-6 mr-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 11V7a4 4 0 00-8 0v4M5 11h14l-1 9H6l-1-9z"
+                    />
+                  </svg>
+                  <span class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Become a seller</span>
+                </a>
               </div>
 
-              <!-- Divider -->
               <div class="h-px bg-gray-200 my-3"></div>
 
-              <!-- Secondary Links -->
-              <div class="">
-                <!-- About Us -->
+              <div>
                 <a href="#" class="flex items-center p-4 rounded-lg transition-colors">
                   <svg class="h-6 w-6 mr-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
@@ -229,7 +242,6 @@
                   <span class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">About Us</span>
                 </a>
 
-                <!-- Support -->
                 <a href="#" class="flex items-center px-4 rounded-lg transition-colors">
                   <svg class="h-6 w-6 mr-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
@@ -243,7 +255,6 @@
                 </a>
               </div>
 
-              <!-- Divider -->
               <div class="h-px bg-gray-200 my-6"></div>
             </div>
           </div>
@@ -297,7 +308,7 @@
           <div class="w-full lg:w-1/2 max-w-md">
             <div class="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-[#E4E7E9] p-6 sm:p-8">
               <!-- Login Form -->
-              <form class="space-y-4 sm:space-y-5">
+              <form id="loginForm" class="space-y-4 sm:space-y-5">
                 <!-- Email Field -->
                 <div>
                   <label for="email" class="block text-xs sm:text-sm font-semibold text-[#292C2D] mb-1.5 sm:mb-2"> Email </label>
@@ -652,6 +663,6 @@
     <!-- Linking Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Main JS -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

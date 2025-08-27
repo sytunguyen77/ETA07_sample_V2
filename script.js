@@ -29,42 +29,42 @@ window.addEventListener("resize", () => {
 });
 
 // ===================== HERO SWIPER  =================== //
-const heroSwiper = new Swiper(".heroSwiper", {
-  loop: true,
-  speed: 700,
-  autoplay: { delay: 5000, disableOnInteraction: false },
-  pagination: { el: ".heroPagination", clickable: true },
-  navigation: { nextEl: ".heroNext", prevEl: ".heroPrev" },
-  keyboard: { enabled: true },
-  a11y: { enabled: true },
-  // keep slide height consistent across breakpoints
-  on: {
-    init(sw) {
-      // ensure slides stretch to container height
-      sw.el.querySelectorAll(".swiper-slide").forEach((s) => s.classList.add("h-full"));
+let heroSwiper;
+if (document.querySelector(".heroSwiper") && window.Swiper) {
+  heroSwiper = new Swiper(".heroSwiper", {
+    loop: true,
+    speed: 700,
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    pagination: { el: ".heroPagination", clickable: true },
+    navigation: { nextEl: ".heroNext", prevEl: ".heroPrev" },
+    keyboard: { enabled: true },
+    a11y: { enabled: true },
+    on: {
+      init(sw) {
+        sw.el.querySelectorAll(".swiper-slide").forEach((s) => s.classList.add("h-full"));
+      },
     },
-  },
-});
+  });
 
-// ============================ PLAY / PAUSE BUTTON FOR HERO SLIDER =================== //
-const playPauseBtn = document.getElementById("heroPlayPause");
-const playIcon = document.getElementById("playIcon");
-const pauseIcon = document.getElementById("pauseIcon");
-
-let isPlaying = true;
-
-playPauseBtn.addEventListener("click", () => {
-  if (isPlaying) {
-    heroSwiper.autoplay.stop();
-    playIcon.classList.remove("hidden");
-    pauseIcon.classList.add("hidden");
-  } else {
-    heroSwiper.autoplay.start();
-    playIcon.classList.add("hidden");
-    pauseIcon.classList.remove("hidden");
+  const playPauseBtn = document.getElementById("heroPlayPause");
+  const playIcon = document.getElementById("playIcon");
+  const pauseIcon = document.getElementById("pauseIcon");
+  if (playPauseBtn && playIcon && pauseIcon) {
+    let isPlaying = true;
+    playPauseBtn.addEventListener("click", () => {
+      if (isPlaying) {
+        heroSwiper.autoplay.stop();
+        playIcon.classList.remove("hidden");
+        pauseIcon.classList.add("hidden");
+      } else {
+        heroSwiper.autoplay.start();
+        playIcon.classList.add("hidden");
+        pauseIcon.classList.remove("hidden");
+      }
+      isPlaying = !isPlaying;
+    });
   }
-  isPlaying = !isPlaying;
-});
+}
 
 // ================================ BRAND SWIPER ============================== //
 const brandSwiper = new Swiper(".brandSwiper", {
@@ -99,59 +99,43 @@ const productsSwiper = new Swiper(".productsSwiper", {
   pagination: { el: ".productsPagination", clickable: true },
 });
 
-// ============================ PLAY / PAUSE BUTTON FOR HERO VIDEO ================== //
+// ====================== HERO VIDEO CONTROLS ====================== //
 const video = document.getElementById("shopEasyVideo");
 const toggle = document.getElementById("shopEasyToggle");
 const iconPlay = document.getElementById("iconPlay");
 const iconPause = document.getElementById("iconPause");
-
-// Update icons based on video state
-video.addEventListener("play", () => {
-  iconPlay.classList.add("hidden");
-  iconPause.classList.remove("hidden");
-});
-
-video.addEventListener("pause", () => {
-  iconPause.classList.add("hidden");
-  iconPlay.classList.remove("hidden");
-});
-
-// Toggle play/pause on button click
-toggle.addEventListener("click", () => {
-  if (video.paused) {
-    video.play();
-  } else {
-    video.pause();
-  }
-});
-
-// ============================ MUTE / UNMUTE BUTTON ================== //
 const muteBtn = document.getElementById("shopEasyMute");
 const iconMute = document.getElementById("iconMute");
 const iconUnmute = document.getElementById("iconUnmute");
 
-// Set initial state (muted by default)
-video.muted = true;
-
-// Update icons when mute/unmute
-function updateMuteIcons() {
-  if (video.muted) {
-    iconMute.classList.remove("hidden");
-    iconUnmute.classList.add("hidden");
-  } else {
-    iconMute.classList.add("hidden");
-    iconUnmute.classList.remove("hidden");
-  }
-}
-
-// Toggle mute/unmute on button click
-muteBtn.addEventListener("click", () => {
-  video.muted = !video.muted;
+if (video) {
+  video.muted = true;
+  const updateMuteIcons = () => {
+    if (!iconMute || !iconUnmute) return;
+    if (video.muted) {
+      iconMute.classList.remove("hidden");
+      iconUnmute.classList.add("hidden");
+    } else {
+      iconMute.classList.add("hidden");
+      iconUnmute.classList.remove("hidden");
+    }
+  };
+  toggle && toggle.addEventListener("click", () => (video.paused ? video.play() : video.pause()));
+  video.addEventListener("play", () => {
+    iconPlay && iconPlay.classList.add("hidden");
+    iconPause && iconPause.classList.remove("hidden");
+  });
+  video.addEventListener("pause", () => {
+    iconPause && iconPause.classList.add("hidden");
+    iconPlay && iconPlay.classList.remove("hidden");
+  });
+  muteBtn &&
+    muteBtn.addEventListener("click", () => {
+      video.muted = !video.muted;
+      updateMuteIcons();
+    });
   updateMuteIcons();
-});
-
-// Run once on load to sync state
-updateMuteIcons();
+}
 
 // ================================  COUNTDOWN TIMER =========================== //
 document.querySelectorAll("[data-countdown]").forEach((el) => {
@@ -329,20 +313,152 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// ============================ ALERT MODAL FOR EMPTY LINKS ========================= //
+// ========================= ALERT MODAL (guarded) ========================= //
 const alertModal = document.getElementById("alertModal");
 const closeAlert = document.getElementById("closeAlert");
-
-// Catch all empty links
-document.querySelectorAll('a[href="#"]').forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    alertModal.classList.remove("hidden");
-    alertModal.classList.add("flex");
+if (alertModal && closeAlert) {
+  document.querySelectorAll('a[href="#"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      alertModal.classList.remove("hidden");
+      alertModal.classList.add("flex");
+    });
   });
-});
+  closeAlert.addEventListener("click", () => {
+    alertModal.classList.add("hidden");
+    alertModal.classList.remove("flex");
+  });
+}
 
 // Close button
 closeAlert.addEventListener("click", () => {
   alertModal.classList.add("hidden");
+});
+
+// ============================ FAKE LOGIN HANDLER ========================= //
+// ============================ FAKE LOGIN HANDLER ========================= //
+document.addEventListener("DOMContentLoaded", function () {
+  // --- LOGIN PAGE HANDLER ---
+  var loginForm = document.querySelector("form#loginForm");
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = document.getElementById("email").value.trim();
+      var password = document.getElementById("password").value.trim();
+
+      if (email === "paulbryant@eta07.com" && password === "1234") {
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("username", "Paul Bryant");
+        window.location.href = "index.html";
+      } else {
+        alert("Invalid email or password.");
+      }
+    });
+  }
+
+  // Helper: attach logout to any "[data-logout]" button
+  function bindLogoutHandlers(scope) {
+    var buttons = (scope || document).querySelectorAll("[data-logout]");
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("username");
+        window.location.href = "index.html";
+      });
+    });
+  }
+
+  // Render desktop auth (dropdown)
+  function renderDesktopAuth(username) {
+    var authSection = document.getElementById("authDesktop");
+    if (!authSection) return;
+
+    if (localStorage.getItem("isLoggedIn") === "true") {
+      authSection.innerHTML = `
+        <div id="userMenuWrap" class="relative inline-block">
+          <button id="userMenuBtn" type="button" aria-haspopup="true" aria-expanded="false"
+                  class="flex items-center gap-2 cursor-pointer select-none">
+            <span class="text-sm sm:text-base text-[#666666] font-bold">Hi! ${username}</span>
+            <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
+            </svg>
+          </button>
+          <div id="userMenu"
+               class="absolute right-0 mt-2 w-35 bg-white border border-gray-200 rounded-lg shadow-lg p-1 hidden z-50">
+            <a href="profile-details.html"
+               class="block px-3 py-2 text-sm text-gray-700 rounded-md hover:bg-gray-100">View Profile</a>
+            <button data-logout
+               class="w-full text-left block px-3 py-2 text-sm text-gray-700 rounded-md hover:bg-gray-100">Logout</button>
+          </div>
+        </div>
+      `;
+
+      var wrap = document.getElementById("userMenuWrap");
+      var btn = document.getElementById("userMenuBtn");
+      var menu = document.getElementById("userMenu");
+
+      function hideMenu() {
+        if (!menu.classList.contains("hidden")) {
+          menu.classList.add("hidden");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      }
+      function toggleMenu() {
+        var willShow = menu.classList.contains("hidden");
+        menu.classList.toggle("hidden");
+        btn.setAttribute("aria-expanded", String(willShow));
+      }
+
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        toggleMenu();
+      });
+      document.addEventListener("click", function (e) {
+        if (!wrap.contains(e.target)) hideMenu();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") hideMenu();
+      });
+
+      bindLogoutHandlers(authSection);
+    } else {
+      // keep original Sign In / Sign Up
+      authSection.innerHTML = `
+        <a href="profile-details.html">
+          <img src="images/user.svg" alt="user" class="h-5 sm:h-6 w-5 sm:w-6" />
+        </a>
+        <div class="flex items-center space-x-1">
+          <a href="register.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity">Sign Up</a>
+          <span class="text-sm sm:text-base text-[#666666] font-bold">/</span>
+          <a href="login.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity">Sign In</a>
+        </div>
+      `;
+    }
+  }
+
+  // Render mobile auth (simple inline)
+  function renderMobileAuth(username) {
+    var mobile = document.getElementById("authMobile");
+    if (!mobile) return;
+
+    if (localStorage.getItem("isLoggedIn") === "true") {
+      mobile.innerHTML = `
+        <img src="images/user.svg" alt="user" class="h-6 w-6 mr-4" />
+        <div class="flex items-center gap-3">
+          <span class="text-sm font-semibold text-gray-800">Hi! ${username}</span>
+          <a href="profile-details.html" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Profile</a>
+          <button data-logout class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Logout</button>
+        </div>
+      `;
+      bindLogoutHandlers(mobile);
+    } else {
+      // keep original Sign In / Sign Up (already in HTML)
+      // nothing to do
+    }
+  }
+
+  // --- INDEX AUTH CHECK (both) ---
+  var username = localStorage.getItem("username") || "User";
+  renderDesktopAuth(username);
+  renderMobileAuth(username);
 });

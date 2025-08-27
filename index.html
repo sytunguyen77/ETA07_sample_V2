@@ -208,7 +208,7 @@
             <div class="hidden lg:block h-6 w-px bg-gray-300"></div>
 
             <!-- Sign Up/Sign In -->
-            <div class="hidden md:flex items-center space-x-1 sm:space-x-2">
+            <div id="authDesktop" class="hidden md:flex items-center space-x-1 sm:space-x-2">
               <a href="profile-details.html">
                 <img src="images/user.svg" alt="user" class="h-5 sm:h-6 w-5 sm:w-6" />
               </a>
@@ -222,6 +222,16 @@
                 >
               </div>
             </div>
+
+            <div class="hidden md:block h-6 w-px bg-gray-300"></div>
+
+            <!-- Become a seller -->
+            <a
+              href="become-seller.html"
+              class="hidden lg:flex items-center space-x-1 sm:space-x-2 hover:opacity-80 transition-opacity"
+            >
+              <span class="text-sm sm:text-base text-[#666666] font-bold whitespace-nowrap">Become a seller</span>
+            </a>
 
             <div class="hidden md:block h-6 w-px bg-gray-300"></div>
 
@@ -261,7 +271,7 @@
                   <img src="images/deal.svg" alt="deals" class="h-6 w-6 mr-4" />
                   <span class="text-sm font-semibold text-[#FC7901] hover:text-[#E67A00] transition-colors">My Deals</span>
                 </a>
-                <div class="flex items-center p-4 rounded-lg">
+                <div id="authMobile" class="flex items-center p-4 rounded-lg">
                   <img src="images/user.svg" alt="user" class="h-6 w-6 mr-4" />
                   <div class="flex items-center space-x-2">
                     <a href="login.html" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
@@ -273,6 +283,19 @@
                     >
                   </div>
                 </div>
+
+                <!-- Become a seller -->
+                <a href="become-seller.html" class="flex items-center px-4 pb-4 rounded-lg transition-colors">
+                  <svg class="h-6 w-6 mr-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 11V7a4 4 0 00-8 0v4M5 11h14l-1 9H6l-1-9z"
+                    />
+                  </svg>
+                  <span class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Become a seller</span>
+                </a>
               </div>
 
               <div class="h-px bg-gray-200 my-3"></div>
@@ -807,7 +830,7 @@
                   class="bg-[#E8E8E8] rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex items-center justify-center h-[160px] sm:h-[200px] md:h-[300px]"
                 >
                   <!-- Product Image -->
-                  <img src="images/labubu.webp" alt="deal 2 class="max-h-full max-w-full object-contain" />
+                  <img src="images/labubu.webp" alt="deal 2" class="max-h-full max-w-full object-contain" />
                 </div>
 
                 <!-- New Badge positioned at top-left corner -->
@@ -2043,6 +2066,6 @@
     <!-- Linking Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Main JS -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
