@@ -336,7 +336,6 @@ closeAlert.addEventListener("click", () => {
 });
 
 // ============================ FAKE LOGIN HANDLER ========================= //
-// ============================ FAKE LOGIN HANDLER ========================= //
 document.addEventListener("DOMContentLoaded", function () {
   // --- LOGIN PAGE HANDLER ---
   var loginForm = document.querySelector("form#loginForm");
@@ -436,7 +435,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Render mobile auth (simple inline)
+  // Render mobile auth (inline)
   function renderMobileAuth(username) {
     var mobile = document.getElementById("authMobile");
     if (!mobile) return;
@@ -452,8 +451,6 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
       bindLogoutHandlers(mobile);
     } else {
-      // keep original Sign In / Sign Up (already in HTML)
-      // nothing to do
     }
   }
 
