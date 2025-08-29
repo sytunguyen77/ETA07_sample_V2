@@ -459,3 +459,21 @@ document.addEventListener("DOMContentLoaded", function () {
   renderDesktopAuth(username);
   renderMobileAuth(username);
 });
+
+// ============================ SIMPLE ACCORDION ========================= //
+document.querySelectorAll(".faq-item").forEach((item) => {
+  const btn = item.querySelector(".faq-question");
+  const ans = item.querySelector(".faq-answer");
+  const icon = item.querySelector(".faq-icon");
+
+  btn.addEventListener("click", () => {
+    const isOpen = btn.getAttribute("aria-expanded") === "true";
+
+    // toggle aria + visibility
+    btn.setAttribute("aria-expanded", String(!isOpen));
+    ans.classList.toggle("hidden", isOpen);
+
+    // rotate the chevron
+    icon.classList.toggle("-rotate-180", !isOpen);
+  });
+});
