@@ -121,23 +121,7 @@
           <div class="flex items-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-5">
             <!-- Sell on ETA07 -->
             <a href="seller-page.html" class="flex items-center space-x-1 sm:space-x-2 hover:text-[#929FA5] transition-colors">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                role="img"
-                aria-label="Sell on ETA07"
-                class="h-4 w-4 sm:h-4 sm:w-4 lg:h-6 lg:w-6"
-              >
-                <title>Sell on ETA07</title>
-                <g fill="none" stroke="#e8c14a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <!-- Price tag outline -->
-                  <path d="M21 12.5 11.5 3H6a2 2 0 0 0-2 2v5.5L13.5 20a2 2 0 0 0 2.8 0l4.7-4.7a2 2 0 0 0 0-2.8Z" />
-                  <!-- Arrow pointing out (sell/export) -->
-                  <path d="M14.5 12h6m-3-3 3 3-3 3" />
-                </g>
-                <!-- Tag hole -->
-                <circle cx="8" cy="7" r="1.3" fill="#e8c14a" />
-              </svg>
+              <img src="images/sell.svg" alt="discount" class="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 mx-1 sm:mx-2" />
               <span class="text-xs sm:text-sm lg:text-sm hidden sm:inline">Sell on ETA07</span>
               <span class="text-xs sm:hidden">Sell</span>
             </a>
@@ -708,34 +692,34 @@
 
         <!-- Deals Grid -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-          <!-- Deal Card 1  -->
-          <div
-            class="bg-white rounded-lg sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
-          >
-            <!-- Product Image Container with Rounded Gray Background -->
-            <div class="p-3 sm:p-3">
-              <div class="relative">
-                <!-- Gray Rounded Container -->
-                <div
-                  class="bg-[#E8E8E8] rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex items-center justify-center h-[160px] sm:h-[200px] md:h-[300px]"
-                >
-                  <!-- Product Image -->
-                  <img src="images/spiderman.webp" alt="deal 1" class="max-h-full max-w-full object-contain" />
-                </div>
-
-                <!-- New Badge (top left) -->
-                <div class="absolute top-0 left-0">
+          <!-- Deal Card 1 -->
+          <div class="cursor-pointer">
+            <!-- White container covering only the image section -->
+            <div class="bg-white rounded-lg sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+              <div class="p-3 sm:p-3">
+                <div class="relative">
+                  <!-- Gray Rounded Container -->
                   <div
-                    class="bg-[#E6B847] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-tl-2xl rounded-br-2xl font-semibold text-xs sm:text-sm"
+                    class="bg-[#E8E8E8] rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex items-center justify-center h-[160px] sm:h-[200px] md:h-[300px]"
                   >
-                    New
+                    <!-- Product Image -->
+                    <img src="images/spiderman.webp" alt="deal 1" class="max-h-full max-w-full object-contain" />
+                  </div>
+
+                  <!-- New Badge (top left) -->
+                  <div class="absolute top-0 left-0">
+                    <div
+                      class="bg-[#E6B847] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-tl-2xl rounded-br-2xl font-semibold text-xs sm:text-sm"
+                    >
+                      New
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Flash Deal Timer -->
-            <div class="px-3 sm:px-4">
+            <div class="px-3 sm:px-4 mt-2">
               <div class="flex items-center gap-2 text-xs sm:text-sm">
                 <span class="text-blue-500">Flash Deal Ends in 5 Hours</span>
                 <span class="text-blue-500">!</span>
@@ -817,33 +801,35 @@
           </div>
 
           <!-- Deal Card 2  -->
-          <div
-            class="bg-white rounded-lg sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
-          >
-            <!-- Product Image Container with Rounded Gray Background -->
-            <div class="p-3 sm:p-3">
-              <div class="relative">
-                <!-- Gray Rounded Container -->
-                <div
-                  class="bg-[#E8E8E8] rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex items-center justify-center h-[160px] sm:h-[200px] md:h-[300px]"
-                >
-                  <!-- Product Image -->
-                  <img src="images/labubu.webp" alt="deal 2" class="max-h-full max-w-full object-contain" />
-                </div>
-
-                <!-- New Badge (top left)  -->
-                <div class="absolute top-0 left-0">
+          <div class="cursor-pointer">
+            <div
+              class="bg-white rounded-lg sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <!-- Product Image Container with Rounded Gray Background -->
+              <div class="p-3 sm:p-3">
+                <div class="relative">
+                  <!-- Gray Rounded Container -->
                   <div
-                    class="bg-[#E6B847] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-tl-2xl rounded-br-2xl font-semibold text-xs sm:text-sm"
+                    class="bg-[#E8E8E8] rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex items-center justify-center h-[160px] sm:h-[200px] md:h-[300px]"
                   >
-                    New
+                    <!-- Product Image -->
+                    <img src="images/labubu.webp" alt="deal 2" class="max-h-full max-w-full object-contain" />
+                  </div>
+
+                  <!-- New Badge (top left)  -->
+                  <div class="absolute top-0 left-0">
+                    <div
+                      class="bg-[#E6B847] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-tl-2xl rounded-br-2xl font-semibold text-xs sm:text-sm"
+                    >
+                      New
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Flash Deal Timer -->
-            <div class="px-3 sm:px-4">
+            <div class="px-3 sm:px-4 mt-2">
               <div class="flex items-center gap-2 text-xs sm:text-sm">
                 <span class="text-red-500">Flash Deal Ends in 1 Hours</span>
                 <span class="text-red-500">!</span>
@@ -925,33 +911,35 @@
           </div>
 
           <!-- Deal Card 3  -->
-          <div
-            class="bg-white rounded-lg sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
-          >
-            <!-- Product Image Container with Rounded Gray Background -->
-            <div class="p-3 sm:p-3">
-              <div class="relative">
-                <!-- Gray Rounded Container -->
-                <div
-                  class="bg-[#E8E8E8] rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex items-center justify-center h-[160px] sm:h-[200px] md:h-[300px]"
-                >
-                  <!-- Product Image -->
-                  <img src="images/drone-6.webp" alt="deal 3" class="max-h-full max-w-full object-contain" />
-                </div>
-
-                <!-- New Badge (top left) -->
-                <div class="absolute top-0 left-0">
+          <div class="cursor-pointer">
+            <div
+              class="bg-white rounded-lg sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <!-- Product Image Container with Rounded Gray Background -->
+              <div class="p-3 sm:p-3">
+                <div class="relative">
+                  <!-- Gray Rounded Container -->
                   <div
-                    class="bg-[#E6B847] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-tl-2xl rounded-br-2xl font-semibold text-xs sm:text-sm"
+                    class="bg-[#E8E8E8] rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex items-center justify-center h-[160px] sm:h-[200px] md:h-[300px]"
                   >
-                    New
+                    <!-- Product Image -->
+                    <img src="images/drone-6.webp" alt="deal 3" class="max-h-full max-w-full object-contain" />
+                  </div>
+
+                  <!-- New Badge (top left) -->
+                  <div class="absolute top-0 left-0">
+                    <div
+                      class="bg-[#E6B847] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-tl-2xl rounded-br-2xl font-semibold text-xs sm:text-sm"
+                    >
+                      New
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Flash Deal Timer -->
-            <div class="px-3 sm:px-4">
+            <div class="px-3 sm:px-4 mt-2">
               <div class="flex items-center gap-2 text-xs sm:text-sm">
                 <span class="text-blue-500">Flash Deal Ends in 5 Hours</span>
                 <span class="text-blue-500">!</span>
@@ -1031,33 +1019,35 @@
           </div>
 
           <!-- Deal Card 4  -->
-          <div
-            class="bg-white rounded-lg sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
-          >
-            <!-- Product Image Container with Rounded Gray Background -->
-            <div class="p-3 sm:p-3">
-              <div class="relative">
-                <!-- Gray Rounded Container -->
-                <div
-                  class="bg-[#E8E8E8] rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex items-center justify-center h-[160px] sm:h-[200px] md:h-[300px]"
-                >
-                  <!-- Product Image -->
-                  <img src="images/barbie.webp" alt="deal 4" class="max-h-full max-w-full object-contain" />
-                </div>
-
-                <!-- New Badge (top left)  -->
-                <div class="absolute top-0 left-0">
+          <div class="cursor-pointer">
+            <div
+              class="bg-white rounded-lg sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <!-- Product Image Container with Rounded Gray Background -->
+              <div class="p-3 sm:p-3">
+                <div class="relative">
+                  <!-- Gray Rounded Container -->
                   <div
-                    class="bg-[#E6B847] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-tl-2xl rounded-br-2xl font-semibold text-xs sm:text-sm"
+                    class="bg-[#E8E8E8] rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex items-center justify-center h-[160px] sm:h-[200px] md:h-[300px]"
                   >
-                    New
+                    <!-- Product Image -->
+                    <img src="images/barbie.webp" alt="deal 4" class="max-h-full max-w-full object-contain" />
+                  </div>
+
+                  <!-- New Badge (top left)  -->
+                  <div class="absolute top-0 left-0">
+                    <div
+                      class="bg-[#E6B847] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-tl-2xl rounded-br-2xl font-semibold text-xs sm:text-sm"
+                    >
+                      New
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Flash Deal Timer -->
-            <div class="px-3 sm:px-4">
+            <div class="px-3 sm:px-4 mt-2">
               <div class="flex items-center gap-2 text-xs sm:text-sm">
                 <span class="text-red-500">Flash Deal Ends in 1 Hours</span>
                 <span class="text-red-500">!</span>
