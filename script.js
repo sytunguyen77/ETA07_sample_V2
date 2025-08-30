@@ -460,7 +460,7 @@ document.addEventListener("DOMContentLoaded", function () {
   renderMobileAuth(username);
 });
 
-// ============================ SIMPLE ACCORDION ========================= //
+// ============================  ACCORDION FOR SELLER ========================= //
 document.querySelectorAll(".faq-item").forEach((item) => {
   const btn = item.querySelector(".faq-question");
   const ans = item.querySelector(".faq-answer");
@@ -476,4 +476,39 @@ document.querySelectorAll(".faq-item").forEach((item) => {
     // rotate the chevron
     icon.classList.toggle("-rotate-180", !isOpen);
   });
+});
+
+// ============================  PERFECT LISTING SECTION CAROUSEL ========================= //
+const plSwiper = new Swiper(".pl-slider", {
+  slidesPerView: 1.3,
+  spaceBetween: 16,
+  grabCursor: true,
+  watchOverflow: true,
+  centeredSlides: false,
+  loop: false,
+
+  navigation: { nextEl: ".pl-next", prevEl: ".pl-prev" },
+
+  // Responsive breakpoints
+  breakpoints: {
+    640: { slidesPerView: 1.4, spaceBetween: 18 },
+    768: { slidesPerView: 1.8, spaceBetween: 20 },
+    1024: { slidesPerView: 2.2, spaceBetween: 22 },
+    1280: { slidesPerView: 2.5, spaceBetween: 24 },
+  },
+
+  // Event handlers for peek overlay control (remove peek overlay when last slide is reached)
+  on: {
+    slideChange() {
+      const overlays = document.querySelectorAll("#perfect-listing .peek-overlay");
+      overlays.forEach((el) => {
+        el.style.transition = "opacity 0.3s ease";
+        el.style.opacity = this.isEnd ? "0" : "1";
+      });
+    },
+    init() {
+      const overlays = document.querySelectorAll("#perfect-listing .peek-overlay");
+      overlays.forEach((el) => (el.style.transition = "opacity 0.3s ease"));
+    },
+  },
 });

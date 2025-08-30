@@ -70,7 +70,7 @@
         <div class="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-3">
           <!-- Logo -->
           <div class="flex items-center flex-shrink-0">
-            <a href="index.html">
+            <a href="#top">
               <img src="images/eta07-nav.svg" alt="ETA07 Logo" class="h-8 w-auto sm:h-10 md:h-11 lg:h-12" />
             </a>
           </div>
@@ -139,12 +139,12 @@
 
             <div class="hidden md:block h-6 w-px bg-gray-300"></div>
 
-            <!-- Become a seller -->
+            <!-- Sell on ETA07 -->
             <a
-              href="become-seller.html"
+              href="seller-page.html"
               class="hidden lg:flex items-center space-x-1 sm:space-x-2 hover:opacity-80 transition-opacity"
             >
-              <span class="text-sm sm:text-base text-[#666666] font-bold whitespace-nowrap">Become a seller</span>
+              <span class="text-sm sm:text-base text-[#666666] font-bold whitespace-nowrap">Sell on ETA07</span>
             </a>
 
             <div class="hidden md:block h-6 w-px bg-gray-300"></div>
@@ -185,7 +185,7 @@
                   <img src="images/deal.svg" alt="deals" class="h-6 w-6 mr-4" />
                   <span class="text-sm font-semibold text-[#FC7901] hover:text-[#E67A00] transition-colors">My Deals</span>
                 </a>
-                <div class="flex items-center p-4 rounded-lg">
+                <div id="authMobile" class="flex items-center p-4 rounded-lg">
                   <img src="images/user.svg" alt="user" class="h-6 w-6 mr-4" />
                   <div class="flex items-center space-x-2">
                     <a href="login.html" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
@@ -198,7 +198,7 @@
                   </div>
                 </div>
 
-                <!-- Become a seller -->
+                <!-- Sell on ETA07 -->
                 <a href="become-seller.html" class="flex items-center px-4 pb-4 rounded-lg transition-colors">
                   <svg class="h-6 w-6 mr-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
@@ -208,7 +208,7 @@
                       d="M16 11V7a4 4 0 00-8 0v4M5 11h14l-1 9H6l-1-9z"
                     />
                   </svg>
-                  <span class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Become a seller</span>
+                  <span class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Sell on ETA07</span>
                 </a>
               </div>
 
@@ -321,7 +321,7 @@
     </section>
 
     <!-- SELLER BENEFITS SECTION -->
-    <section id="seller-benefits" class="py-12 sm:py-16 lg:py-20">
+    <section id="seller-benefits" class="py-12">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           <!-- Fast & Simple Listings -->
@@ -434,8 +434,213 @@
       </div>
     </section>
 
+    <!-- PERFECT LISTING SECTION -->
+    <section id="perfect-listing" class="py-12">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header  -->
+        <div class="mb-10">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <!-- Title + Sub -->
+            <div>
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#292C2D] mb-3">Master the Art of a Perfect Listing</h2>
+              <p class="text-base sm:text-lg text-[#666666]">Here are six ways to get your product noticed and sold.</p>
+            </div>
+
+            <!-- Navigation Arrows  -->
+            <div class="hidden sm:flex items-center gap-3 shrink-0">
+              <button
+                class="pl-prev w-10 h-10 lg:w-12 lg:h-12 rounded-xl border border-gray-300 flex items-center justify-center hover:bg-gray-100 hover:border-gray-400 transition-all duration-200 cursor-pointer"
+                aria-label="Previous"
+              >
+                <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                class="pl-next w-10 h-10 lg:w-12 lg:h-12 rounded-xl border border-gray-300 flex items-center justify-center hover:bg-gray-100 hover:border-gray-400 transition-all duration-200 cursor-pointer"
+                aria-label="Next"
+              >
+                <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Peek Carousel -->
+        <div class="swiper pl-slider relative overflow-visible">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div
+                class="bg-[#FFEAA7] rounded-2xl p-4 sm:p-8 hover:shadow-lg transition-shadow duration-300 h-[290px] sm:h-[260px]"
+              >
+                <h3 class="text-xl sm:text-2xl font-bold text-[#292C2D] mb-2">Craft a Powerful Title</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-[#666666] mr-2 mt-1">•</span>
+                    <span class="text-sm sm:text-base text-[#666666] leading-relaxed">
+                      We'll suggest popular search terms buyers are using. Make sure to include these in your title.
+                    </span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-[#666666] mr-2 mt-1">•</span>
+                    <span class="text-sm sm:text-base text-[#666666] leading-relaxed">
+                      Avoid using all capital letters. Instead, focus on specific details like brand, model, size, and color.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div
+                class="bg-[#FDCB6E] rounded-2xl p-4 sm:p-8 hover:shadow-lg transition-shadow duration-300 h-[290px] sm:h-[260px]"
+              >
+                <h3 class="text-xl sm:text-2xl font-bold text-[#292C2D] mb-2">Capture High-Quality Photos</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-[#666666] mr-2 mt-1">•</span>
+                    <span class="text-sm sm:text-base text-[#666666] leading-relaxed">
+                      Take clear photos from multiple angles in good lighting, and include any imperfections so buyers know
+                      exactly what to expect.
+                    </span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-[#666666] mr-2 mt-1">•</span>
+                    <span class="text-sm sm:text-base text-[#666666] leading-relaxed">
+                      Using the ETA07 app, you can easily edit your photos and create a clean, white background.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div
+                class="bg-[#DFE6E9] rounded-2xl p-4 sm:p-8 hover:shadow-lg transition-shadow duration-300 h-[290px] sm:h-[260px]"
+              >
+                <h3 class="text-xl sm:text-2xl font-bold text-[#292C2D] mb-2">Choose the Right Category</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-[#666666] mr-2 mt-1">•</span>
+                    <span class="text-sm sm:text-base text-[#666666] leading-relaxed">
+                      If you're not sure which category your item fits into, we have a tool that will choose it for you.
+                    </span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-[#666666] mr-2 mt-1">•</span>
+                    <span class="text-sm sm:text-base text-[#666666] leading-relaxed">
+                      If you provide the wrong category, we will update this for you so it can reach the right buyer.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <div
+                class="bg-[#A8E6CF] rounded-2xl p-4 sm:p-8 hover:shadow-lg transition-shadow duration-300 h-[290px] sm:h-[260px]"
+              >
+                <h3 class="text-xl sm:text-2xl font-bold text-[#292C2D] mb-2">Write Detailed Descriptions</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-[#666666] mr-2 mt-1">•</span>
+                    <span class="text-sm sm:text-base text-[#666666] leading-relaxed">
+                      Include key details like condition, dimensions, and any unique features. Be honest about any flaws.
+                    </span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-[#666666] mr-2 mt-1">•</span>
+                    <span class="text-sm sm:text-base text-[#666666] leading-relaxed">
+                      Our AI writing assistant can help you create compelling descriptions that convert browsers into buyers.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="swiper-slide">
+              <div
+                class="bg-[#FFD3E1] rounded-2xl p-4 sm:p-8 hover:shadow-lg transition-shadow duration-300 h-[290px] sm:h-[260px]"
+              >
+                <h3 class="text-xl sm:text-2xl font-bold text-[#292C2D] mb-2">Set Competitive Prices</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-[#666666] mr-2 mt-1">•</span>
+                    <span class="text-sm sm:text-base text-[#666666] leading-relaxed">
+                      Our pricing tool analyzes similar listings to suggest the optimal price for a quick sale.
+                    </span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-[#666666] mr-2 mt-1">•</span>
+                    <span class="text-sm sm:text-base text-[#666666] leading-relaxed">
+                      Consider offering bundle deals or accepting offers to attract more potential buyers.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="swiper-slide">
+              <div
+                class="bg-[#C7CEEA] rounded-2xl p-4 sm:p-8 hover:shadow-lg transition-shadow duration-300 h-[290px] sm:h-[260px]"
+              >
+                <h3 class="text-xl sm:text-2xl font-bold text-[#292C2D] mb-2">Ship with Confidence</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-[#666666] mr-2 mt-1">•</span>
+                    <span class="text-sm sm:text-base text-[#666666] leading-relaxed">
+                      Choose from our discounted shipping options or offer local pickup for larger items.
+                    </span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-[#666666] mr-2 mt-1">•</span>
+                    <span class="text-sm sm:text-base text-[#666666] leading-relaxed">
+                      Track your shipments and communicate with buyers through our secure messaging system.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT PEEK OVERLAY (visible on larger screens)  -->
+          <div
+            class="peek-overlay hidden sm:flex pointer-events-none absolute inset-y-0 -right-1 sm:w-[30%] md:w-[30%] lg:w-[22%] xl:w-[25%] z-20"
+            style="
+              background-image: url('images/peek-overlay.svg');
+              background-size: cover;
+              background-position: left center;
+              background-repeat: no-repeat;
+            "
+          ></div>
+
+          <!-- MOBILE GRADIENT OVERLAY (visible only on small screens) -->
+          <div
+            class="peek-overlay block sm:hidden pointer-events-none absolute inset-y-0 -right-0.5 w-[20%] z-20"
+            style="
+              background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.35) 55%,
+                rgba(255, 255, 255, 0.7) 80%,
+                rgba(255, 255, 255, 0.95) 100%
+              );
+            "
+          ></div>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ SECTION -->
-    <section id="faq" class="py-12 sm:py-16 lg:py-20 bg-white">
+    <section id="faq" class="py-12">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div>
           <!-- Section Title -->
@@ -615,6 +820,51 @@
                   We provide seller protection against fraudulent claims, secure payment processing, and dispute resolution
                   support. Our team reviews suspicious activity and helps resolve any issues that arise during transactions.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- START SELLING TODAY SECTION -->
+    <section id="start-selling" class="py-12">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative rounded-2xl lg:rounded-3xl overflow-hidden">
+          <!-- Background Image Container -->
+          <div class="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px]">
+            <!-- Dark Overlay for better text contrast -->
+            <!-- <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent z-10"></div> -->
+
+            <!-- Background Image -->
+            <img src="images/start-selling.webp" alt="Business partners working together" class="w-full h-full object-cover" />
+
+            <!-- Content Overlay -->
+            <div class="absolute inset-0 flex items-center z-20">
+              <div class="px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 w-full">
+                <div class="max-w-xl">
+                  <!-- Main Heading -->
+                  <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
+                    START SELLING<br />
+                    TODAY!
+                  </h2>
+
+                  <!-- CTA Button -->
+                  <button
+                    type="button"
+                    class="bg-[#FDB913] hover:bg-[#ffc42e] text-[#292C2D] font-bold py-3 px-6 sm:py-3.5 sm:px-8 md:py-4 md:px-10 rounded-lg text-sm sm:text-base uppercase transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FDB913] cursor-pointer inline-flex items-center group"
+                  >
+                    LIST AN ITEM
+                    <svg
+                      class="w-4 h-4 sm:w-5 sm:h-5 ml-2 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
