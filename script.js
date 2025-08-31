@@ -337,129 +337,129 @@ closeAlert.addEventListener("click", () => {
 });
 
 // ============================ FAKE LOGIN HANDLER ========================= //
-document.addEventListener("DOMContentLoaded", function () {
-  // --- LOGIN PAGE HANDLER ---
-  var loginForm = document.querySelector("form#loginForm");
-  if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var email = document.getElementById("email").value.trim();
-      var password = document.getElementById("password").value.trim();
+// document.addEventListener("DOMContentLoaded", function () {
+//   // --- LOGIN PAGE HANDLER ---
+//   var loginForm = document.querySelector("form#loginForm");
+//   if (loginForm) {
+//     loginForm.addEventListener("submit", function (e) {
+//       e.preventDefault();
+//       var email = document.getElementById("email").value.trim();
+//       var password = document.getElementById("password").value.trim();
 
-      if (email === "paulbryant@eta07.com" && password === "1234") {
-        localStorage.setItem("isLoggedIn", "true");
-        localStorage.setItem("username", "Paul Bryant");
-        window.location.href = "index.html";
-      } else {
-        alert("Invalid email or password.");
-      }
-    });
-  }
+//       if (email === "paulbryant@eta07.com" && password === "1234") {
+//         localStorage.setItem("isLoggedIn", "true");
+//         localStorage.setItem("username", "Paul Bryant");
+//         window.location.href = "index.html";
+//       } else {
+//         alert("Invalid email or password.");
+//       }
+//     });
+//   }
 
-  // Helper: attach logout to any "[data-logout]" button
-  function bindLogoutHandlers(scope) {
-    var buttons = (scope || document).querySelectorAll("[data-logout]");
-    buttons.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        localStorage.removeItem("isLoggedIn");
-        localStorage.removeItem("username");
-        window.location.href = "index.html";
-      });
-    });
-  }
+//   // Helper: attach logout to any "[data-logout]" button
+//   function bindLogoutHandlers(scope) {
+//     var buttons = (scope || document).querySelectorAll("[data-logout]");
+//     buttons.forEach(function (btn) {
+//       btn.addEventListener("click", function () {
+//         localStorage.removeItem("isLoggedIn");
+//         localStorage.removeItem("username");
+//         window.location.href = "index.html";
+//       });
+//     });
+//   }
 
-  // Render desktop auth (dropdown)
-  function renderDesktopAuth(username) {
-    var authSection = document.getElementById("authDesktop");
-    if (!authSection) return;
+//   // Render desktop auth (dropdown)
+//   function renderDesktopAuth(username) {
+//     var authSection = document.getElementById("authDesktop");
+//     if (!authSection) return;
 
-    if (localStorage.getItem("isLoggedIn") === "true") {
-      authSection.innerHTML = `
-        <div id="userMenuWrap" class="relative inline-block">
-          <button id="userMenuBtn" type="button" aria-haspopup="true" aria-expanded="false"
-                  class="flex items-center gap-2 cursor-pointer select-none">
-            <span class="text-sm sm:text-base text-[#666666] font-bold">Hi! ${username}</span>
-            <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
-            </svg>
-          </button>
-          <div id="userMenu"
-               class="absolute right-0 mt-2 w-35 bg-white border border-gray-200 rounded-lg shadow-lg p-1 hidden z-50">
-            <a href="profile-details.html"
-               class="block px-3 py-2 text-sm text-gray-700 rounded-md hover:bg-gray-100">View Profile</a>
-            <button data-logout
-               class="w-full text-left block px-3 py-2 text-sm text-gray-700 rounded-md hover:bg-gray-100">Logout</button>
-          </div>
-        </div>
-      `;
+//     if (localStorage.getItem("isLoggedIn") === "true") {
+//       authSection.innerHTML = `
+//         <div id="userMenuWrap" class="relative inline-block">
+//           <button id="userMenuBtn" type="button" aria-haspopup="true" aria-expanded="false"
+//                   class="flex items-center gap-2 cursor-pointer select-none">
+//             <span class="text-sm sm:text-base text-[#666666] font-bold">Hi! ${username}</span>
+//             <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+//               <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
+//             </svg>
+//           </button>
+//           <div id="userMenu"
+//                class="absolute right-0 mt-2 w-35 bg-white border border-gray-200 rounded-lg shadow-lg p-1 hidden z-50">
+//             <a href="profile-details.html"
+//                class="block px-3 py-2 text-sm text-gray-700 rounded-md hover:bg-gray-100">View Profile</a>
+//             <button data-logout
+//                class="w-full text-left block px-3 py-2 text-sm text-gray-700 rounded-md hover:bg-gray-100">Logout</button>
+//           </div>
+//         </div>
+//       `;
 
-      var wrap = document.getElementById("userMenuWrap");
-      var btn = document.getElementById("userMenuBtn");
-      var menu = document.getElementById("userMenu");
+//       var wrap = document.getElementById("userMenuWrap");
+//       var btn = document.getElementById("userMenuBtn");
+//       var menu = document.getElementById("userMenu");
 
-      function hideMenu() {
-        if (!menu.classList.contains("hidden")) {
-          menu.classList.add("hidden");
-          btn.setAttribute("aria-expanded", "false");
-        }
-      }
-      function toggleMenu() {
-        var willShow = menu.classList.contains("hidden");
-        menu.classList.toggle("hidden");
-        btn.setAttribute("aria-expanded", String(willShow));
-      }
+//       function hideMenu() {
+//         if (!menu.classList.contains("hidden")) {
+//           menu.classList.add("hidden");
+//           btn.setAttribute("aria-expanded", "false");
+//         }
+//       }
+//       function toggleMenu() {
+//         var willShow = menu.classList.contains("hidden");
+//         menu.classList.toggle("hidden");
+//         btn.setAttribute("aria-expanded", String(willShow));
+//       }
 
-      btn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        toggleMenu();
-      });
-      document.addEventListener("click", function (e) {
-        if (!wrap.contains(e.target)) hideMenu();
-      });
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") hideMenu();
-      });
+//       btn.addEventListener("click", function (e) {
+//         e.stopPropagation();
+//         toggleMenu();
+//       });
+//       document.addEventListener("click", function (e) {
+//         if (!wrap.contains(e.target)) hideMenu();
+//       });
+//       document.addEventListener("keydown", function (e) {
+//         if (e.key === "Escape") hideMenu();
+//       });
 
-      bindLogoutHandlers(authSection);
-    } else {
-      // keep original Sign In / Sign Up
-      authSection.innerHTML = `
-        <a href="profile-details.html">
-          <img src="images/user.svg" alt="user" class="h-5 sm:h-6 w-5 sm:w-6" />
-        </a>
-        <div class="flex items-center space-x-1">
-          <a href="register.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity">Sign Up</a>
-          <span class="text-sm sm:text-base text-[#666666] font-bold">/</span>
-          <a href="login.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity">Sign In</a>
-        </div>
-      `;
-    }
-  }
+//       bindLogoutHandlers(authSection);
+//     } else {
+//       // keep original Sign In / Sign Up
+//       authSection.innerHTML = `
+//         <a href="profile-details.html">
+//           <img src="images/user.svg" alt="user" class="h-5 sm:h-6 w-5 sm:w-6" />
+//         </a>
+//         <div class="flex items-center space-x-1">
+//           <a href="register.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity">Sign Up</a>
+//           <span class="text-sm sm:text-base text-[#666666] font-bold">/</span>
+//           <a href="login.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity">Sign In</a>
+//         </div>
+//       `;
+//     }
+//   }
 
-  // Render mobile auth (inline)
-  function renderMobileAuth(username) {
-    var mobile = document.getElementById("authMobile");
-    if (!mobile) return;
+//   // Render mobile auth (inline)
+//   function renderMobileAuth(username) {
+//     var mobile = document.getElementById("authMobile");
+//     if (!mobile) return;
 
-    if (localStorage.getItem("isLoggedIn") === "true") {
-      mobile.innerHTML = `
-        <img src="images/user.svg" alt="user" class="h-6 w-6 mr-4" />
-        <div class="flex items-center gap-3">
-          <span class="text-sm font-semibold text-gray-800">Hi! ${username}</span>
-          <a href="profile-details.html" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Profile</a>
-          <button data-logout class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Logout</button>
-        </div>
-      `;
-      bindLogoutHandlers(mobile);
-    } else {
-    }
-  }
+//     if (localStorage.getItem("isLoggedIn") === "true") {
+//       mobile.innerHTML = `
+//         <img src="images/user.svg" alt="user" class="h-6 w-6 mr-4" />
+//         <div class="flex items-center gap-3">
+//           <span class="text-sm font-semibold text-gray-800">Hi! ${username}</span>
+//           <a href="profile-details.html" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Profile</a>
+//           <button data-logout class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Logout</button>
+//         </div>
+//       `;
+//       bindLogoutHandlers(mobile);
+//     } else {
+//     }
+//   }
 
-  // --- INDEX AUTH CHECK (both) ---
-  var username = localStorage.getItem("username") || "User";
-  renderDesktopAuth(username);
-  renderMobileAuth(username);
-});
+//   // --- INDEX AUTH CHECK (both) ---
+//   var username = localStorage.getItem("username") || "User";
+//   renderDesktopAuth(username);
+//   renderMobileAuth(username);
+// });
 
 // ============================  ACCORDION FOR SELLER ========================= //
 document.querySelectorAll(".faq-item").forEach((item) => {
@@ -512,4 +512,33 @@ const plSwiper = new Swiper(".pl-slider", {
       overlays.forEach((el) => (el.style.transition = "opacity 0.3s ease"));
     },
   },
+});
+
+// Mobile search toggle functionality
+const mobileSearchBtn = document.getElementById("mobile-search-btn");
+const mobileSearchContainer = document.getElementById("mobile-search-container");
+const closeMobileSearch = document.getElementById("close-mobile-search");
+const mobileSearchInput = document.getElementById("mobile-search-input");
+
+// Open mobile search
+mobileSearchBtn.addEventListener("click", function () {
+  mobileSearchContainer.classList.add("active");
+  // Focus on input after animation
+  setTimeout(() => {
+    mobileSearchInput.focus();
+  }, 100);
+});
+
+// Close mobile search
+closeMobileSearch.addEventListener("click", function () {
+  mobileSearchContainer.classList.remove("active");
+  mobileSearchInput.value = "";
+});
+
+// Optional: Close on escape key
+mobileSearchInput.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    mobileSearchContainer.classList.remove("active");
+    mobileSearchInput.value = "";
+  }
 });

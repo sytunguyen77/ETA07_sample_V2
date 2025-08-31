@@ -114,8 +114,14 @@
     <nav id="top" class="bg-[#292C2D] text-white">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-12 sm:h-10 md:h-12">
-          <!-- Left Side - Welcome Message -->
-          <div class="text-xs sm:text-sm md:text-sm">Welcome to ETA07!</div>
+          <!-- Left Side - Sign In/Sign Up Message -->
+          <div class="text-xs sm:text-sm md:text-sm" id="auth-links">
+            Hello! (
+            <a href="login.html" class="text-[#ECC450] transition-colors underline">Sign in</a>
+            /
+            <a href="register.html" class="text-[#ECC450] transition-colors underline">Sign up</a>
+            )
+          </div>
 
           <!-- Right Side - Navigation Links -->
           <div class="flex items-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-5">
@@ -198,7 +204,7 @@
           </div>
 
           <!-- Right Section -->
-          <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <div class="flex items-center gap-3 sm:gap-3 flex-shrink-0">
             <!-- My Deals -->
             <a href="#" class="hidden lg:flex items-center space-x-1 sm:space-x-2 hover:opacity-80 transition-opacity">
               <img src="images/deal.svg" alt="deal" class="h-5 sm:h-6 w-5 sm:w-6" />
@@ -207,23 +213,12 @@
 
             <div class="hidden lg:block h-6 w-px bg-gray-300"></div>
 
-            <!-- Sign Up/Sign In -->
-            <div id="authDesktop" class="hidden md:flex items-center space-x-1 sm:space-x-2">
-              <a href="profile-details.html">
-                <img src="images/user.svg" alt="user" class="h-5 sm:h-6 w-5 sm:w-6" />
-              </a>
-              <div class="flex items-center space-x-1">
-                <a href="register.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity"
-                  >Sign Up</a
-                >
-                <span class="text-sm sm:text-base text-[#666666] font-bold">/</span>
-                <a href="login.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity"
-                  >Sign In</a
-                >
-              </div>
-            </div>
+            <!-- Services -->
+            <a href="#" class="hidden lg:flex items-center space-x-1 sm:space-x-2 hover:opacity-80 transition-opacity">
+              <span class="text-sm sm:text-base font-bold text-[#666666] whitespace-nowrap">Services</span>
+            </a>
 
-            <div class="hidden md:block h-6 w-px bg-gray-300"></div>
+            <div class="hidden lg:block h-6 w-px bg-gray-300"></div>
 
             <!-- Cart -->
             <a href="#" class="flex items-center hover:opacity-80 transition-opacity">
@@ -2523,6 +2518,142 @@
 
     <!-- Linking Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      const authLinks = document.getElementById("auth-links");
+      const loggedInUser = localStorage.getItem("loggedInUser");
+
+      if (loggedInUser) {
+        authLinks.innerHTML = `
+          <div class="relative group" id="userMenu">
+            <button
+              id="userMenuBtn"
+              class="flex items-center gap-1 text-xs sm:text-sm md:text-sm focus:outline-none
+                    transition-colors duration-200
+                    max-w-[200px] sm:max-w-[250px] cursor-pointer"
+              aria-haspopup="true" aria-expanded="false"
+            >
+              <span class="truncate">Hello</span>
+              <span class="text-[#ECC450] font-semibold truncate max-w-[100px] sm:max-w-[150px]">${loggedInUser}!</span>
+              <svg class="w-4 h-4 ml-0.5 flex-shrink-0 transition-transform duration-300 ease-in-out group-hover:rotate-180" 
+                  fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <!-- Dropdown -->
+            <div
+              id="userDropdown"
+              class="pointer-events-none opacity-0 scale-95 
+              group-hover:pointer-events-auto group-hover:opacity-100 group-hover:scale-100
+              transition-all duration-300 ease-in-out transform origin-top-right
+              absolute -right-18 sm:-right-13 md:-right-13 top-full mt-1 pt-2 w-52 rounded-xl border border-gray-200 
+              bg-white text-[#292C2D] shadow-lg z-[2000]
+              before:content-[''] before:absolute before:inset-x-0 before:-top-3 before:h-3
+              sm:group-hover:block cursor-pointer mt-3"
+              role="menu"
+            >
+              <div class="px-4 py-3 text-xs text-gray-600 border-b border-gray-200">
+                <span class="block truncate">Signed in as</span>
+                <span class="font-semibold block truncate">${loggedInUser}</span>
+              </div>
+
+              <!-- Account Settings -->
+              <div class="py-1">
+                <a href="account.html" 
+                  class="flex items-center gap-2 mx-2 px-4 py-2.5 text-sm rounded-lg
+                  transition-colors duration-150 cursor-pointer
+                  hover:hover:bg-gray-100 hover:text-[#ECC450]" 
+                  role="menuitem">
+                  <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    Account settings
+                  </span>
+                </a>
+                
+                <!-- Sign out -->
+                <button id="signOutBtn" 
+                  class="flex items-center gap-2 mx-2 px-4 py-2.5 text-sm rounded-lg w-[calc(100%-1rem)]
+                        transition-colors duration-150 cursor-pointer
+                        hover:bg-gray-100 hover:text-red-600" 
+                  role="menuitem">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                  </svg>
+                  Sign out
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // --- Behavior (click/tap + keyboard + outside click) ---
+        const btn = document.getElementById("userMenuBtn");
+        const menu = document.getElementById("userDropdown");
+        const signOutBtn = document.getElementById("signOutBtn");
+
+        // Mobile/tap toggle (since :hover doesn't work on touch)
+        let open = false;
+        const showMenu = () => {
+          menu.classList.remove("pointer-events-none", "opacity-0", "scale-95");
+          menu.classList.add("pointer-events-auto", "opacity-100", "scale-100");
+          btn.setAttribute("aria-expanded", "true");
+          // Rotate arrow
+          btn.querySelector("svg").classList.add("rotate-180");
+          open = true;
+        };
+
+        const hideMenu = () => {
+          menu.classList.add("pointer-events-none", "opacity-0", "scale-95");
+          menu.classList.remove("pointer-events-auto", "opacity-100", "scale-100");
+          btn.setAttribute("aria-expanded", "false");
+          // Reset arrow rotation
+          btn.querySelector("svg").classList.remove("rotate-180");
+          open = false;
+        };
+
+        btn.addEventListener("click", (e) => {
+          // On small screens, toggle with click
+          if (window.matchMedia("(hover: none)").matches) {
+            e.preventDefault();
+            open ? hideMenu() : showMenu();
+          }
+        });
+
+        // Close on outside click
+        document.addEventListener("click", (e) => {
+          const menuWrap = document.getElementById("userMenu");
+          if (!menuWrap.contains(e.target) && open) hideMenu();
+        });
+
+        // Keyboard support
+        btn.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            open ? hideMenu() : showMenu();
+          }
+          if (e.key === "ArrowDown") showMenu();
+        });
+
+        menu.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") hideMenu();
+        });
+
+        // Sign out
+        signOutBtn.addEventListener("click", () => {
+          localStorage.removeItem("loggedInUser");
+          // Optional: also clear other auth data if you add any later
+          window.location.href = "index.html"; // back to home
+        });
+      }
+    </script>
+
     <!-- Main JS -->
     <script src="script.js" defer></script>
   </body>
