@@ -85,6 +85,7 @@ const brandSwiper = new Swiper(".brandSwiper", {
 const productsSwiper = new Swiper(".productsSwiper", {
   slidesPerView: 1.15, // default (mobile-first)
   spaceBetween: 12,
+  speed: 260,
   centeredSlides: false,
   slidesOffsetBefore: 0,
   slidesOffsetAfter: 0,
