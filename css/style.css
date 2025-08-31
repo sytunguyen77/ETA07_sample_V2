@@ -341,6 +341,12 @@
   .-right-20 {
     right: calc(var(--spacing) * -20);
   }
+  .-right-21 {
+    right: calc(var(--spacing) * -21);
+  }
+  .-right-25 {
+    right: calc(var(--spacing) * -25);
+  }
   .-right-30 {
     right: calc(var(--spacing) * -30);
   }
@@ -2360,6 +2366,16 @@
       right: calc(var(--spacing) * -13);
     }
   }
+  .sm\:-right-15 {
+    @media (width >= 40rem) {
+      right: calc(var(--spacing) * -15);
+    }
+  }
+  .sm\:-right-17 {
+    @media (width >= 40rem) {
+      right: calc(var(--spacing) * -17);
+    }
+  }
   .sm\:right-2 {
     @media (width >= 40rem) {
       right: calc(var(--spacing) * 2);
@@ -3138,6 +3154,16 @@
   .md\:-right-15 {
     @media (width >= 48rem) {
       right: calc(var(--spacing) * -15);
+    }
+  }
+  .md\:-right-16 {
+    @media (width >= 48rem) {
+      right: calc(var(--spacing) * -16);
+    }
+  }
+  .md\:-right-17 {
+    @media (width >= 48rem) {
+      right: calc(var(--spacing) * -17);
     }
   }
   .md\:-right-20 {
