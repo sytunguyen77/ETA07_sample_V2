@@ -22,26 +22,39 @@
     <link rel="stylesheet" href="css/input.css" />
 
     <style>
-      /* Put scrollbar on the left */
+      /* Scrollbar on the left */
       .rtl-scroll {
         direction: rtl; /* scrollbar goes to left */
         padding-left: 10px;
       }
       .rtl-scroll > * {
-        direction: ltr; /* keep content normal left-to-right */
+        direction: ltr; /* keep content left-to-right */
       }
 
-      /* Optional scrollbar styling */
-      .rtl-scroll::-webkit-scrollbar {
-        width: 5px;
+      /* Desktop & tablet: style the scrollbar */
+      @media (min-width: 640px) {
+        .rtl-scroll::-webkit-scrollbar {
+          width: 5px;
+        }
+        .rtl-scroll::-webkit-scrollbar-track {
+          background: #f3f4f6;
+          border-radius: 8px;
+        }
+        .rtl-scroll::-webkit-scrollbar-thumb {
+          background: #9ca3af;
+          border-radius: 8px;
+        }
       }
-      .rtl-scroll::-webkit-scrollbar-track {
-        background: #f3f4f6;
-        border-radius: 8px;
-      }
-      .rtl-scroll::-webkit-scrollbar-thumb {
-        background: #9ca3af;
-        border-radius: 8px;
+
+      /* Mobile: hide scrollbar but keep scroll working */
+      @media (max-width: 639px) {
+        .rtl-scroll::-webkit-scrollbar {
+          display: none; /* Chrome, Safari */
+        }
+        .rtl-scroll {
+          -ms-overflow-style: none; /* IE & Edge */
+          scrollbar-width: none; /* Firefox */
+        }
       }
     </style>
   </head>
@@ -266,17 +279,17 @@
 
     <!-- PRODUCT DETAILS SECTION -->
     <section class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6 bg-white">
-      <div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] xl:grid-cols-[1.6fr_1fr] gap-8 lg:gap-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.8fr_1fr] xl:grid-cols-[1.6fr_1fr] gap-12 lg:gap-12">
         <!-- Left Column - Image Gallery -->
-        <div class="flex flex-col sm:flex-row gap-4 h-[400px] sm:h-[500px] lg:h-[630px]">
+        <div class="flex flex-col sm:flex-row gap-4 h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[630px]">
           <!-- Thumbnails -->
           <div
-            class="flex sm:flex-col gap-2 order-2 sm:order-1 overflow-x-auto sm:overflow-y-auto sm:overflow-x-hidden sm:pr-1 rtl-scroll"
+            class="hidden sm:flex sm:flex-col gap-2 order-2 sm:order-1 overflow-x-auto sm:overflow-y-auto sm:overflow-x-hidden sm:pr-1 rtl-scroll"
           >
             <div
               class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-[#e6b847] cursor-pointer overflow-hidden"
             >
-              <img src="images/drone-2.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
+              <img src="images/spiderman.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
             </div>
             <div
               class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors"
@@ -336,12 +349,12 @@
 
           <!-- Main Image  -->
           <div class="flex-1 order-1 sm:order-2">
-            <div class="relative bg-[#f0f0f0] rounded-lg h-full overflow-hidden flex items-center justify-center">
-              <img src="/images/drone-1.webp" alt="Main product image" class="w-full h-full object-contain" />
+            <div class="relative bg-[#f0f0f0] rounded-lg h-[300px] sm:h-full overflow-hidden flex items-center justify-center">
+              <img src="/images/spiderman.webp" alt="Main product image" class="w-full h-full object-contain" />
 
               <!-- Navigation Arrows -->
               <button
-                class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/70 text-white rounded-full flex items-center justify-center shadow-lg cursor-pointer transition-all duration-300 ease-in-out hover:bg-black hover:scale-110 hover:ring-2 hover:ring-offset-2 hover:ring-black/50"
+                class="hidden sm:flex items-center justify-center absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/70 text-white rounded-full shadow-lg cursor-pointer transition-all duration-300 ease-in-out hover:bg-black hover:scale-110 hover:ring-2 hover:ring-offset-2 hover:ring-black/50"
               >
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -349,7 +362,7 @@
               </button>
 
               <button
-                class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/70 text-white rounded-full flex items-center justify-center shadow-lg cursor-pointer transition-all duration-300 ease-in-out hover:bg-black hover:scale-110 hover:ring-2 hover:ring-offset-2 hover:ring-black/50"
+                class="hidden sm:flex items-center justify-center absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/70 text-white rounded-full shadow-lg cursor-pointer transition-all duration-300 ease-in-out hover:bg-black hover:scale-110 hover:ring-2 hover:ring-offset-2 hover:ring-black/50"
               >
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -357,7 +370,7 @@
               </button>
 
               <!-- Action Buttons (Top Right) -->
-              <div class="absolute top-4 right-4 flex gap-2">
+              <div class="hidden sm:flex absolute top-4 right-4 gap-2">
                 <button
                   class="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-white rounded-lg flex items-center justify-center shadow cursor-pointer transition-all duration-300 ease-in-out hover:scale-105 sm:hover:scale-110 hover:ring-2 hover:ring-black/40 hover:ring-offset-1 sm:hover:ring-offset-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2"
                 >
@@ -365,6 +378,13 @@
                 </button>
               </div>
             </div>
+          </div>
+          <!-- MOBILE DOTS -->
+          <div class="sm:hidden flex items-center justify-center gap-3 order-4">
+            <span class="h-2.5 w-2.5 rounded-full bg-gray-900"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-gray-300"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-gray-300"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-gray-300"></span>
           </div>
         </div>
 
@@ -811,6 +831,7 @@
 
     <!-- Linking Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!-- Main JS -->
     <script src="script.js" defer></script>
   </body>
