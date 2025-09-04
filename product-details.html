@@ -21,15 +21,53 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/input.css" />
 
-    <style></style>
+    <style>
+      /* Put scrollbar on the left */
+      .rtl-scroll {
+        direction: rtl; /* scrollbar goes to left */
+        padding-left: 10px;
+      }
+      .rtl-scroll > * {
+        direction: ltr; /* keep content normal left-to-right */
+      }
+
+      /* Optional scrollbar styling */
+      .rtl-scroll::-webkit-scrollbar {
+        width: 5px;
+      }
+      .rtl-scroll::-webkit-scrollbar-track {
+        background: #f3f4f6;
+        border-radius: 8px;
+      }
+      .rtl-scroll::-webkit-scrollbar-thumb {
+        background: #9ca3af;
+        border-radius: 8px;
+      }
+    </style>
   </head>
   <body class="">
     <!-- TOP NAVIGATION BAR -->
     <nav id="top" class="bg-[#292C2D] text-white">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-12 sm:h-10 md:h-12">
-          <!-- Left Side - Welcome Message -->
-          <div class="text-xs sm:text-sm md:text-sm">Welcome to ETA07!</div>
+          <!-- Left Side - Sign In/Sign Up Message -->
+          <div class="text-xs sm:text-sm md:text-sm" id="auth-links">
+            Welcome (
+            <a
+              href="login.html"
+              class="relative text-[#ECC450] transition-all duration-300 before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[1px] before:bg-[#ECC450]/70 before:transition-all before:duration-500 hover:before:w-full"
+            >
+              Sign in
+            </a>
+            /
+            <a
+              href="register.html"
+              class="relative text-[#ECC450] transition-all duration-300 before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[1px] before:bg-[#ECC450]/70 before:transition-all before:duration-500 hover:before:w-full"
+            >
+              Sign up
+            </a>
+            )
+          </div>
 
           <!-- Right Side - Navigation Links -->
           <div class="flex items-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-5">
@@ -112,7 +150,7 @@
           </div>
 
           <!-- Right Section -->
-          <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <div class="flex items-center gap-3 sm:gap-3 flex-shrink-0">
             <!-- My Deals -->
             <a href="#" class="hidden lg:flex items-center space-x-1 sm:space-x-2 hover:opacity-80 transition-opacity">
               <img src="images/deal.svg" alt="deal" class="h-5 sm:h-6 w-5 sm:w-6" />
@@ -121,23 +159,12 @@
 
             <div class="hidden lg:block h-6 w-px bg-gray-300"></div>
 
-            <!-- Sign Up/Sign In -->
-            <div id="authDesktop" class="hidden md:flex items-center space-x-1 sm:space-x-2">
-              <a href="profile-details.html">
-                <img src="images/user.svg" alt="user" class="h-5 sm:h-6 w-5 sm:w-6" />
-              </a>
-              <div class="flex items-center space-x-1">
-                <a href="register.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity"
-                  >Sign Up</a
-                >
-                <span class="text-sm sm:text-base text-[#666666] font-bold">/</span>
-                <a href="login.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity"
-                  >Sign In</a
-                >
-              </div>
-            </div>
+            <!-- Services -->
+            <a href="#" class="hidden lg:flex items-center space-x-1 sm:space-x-2 hover:opacity-80 transition-opacity">
+              <span class="text-sm sm:text-base font-bold text-[#666666] whitespace-nowrap">Services</span>
+            </a>
 
-            <div class="hidden md:block h-6 w-px bg-gray-300"></div>
+            <div class="hidden lg:block h-6 w-px bg-gray-300"></div>
 
             <!-- Cart -->
             <a href="#" class="flex items-center hover:opacity-80 transition-opacity">
@@ -148,6 +175,7 @@
                   >0</span
                 >
               </div>
+              <span class="text-sm sm:text-base text-[#666666] font-bold hidden lg:inline ml-1">Cart</span>
             </a>
 
             <!-- Hamburger Menu -->
@@ -235,6 +263,331 @@
         </div>
       </div>
     </header>
+
+    <!-- PRODUCT DETAILS SECTION -->
+    <section class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6 bg-white">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] xl:grid-cols-[1.6fr_1fr] gap-8 lg:gap-12">
+        <!-- Left Column - Image Gallery -->
+        <div class="flex flex-col sm:flex-row gap-4 h-[400px] sm:h-[500px] lg:h-[630px]">
+          <!-- Thumbnails -->
+          <div
+            class="flex sm:flex-col gap-2 order-2 sm:order-1 overflow-x-auto sm:overflow-y-auto sm:overflow-x-hidden sm:pr-1 rtl-scroll"
+          >
+            <div
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-[#e6b847] cursor-pointer overflow-hidden"
+            >
+              <img src="images/drone-2.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
+            </div>
+            <div
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors"
+            >
+              <img
+                src="https://i.ebayimg.com/images/g/1~MAAOSwUlRm9vY6/s-l1600.jpg"
+                alt="Product thumbnail"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <div
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors"
+            >
+              <img
+                src="https://i.ebayimg.com/images/g/1~MAAOSwUlRm9vY6/s-l1600.jpg"
+                alt="Product thumbnail"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <div
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors"
+            >
+              <img
+                src="https://i.ebayimg.com/images/g/1~MAAOSwUlRm9vY6/s-l1600.jpg"
+                alt="Product thumbnail"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <div
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors"
+            >
+              <img
+                src="https://i.ebayimg.com/images/g/1~MAAOSwUlRm9vY6/s-l1600.jpg"
+                alt="Product thumbnail"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <div
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors"
+            >
+              <img
+                src="https://i.ebayimg.com/images/g/1~MAAOSwUlRm9vY6/s-l1600.jpg"
+                alt="Product thumbnail"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <div
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors"
+            >
+              <img
+                src="https://i.ebayimg.com/images/g/1~MAAOSwUlRm9vY6/s-l1600.jpg"
+                alt="Product thumbnail"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+
+          <!-- Main Image  -->
+          <div class="flex-1 order-1 sm:order-2">
+            <div class="relative bg-[#f0f0f0] rounded-lg h-full overflow-hidden flex items-center justify-center">
+              <img src="/images/drone-1.webp" alt="Main product image" class="w-full h-full object-contain" />
+
+              <!-- Navigation Arrows -->
+              <button
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/70 text-white rounded-full flex items-center justify-center shadow-lg cursor-pointer transition-all duration-300 ease-in-out hover:bg-black hover:scale-110 hover:ring-2 hover:ring-offset-2 hover:ring-black/50"
+              >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              <button
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/70 text-white rounded-full flex items-center justify-center shadow-lg cursor-pointer transition-all duration-300 ease-in-out hover:bg-black hover:scale-110 hover:ring-2 hover:ring-offset-2 hover:ring-black/50"
+              >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              <!-- Action Buttons (Top Right) -->
+              <div class="absolute top-4 right-4 flex gap-2">
+                <button
+                  class="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-white rounded-lg flex items-center justify-center shadow cursor-pointer transition-all duration-300 ease-in-out hover:scale-105 sm:hover:scale-110 hover:ring-2 hover:ring-black/40 hover:ring-offset-1 sm:hover:ring-offset-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2"
+                >
+                  <img src="/images/expand-arrow.svg" alt="expand-arrow" class="w-4 h-4 sm:w-5 sm:h-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Product Information -->
+        <div class="flex flex-col gap-4">
+          <!-- Product Title -->
+          <h1 class="text-xl sm:text-2xl font-extrabold text-gray-900 pb-4 border-b border-gray-200">
+            2.4G 4CH 6-Axis Gyro RC Quadcopter RTF Anti-crush Drone With Headless RUHJ
+          </h1>
+
+          <!-- Seller Info -->
+          <div class="pb-4 border-b border-gray-200">
+            <div class="flex items-start sm:items-center gap-3 sm:gap-4">
+              <!-- Yellow badge -->
+              <div class="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#FDB913] flex items-center justify-center">
+                <span class="text-[10px] sm:text-xs font-extrabold tracking-wider text-[#292C2D]">ETA07</span>
+              </div>
+
+              <!-- Name + count + links -->
+              <div class="flex-1 min-w-0">
+                <!-- Top row: seller name + feedback count -->
+                <div class="flex flex-wrap items-center gap-x-2">
+                  <span class="text-sm sm:text-base font-semibold text-gray-900">ETA07</span>
+                  <span class="text-xs sm:text-sm text-gray-500">(21,671)</span>
+                </div>
+
+                <!-- Bottom row: links -->
+                <div class="mt-1 flex flex-wrap items-center gap-x-5 gap-y-1 text-xs sm:text-sm">
+                  <a href="#" class="underline font-semibold underline-offset-2 hover:text-gray-600 transition-colors"
+                    >99.2% positive</a
+                  >
+                  <a href="#" class="underline font-semibold underline-offset-2 hover:text-gray-600 transition-colors"
+                    >Seller's other items</a
+                  >
+                  <a href="#" class="underline font-semibold underline-offset-2 hover:text-gray-600 transition-colors"
+                    >Contact seller</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Price Section -->
+          <div class="pb-4 border-b border-gray-200">
+            <!-- Row: price + old + badge -->
+            <div class="flex items-baseline gap-2 sm:gap-2 flex-wrap">
+              <!-- Current price ($ smaller, number big) -->
+              <div class="flex items-center">
+                <span class="text-xl sm:text-2xl font-bold leading-none">$</span>
+                <span class="ml-0.5 text-3xl sm:text-4xl font-extrabold leading-none tracking-tight">150</span>
+              </div>
+
+              <!-- Old price -->
+              <span class="text-gray-400 line-through text-lg sm:text-xl">$180</span>
+
+              <!-- Discount badge -->
+              <span class="bg-[#E6B847] text-[#111827] text-xs sm:text-sm font-semibold px-3 py-1 rounded-md whitespace-nowrap">
+                21% OFF
+              </span>
+            </div>
+          </div>
+
+          <!-- Condition, Deals Info and Quantity -->
+          <div class="pb-4 border-b border-gray-200 space-y-3">
+            <div class="flex items-center gap-7.5">
+              <span class="text-gray-600 text-sm">Condition:</span>
+              <span class="font-semibold">New</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-gray-600 text-sm">Deal ends in:</span>
+              <span class="font-semibold">5h 20min</span>
+            </div>
+            <!-- Quantity -->
+            <div class="flex items-center gap-8.5 pt-1">
+              <span class="text-gray-600 text-sm">Quantity:</span>
+
+              <!-- Stepper -->
+              <div
+                class="inline-flex items-center rounded-full border-2 border-[#e4e7e9] px-1 h-10 sm:h-12 select-none"
+                data-qty
+                data-min="1"
+                data-max="99"
+              >
+                <button
+                  type="button"
+                  class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-gray-600 hover:bg-gray-50 rounded-full cursor-pointer"
+                  data-qty-dec
+                  aria-label="Decrease quantity"
+                >
+                  −
+                </button>
+
+                <!-- current value -->
+                <span
+                  class="mx-3 sm:mx-4 w-8 text-center tabular-nums font-medium text-gray-800"
+                  data-qty-value
+                  aria-live="polite"
+                  >01</span
+                >
+
+                <button
+                  type="button"
+                  class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-gray-600 hover:bg-gray-50 rounded-full cursor-pointer"
+                  data-qty-inc
+                  aria-label="Increase quantity"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="space-y-3 py-4">
+            <!-- BUY NOW -->
+            <button
+              class="w-full py-3 bg-[#161616] text-white font-semibold rounded-full hover:bg-gray-700 transition-colors cursor-pointer flex items-center justify-center gap-2 sm:gap-3"
+            >
+              <img src="/images/local-offer.svg" alt="" aria-hidden="true" class="w-5 h-5 sm:w-6 sm:h-6" />
+              <span>BUY NOW</span>
+            </button>
+
+            <!-- ADD TO CART -->
+            <button
+              class="w-full py-3 bg-white text-[#161616] font-semibold border-2 border-[#161616] rounded-full hover:bg-yellow-50 transition-colors cursor-pointer flex items-center justify-center gap-2 sm:gap-3"
+            >
+              <img src="/images/product-cart.svg" alt="" aria-hidden="true" class="w-5 h-5 sm:w-6 sm:h-6" />
+              <span>ADD TO CART</span>
+            </button>
+
+            <!-- ADD TO WISHLIST -->
+            <div class="relative">
+              <button
+                class="w-full py-3 bg-white text-[#161616] font-semibold border-2 border-[#161616] rounded-full hover:bg-yellow-50 transition-colors flex items-center justify-center gap-2 sm:gap-3 cursor-pointer"
+              >
+                <img src="/images/product-wishlist.svg" alt="" aria-hidden="true" class="w-5 h-5 sm:w-6 sm:h-6" />
+                <span>ADD TO WISHLIST</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Shipping / Delivery / Returns -->
+          <div class="mt-4 rounded-2xl border border-gray-200 p-4 sm:p-5">
+            <div class="space-y-3">
+              <!-- Shipping -->
+              <div class="grid grid-cols-[auto,1fr] gap-x-3 sm:gap-x-4 items-start">
+                <span class="text-gray-600 text-sm">Shipping:</span>
+                <span class="text-sm sm:text-base">
+                  Free UPS Standard Shipping
+                  <span class="block text-xs text-gray-500 sm:inline sm:ml-1">(3–5 business days)</span>
+                </span>
+              </div>
+
+              <!-- Delivery -->
+              <div class="grid grid-cols-[auto,1fr] gap-x-3 sm:gap-x-4 items-start">
+                <span class="text-gray-600 text-sm">Delivery:</span>
+                <span class="text-sm sm:text-base"> Est. Tue, Dec 3 – Fri, Dec 6 </span>
+              </div>
+
+              <!-- Returns -->
+              <div class="grid grid-cols-[auto,1fr] gap-x-3 sm:gap-x-4 items-start">
+                <span class="text-gray-600 text-sm">Returns:</span>
+                <span class="text-sm sm:text-base">
+                  30-day returns. Buyer pays return shipping.
+                  <a href="#" class="block text-sm text-gray-500 underline underline-offset-2">See details</a>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Safe Checkout -->
+          <div class="mt-4 rounded-2xl bg-gray-50 p-4 sm:p-5 cursor-pointer">
+            <p class="text-sm sm:text-base font-semibold mb-3">100% Guarantee Safe Checkout</p>
+            <div class="flex justify-start">
+              <img
+                src="/images/product-payment.svg"
+                alt="Payment methods"
+                class="max-h-30 w-auto object-contain"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Description Tabs -->
+      <div class="mt-12 border-t border-gray-200">
+        <div class="flex gap-8 border-b border-gray-200">
+          <button class="py-4 text-blue-600 font-semibold border-b-2 border-blue-600">Description</button>
+          <button class="py-4 text-gray-600 hover:text-gray-900 transition-colors">Shipping & Returns</button>
+          <button class="py-4 text-gray-600 hover:text-gray-900 transition-colors">Reviews (45)</button>
+        </div>
+
+        <div class="py-8">
+          <h2 class="text-xl font-semibold mb-4">Product Description</h2>
+          <div class="prose max-w-none text-gray-700">
+            <p class="mb-4">
+              Experience the legendary warrior Guan Yu from the Three Kingdoms era with this exceptional 1/6 scale action figure
+              from JSTOYS. This 2024 Wonder Festival exclusive release showcases incredible attention to detail and craftsmanship.
+            </p>
+            <h3 class="text-lg font-semibold mt-6 mb-3">Key Features:</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>1/6 Scale (approximately 12 inches tall)</li>
+              <li>Highly detailed head sculpt with authentic facial features</li>
+              <li>Fully articulated body with over 30 points of articulation</li>
+              <li>Authentic Three Kingdoms era armor and clothing</li>
+              <li>Multiple interchangeable hands</li>
+              <li>Signature Green Dragon Crescent Blade weapon</li>
+              <li>Display stand included</li>
+            </ul>
+            <h3 class="text-lg font-semibold mt-6 mb-3">Package Contents:</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>1x Guan Yu figure</li>
+              <li>1x Detailed armor set</li>
+              <li>6x Interchangeable hands</li>
+              <li>1x Green Dragon Crescent Blade</li>
+              <li>1x Display base</li>
+              <li>1x Certificate of authenticity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- FOOTER -->
     <footer id="footer" class="bg-[#191C1F] text-white">
