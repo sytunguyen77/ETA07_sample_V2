@@ -649,6 +649,9 @@
   .h-40 {
     height: calc(var(--spacing) * 40);
   }
+  .h-48 {
+    height: calc(var(--spacing) * 48);
+  }
   .h-50 {
     height: calc(var(--spacing) * 50);
   }
@@ -768,6 +771,9 @@
   }
   .w-40 {
     width: calc(var(--spacing) * 40);
+  }
+  .w-50 {
+    width: calc(var(--spacing) * 50);
   }
   .w-52 {
     width: calc(var(--spacing) * 52);
@@ -1164,6 +1170,10 @@
     border-bottom-right-radius: var(--radius-2xl);
   }
   .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-1 {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
@@ -2138,6 +2148,13 @@
       }
     }
   }
+  .hover\:border-\[\#ffc42e\] {
+    &:hover {
+      @media (hover: hover) {
+        border-color: #ffc42e;
+      }
+    }
+  }
   .hover\:border-\[\#ffffff\] {
     &:hover {
       @media (hover: hover) {
@@ -2806,6 +2823,11 @@
       height: calc(var(--spacing) * 32);
     }
   }
+  .sm\:h-60 {
+    @media (width >= 40rem) {
+      height: calc(var(--spacing) * 60);
+    }
+  }
   .sm\:h-70 {
     @media (width >= 40rem) {
       height: calc(var(--spacing) * 70);
@@ -3150,6 +3172,11 @@
   .sm\:rounded-3xl {
     @media (width >= 40rem) {
       border-radius: var(--radius-3xl);
+    }
+  }
+  .sm\:p-1 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 1);
     }
   }
   .sm\:p-1\.5 {
@@ -3517,6 +3544,11 @@
   .md\:h-32 {
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 32);
+    }
+  }
+  .md\:h-72 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 72);
     }
   }
   .md\:h-80 {
@@ -3905,6 +3937,11 @@
   .lg\:h-36 {
     @media (width >= 64rem) {
       height: calc(var(--spacing) * 36);
+    }
+  }
+  .lg\:h-80 {
+    @media (width >= 64rem) {
+      height: calc(var(--spacing) * 80);
     }
   }
   .lg\:h-\[240px\] {
