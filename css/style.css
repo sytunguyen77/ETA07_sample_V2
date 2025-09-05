@@ -3581,6 +3581,16 @@
       height: 300px;
     }
   }
+  .md\:h-\[320px\] {
+    @media (width >= 48rem) {
+      height: 320px;
+    }
+  }
+  .md\:h-\[330px\] {
+    @media (width >= 48rem) {
+      height: 330px;
+    }
+  }
   .md\:h-\[350px\] {
     @media (width >= 48rem) {
       height: 350px;
