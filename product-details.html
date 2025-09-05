@@ -326,8 +326,17 @@
 
           <!-- Main Image  -->
           <div class="flex-1 order-1 sm:order-2">
-            <div class="relative bg-[#f0f0f0] rounded-lg h-[300px] sm:h-full overflow-hidden flex items-center justify-center">
-              <img id="mainImage" src="/images/spiderman.webp" alt="Main product image" class="w-full h-full object-contain" />
+            <div
+              id="stage"
+              class="relative bg-[#f0f0f0] rounded-lg h-[300px] sm:h-full overflow-hidden flex items-center justify-center touch-pan-y select-none cursor-grab"
+            >
+              <img
+                id="mainImage"
+                src="/images/spiderman.webp"
+                alt="Main product image"
+                class="w-full h-full object-contain"
+                draggable="false"
+              />
 
               <!-- Navigation Arrows -->
               <button
@@ -803,7 +812,6 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/embla-carousel@8.0.0/embla.umd.js"></script>
     <!-- Linking Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -815,8 +823,8 @@
       const mainImage = document.getElementById("mainImage");
       const prevBtn = document.getElementById("prevBtn");
       const nextBtn = document.getElementById("nextBtn");
-      const stage = document.getElementById("stage"); // <-- add id="stage" to gray main image box
-      const pager = document.getElementById("pager"); // <-- add <div id="pager" ...></div> for dots
+      const stage = document.getElementById("stage"); // <-- now exists
+      const pager = document.getElementById("pager");
 
       // Build image list from thumbs
       const images = thumbs.map((t) => t.src);
@@ -890,17 +898,26 @@
         const DIST = 50,
           TIME = 600;
 
+        function isInteractive(el) {
+          return !!el.closest("button, a, input, textarea, select, [role='button']");
+        }
+
         function down(e) {
+          // Skip if pressing on arrows/buttons
+          if (isInteractive(e.target)) return;
+
           tracking = true;
           axis = null;
           t0 = Date.now();
           sx = e.clientX;
           sy = e.clientY;
           dx = dy = 0;
+
           stage.setPointerCapture?.(e.pointerId);
           stage.classList.remove("cursor-grab");
           stage.classList.add("cursor-grabbing");
         }
+
         function move(e) {
           if (!tracking) return;
           dx = e.clientX - sx;
@@ -908,18 +925,19 @@
           if (!axis && (Math.abs(dx) > 10 || Math.abs(dy) > 10)) axis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
           if (axis === "x") e.preventDefault();
         }
+
         function up(e) {
           if (!tracking) return;
           tracking = false;
           stage.releasePointerCapture?.(e.pointerId);
           stage.classList.remove("cursor-grabbing");
           stage.classList.add("cursor-grab");
+
           const isH = Math.abs(dx) > Math.abs(dy);
           const fast = Date.now() - t0 < TIME;
           const far = Math.abs(dx) > DIST;
-          if (isH && fast && far) {
-            goTo(current + (dx < 0 ? 1 : -1));
-          }
+          if (isH && fast && far) goTo(current + (dx < 0 ? 1 : -1));
+
           dx = dy = 0;
           axis = null;
         }
@@ -929,6 +947,12 @@
         stage.addEventListener("pointerup", up, { passive: true });
         stage.addEventListener("pointercancel", up, { passive: true });
       })();
+
+      // Prevent arrows from being swallowed by swipe
+      [prevBtn, nextBtn].forEach((btn) => {
+        btn?.classList.add("z-10");
+        btn?.addEventListener("pointerdown", (e) => e.stopPropagation());
+      });
 
       // Init
       goTo(0);
