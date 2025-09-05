@@ -284,76 +284,54 @@
         <div class="flex flex-col sm:flex-row gap-4 h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[630px]">
           <!-- Thumbnails -->
           <div
+            id="thumbsScroll"
             class="hidden sm:flex sm:flex-col gap-2 order-2 sm:order-1 overflow-x-auto sm:overflow-y-auto sm:overflow-x-hidden sm:pr-1 rtl-scroll"
           >
             <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-[#e6b847] cursor-pointer overflow-hidden"
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-[#e6b847] cursor-pointer overflow-hidden thumb"
             >
               <img src="images/spiderman.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
             </div>
             <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors"
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors thumb"
             >
-              <img
-                src="https://i.ebayimg.com/images/g/1~MAAOSwUlRm9vY6/s-l1600.jpg"
-                alt="Product thumbnail"
-                class="w-full h-full object-contain"
-              />
+              <img src="images/drone-1.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
             </div>
             <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors"
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors thumb"
             >
-              <img
-                src="https://i.ebayimg.com/images/g/1~MAAOSwUlRm9vY6/s-l1600.jpg"
-                alt="Product thumbnail"
-                class="w-full h-full object-contain"
-              />
+              <img src="images/drone-2.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
             </div>
             <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors"
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors thumb"
             >
-              <img
-                src="https://i.ebayimg.com/images/g/1~MAAOSwUlRm9vY6/s-l1600.jpg"
-                alt="Product thumbnail"
-                class="w-full h-full object-contain"
-              />
+              <img src="images/drone-3.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
             </div>
             <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors"
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors thumb"
             >
-              <img
-                src="https://i.ebayimg.com/images/g/1~MAAOSwUlRm9vY6/s-l1600.jpg"
-                alt="Product thumbnail"
-                class="w-full h-full object-contain"
-              />
+              <img src="images/drone-4.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
             </div>
             <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors"
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors thumb"
             >
-              <img
-                src="https://i.ebayimg.com/images/g/1~MAAOSwUlRm9vY6/s-l1600.jpg"
-                alt="Product thumbnail"
-                class="w-full h-full object-contain"
-              />
+              <img src="images/drone-5.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
             </div>
             <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors"
+              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors thumb"
             >
-              <img
-                src="https://i.ebayimg.com/images/g/1~MAAOSwUlRm9vY6/s-l1600.jpg"
-                alt="Product thumbnail"
-                class="w-full h-full object-contain"
-              />
+              <img src="images/drone-6.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
             </div>
           </div>
 
           <!-- Main Image  -->
           <div class="flex-1 order-1 sm:order-2">
             <div class="relative bg-[#f0f0f0] rounded-lg h-[300px] sm:h-full overflow-hidden flex items-center justify-center">
-              <img src="/images/spiderman.webp" alt="Main product image" class="w-full h-full object-contain" />
+              <img id="mainImage" src="/images/spiderman.webp" alt="Main product image" class="w-full h-full object-contain" />
 
               <!-- Navigation Arrows -->
               <button
+                id="prevBtn"
                 class="hidden sm:flex items-center justify-center absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/70 text-white rounded-full shadow-lg cursor-pointer transition-all duration-300 ease-in-out hover:bg-black hover:scale-110 hover:ring-2 hover:ring-offset-2 hover:ring-black/50"
               >
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -362,6 +340,7 @@
               </button>
 
               <button
+                id="nextBtn"
                 class="hidden sm:flex items-center justify-center absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/70 text-white rounded-full shadow-lg cursor-pointer transition-all duration-300 ease-in-out hover:bg-black hover:scale-110 hover:ring-2 hover:ring-offset-2 hover:ring-black/50"
               >
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -380,12 +359,7 @@
             </div>
           </div>
           <!-- MOBILE DOTS -->
-          <div class="sm:hidden flex items-center justify-center gap-3 order-4">
-            <span class="h-2.5 w-2.5 rounded-full bg-gray-900"></span>
-            <span class="h-2.5 w-2.5 rounded-full bg-gray-300"></span>
-            <span class="h-2.5 w-2.5 rounded-full bg-gray-300"></span>
-            <span class="h-2.5 w-2.5 rounded-full bg-gray-300"></span>
-          </div>
+          <div id="pager" class="sm:hidden flex items-center justify-center gap-3 order-4"></div>
         </div>
 
         <!-- Right Column - Product Information -->
@@ -829,8 +803,136 @@
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/embla-carousel@8.0.0/embla.umd.js"></script>
     <!-- Linking Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      // Elements
+      const thumbsWrap = document.getElementById("thumbsScroll");
+      const thumbBoxes = Array.from(document.querySelectorAll(".thumb"));
+      const thumbs = thumbBoxes.map((b) => b.querySelector("img"));
+      const mainImage = document.getElementById("mainImage");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const stage = document.getElementById("stage"); // <-- add id="stage" to gray main image box
+      const pager = document.getElementById("pager"); // <-- add <div id="pager" ...></div> for dots
+
+      // Build image list from thumbs
+      const images = thumbs.map((t) => t.src);
+      let current = 0;
+
+      // Build dots dynamically
+      const dots = images.map((_, i) => {
+        const d = document.createElement("span");
+        d.className = "dot h-2.5 w-2.5 rounded-full " + (i ? "bg-gray-300" : "bg-gray-900");
+        d.role = "button";
+        d.tabIndex = 0;
+        d.addEventListener("click", () => goTo(i));
+        pager?.appendChild(d);
+        return d;
+      });
+
+      // --- Helpers ---
+      function setActive(i) {
+        // thumbs
+        thumbBoxes.forEach((box, idx) => {
+          box.classList.toggle("border-[#e6b847]", idx === i);
+          box.classList.toggle("border-gray-300", idx !== i);
+        });
+        // dots
+        dots.forEach((d, idx) => {
+          d.classList.toggle("bg-gray-900", idx === i);
+          d.classList.toggle("bg-gray-300", idx !== i);
+        });
+        // center active thumb
+        if (thumbsWrap) {
+          const el = thumbBoxes[i];
+          const wrap = thumbsWrap.getBoundingClientRect();
+          const rect = el.getBoundingClientRect();
+          const vertical = getComputedStyle(thumbsWrap).flexDirection.includes("column");
+          if (vertical) {
+            const targetTop = thumbsWrap.scrollTop + (rect.top - wrap.top) - (thumbsWrap.clientHeight / 2 - el.offsetHeight / 2);
+            thumbsWrap.scrollTo({ top: targetTop, behavior: "smooth" });
+          } else {
+            const targetLeft =
+              thumbsWrap.scrollLeft + (rect.left - wrap.left) - (thumbsWrap.clientWidth / 2 - el.offsetWidth / 2);
+            thumbsWrap.scrollTo({ left: targetLeft, behavior: "smooth" });
+          }
+        }
+      }
+
+      function goTo(i) {
+        const n = images.length;
+        current = (i + n) % n; // wrap around
+        mainImage.src = images[current];
+        setActive(current);
+      }
+
+      // --- Events ---
+      thumbs.forEach((t, i) => t.addEventListener("click", () => goTo(i)));
+      prevBtn?.addEventListener("click", () => goTo(current - 1));
+      nextBtn?.addEventListener("click", () => goTo(current + 1));
+
+      // --- Swipe (touch + mouse) ---
+      (() => {
+        if (!stage) return;
+        stage.style.touchAction = "pan-y";
+        stage.classList.add("cursor-grab");
+
+        let sx = 0,
+          sy = 0,
+          dx = 0,
+          dy = 0,
+          tracking = false,
+          axis = null,
+          t0 = 0;
+        const DIST = 50,
+          TIME = 600;
+
+        function down(e) {
+          tracking = true;
+          axis = null;
+          t0 = Date.now();
+          sx = e.clientX;
+          sy = e.clientY;
+          dx = dy = 0;
+          stage.setPointerCapture?.(e.pointerId);
+          stage.classList.remove("cursor-grab");
+          stage.classList.add("cursor-grabbing");
+        }
+        function move(e) {
+          if (!tracking) return;
+          dx = e.clientX - sx;
+          dy = e.clientY - sy;
+          if (!axis && (Math.abs(dx) > 10 || Math.abs(dy) > 10)) axis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
+          if (axis === "x") e.preventDefault();
+        }
+        function up(e) {
+          if (!tracking) return;
+          tracking = false;
+          stage.releasePointerCapture?.(e.pointerId);
+          stage.classList.remove("cursor-grabbing");
+          stage.classList.add("cursor-grab");
+          const isH = Math.abs(dx) > Math.abs(dy);
+          const fast = Date.now() - t0 < TIME;
+          const far = Math.abs(dx) > DIST;
+          if (isH && fast && far) {
+            goTo(current + (dx < 0 ? 1 : -1));
+          }
+          dx = dy = 0;
+          axis = null;
+        }
+
+        stage.addEventListener("pointerdown", down, { passive: true });
+        stage.addEventListener("pointermove", move, { passive: false });
+        stage.addEventListener("pointerup", up, { passive: true });
+        stage.addEventListener("pointercancel", up, { passive: true });
+      })();
+
+      // Init
+      goTo(0);
+    </script>
 
     <!-- Main JS -->
     <script src="script.js" defer></script>
