@@ -77,13 +77,13 @@ const brandSwiper = new Swiper(".brandSwiper", {
   a11y: { enabled: true },
   breakpoints: {
     640: { slidesPerView: 2, spaceBetween: 16 },
-    1024: { slidesPerView: 3, spaceBetween: 24 },
+    1024: { slidesPerView: 3, spaceBetween: 15 },
   },
 });
 
 // ============================= PRODUCT SWIPER (peek carousel) ===================== //
 const productsSwiper = new Swiper(".productsSwiper", {
-  slidesPerView: 1.15, // default (mobile-first)
+  slidesPerView: 3, //
   spaceBetween: 12,
   speed: 260,
   centeredSlides: false,
@@ -94,7 +94,7 @@ const productsSwiper = new Swiper(".productsSwiper", {
     480: { slidesPerView: 2.5, spaceBetween: 14 }, // small mobile / portrait
     640: { slidesPerView: 2.5, spaceBetween: 20 }, // tablet
     1024: { slidesPerView: 3.5, spaceBetween: 24 }, // desktop
-    1280: { slidesPerView: 4.5, spaceBetween: 28 }, // large desktop
+    1280: { slidesPerView: 4.5, spaceBetween: 15 }, // large desktop
   },
   navigation: { nextEl: ".productsNext", prevEl: ".productsPrev" },
   pagination: { el: ".productsPagination", clickable: true },
