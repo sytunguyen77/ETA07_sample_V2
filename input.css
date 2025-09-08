@@ -22,7 +22,7 @@
   transition: filter 0.3s ease;
 }
 
-/* ========== HAMBURGER MENU ====================== */
+/* CUSTOM STYLE FOR HAMBURGER MENU  */
 .hamburger {
   cursor: pointer;
   width: 20px;
@@ -60,22 +60,51 @@
   transform: rotate(-45deg) translate(4px, -4px);
 }
 
-/* Custom Swiper Pagination Styles */
-.hero-swiper .swiper-pagination-bullet {
-  width: 40px;
-  height: 4px;
-  border-radius: 2px;
+/* CUSTOM STYLE FOR HERO SECTION */
+/* Hero Pagination */
+.heroSwiper .swiper-pagination {
+  position: absolute !important;
+  bottom: 1rem !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  width: auto !important;
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.heroSwiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
   background: rgba(255, 255, 255, 0.5);
   opacity: 1;
-  transition: all 0.3s ease;
+  margin: 0 !important;
+  border: 2px solid transparent;
+  border-radius: 9999px;
+  transition: width 0.25s ease, height 0.25s ease, background 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
 }
 
-.hero-swiper .swiper-pagination-bullet-active {
-  background: #ffffff;
-  width: 60px;
+.heroSwiper .swiper-pagination-bullet:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.1);
 }
 
-/* Custom Navigation Arrows */
+.heroSwiper .swiper-pagination-bullet-active {
+  width: 25px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #fff;
+}
+
+@media (min-width: 1024px) {
+  .heroSwiper .swiper-pagination-bullet-active {
+    width: 26px;
+  }
+}
+
+/* == Custom Navigation Arrows == */
 .hero-swiper .swiper-button-next,
 .hero-swiper .swiper-button-prev {
   color: #ffffff;
@@ -148,4 +177,93 @@
 
 .swiper-slide-active .slide-button {
   animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+/* == CUSTOM STYLE FOR BRANDS SECTION == */
+.brandPagination {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  z-index: 5;
+}
+
+.brandPagination.swiper-pagination-bullets {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.brandPagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 !important;
+  border-radius: 9999px;
+  background: #d1d5db;
+  opacity: 1;
+  border: 2px solid transparent;
+  transition: width 0.25s ease, height 0.25s ease, background 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+}
+
+.brandPagination .swiper-pagination-bullet:hover {
+  background: #cbd5e1;
+  transform: scale(1.1);
+}
+
+.brandPagination .swiper-pagination-bullet-active {
+  width: 25px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #292c2d;
+}
+
+@media (min-width: 1024px) {
+  .brandPagination .swiper-pagination-bullet-active {
+    width: 26px;
+  }
+}
+
+/* == CUSTOM STYLE FOR PRODUCTS DETAILS SECTION == */
+:root {
+  --thumbs-sb-gap: 5px;
+}
+
+.thumbs-scrollbar {
+  position: absolute;
+  right: 100% !important;
+  left: auto !important;
+  margin-right: var(--thumbs-sb-gap);
+
+  /* track */
+  width: 4px;
+  background: #e5e7eb;
+  border-radius: 9999px;
+  z-index: 1;
+
+  --swiper-scrollbar-sides-offset: 0px;
+  top: 0 !important;
+  bottom: 0 !important;
+
+  pointer-events: none;
+}
+.thumbs-scrollbar .swiper-scrollbar-drag {
+  background: #e6b847;
+  border-radius: 9999px;
+  pointer-events: auto;
+}
+
+/* Normal dots */
+.main-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #d1d5db; /* gray-300 */
+  opacity: 1;
+  margin: 0 4px;
+  transition: background 0.2s;
+}
+
+/* Active dot */
+.main-pagination .swiper-pagination-bullet-active {
+  background: #e6b847; /* your yellow */
 }

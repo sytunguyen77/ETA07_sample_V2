@@ -22,49 +22,7 @@
     <link rel="stylesheet" href="css/input.css" />
     <title>ETA07</title>
     <style>
-      /* Hero Pagination */
-      .heroSwiper .swiper-pagination {
-        position: absolute !important;
-        bottom: 1rem !important;
-        left: 50% !important;
-        transform: translateX(-50%);
-        width: auto !important;
-        margin: 0 !important;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        z-index: 10;
-      }
-
-      .heroSwiper .swiper-pagination-bullet {
-        width: 10px;
-        height: 10px;
-        background: rgba(255, 255, 255, 0.5);
-        opacity: 1;
-        margin: 0 !important;
-        border: 2px solid transparent;
-        border-radius: 9999px;
-        transition: width 0.25s ease, height 0.25s ease, background 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
-      }
-
-      .heroSwiper .swiper-pagination-bullet:hover {
-        background: rgba(255, 255, 255, 0.7);
-        transform: scale(1.1);
-      }
-
-      .heroSwiper .swiper-pagination-bullet-active {
-        width: 25px;
-        height: 10px;
-        border-radius: 9999px;
-        background: #fff;
-      }
-
-      @media (min-width: 1024px) {
-        .heroSwiper .swiper-pagination-bullet-active {
-          width: 26px;
-        }
-      }
-
+      /* CUSTOM STYLE FOR BRANDS SECTION */
       .brandPagination {
         position: relative;
         display: flex;
@@ -2207,18 +2165,18 @@
         <div class="absolute inset-y-0 left-0 right-0 pointer-events-none">
           <!-- Prev -->
           <div
-            class="productsPrev pointer-events-auto absolute left-2 lg:left-4.5 top-1/2 -translate-y-1/2 z-50 hidden sm:flex w-8 h-8 items-center justify-center rounded-full bg-white shadow hover:bg-gray-100 [&.swiper-button-disabled]:opacity-40 cursor-pointer"
+            class="productsPrev pointer-events-auto absolute left-2 lg:left-4.5 top-1/2 -translate-y-1/2 z-50 hidden sm:flex w-8 h-8 items-center justify-center rounded-full bg-black/70 shadow hover:bg-black/80 [&.swiper-button-disabled]:opacity-40 cursor-pointer"
           >
-            <svg class="w-5 h-5 text-gray-700" viewBox="0 0 24 24" fill="none">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none">
               <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </div>
 
           <!-- Next -->
           <div
-            class="productsNext pointer-events-auto absolute right-2 lg:right-4.5 top-1/2 -translate-y-1/2 z-50 hidden sm:flex w-8 h-8 items-center justify-center rounded-full bg-white shadow hover:bg-gray-100 [&.swiper-button-disabled]:opacity-40 cursor-pointer"
+            class="productsNext pointer-events-auto absolute right-2 lg:right-4.5 top-1/2 -translate-y-1/2 z-50 hidden sm:flex w-8 h-8 items-center justify-center rounded-full bg-black/70 shadow hover:bg-black/80 [&.swiper-button-disabled]:opacity-40 cursor-pointer"
           >
-            <svg class="w-5 h-5 text-gray-700" viewBox="0 0 24 24" fill="none">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none">
               <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </div>
