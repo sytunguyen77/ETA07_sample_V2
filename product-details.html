@@ -387,19 +387,31 @@
                 <div class="hidden sm:flex">
                   <!-- Prev -->
                   <div
-                    class="swiper-button-prev !left-4 after:!content-[''] !w-12 !h-12 bg-black/70 text-white rounded-full flex items-center justify-center hover:bg-black/80 transition"
+                    class="swiper-button-prev !w-12 !h-12 aspect-square after:!content-[''] absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden sm:flex items-center justify-center rounded-full cursor-pointer shadow bg-black/70 hover:bg-black/70 transition-colors duration-200"
                   >
-                    <svg class="!w-6 !h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    <svg class="!w-7 !h-7 text-white" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M15 6l-6 6 6 6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
                     </svg>
                   </div>
 
                   <!-- Next -->
                   <div
-                    class="swiper-button-next !right-4 after:!content-[''] !w-12 !h-12 bg-black/70 text-white rounded-full flex items-center justify-center hover:bg-black/80 transition"
+                    class="swiper-button-next group !w-12 !h-12 aspect-square after:!content-[''] absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden sm:flex items-center justify-center rounded-full cursor-pointer shadow bg-black/70 hover:bg-black/70 transition-colors duration-200"
                   >
-                    <svg class="!w-6 !h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    <svg class="!w-7 !h-7 text-white" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M9 6l6 6-6 6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
                     </svg>
                   </div>
                 </div>
@@ -407,7 +419,8 @@
             </div>
           </div>
         </div>
-        <!-- Pagination ở ngoài main-swiper -->
+
+        <!-- Pagination  -->
         <div class="main-pagination sm:hidden flex justify-center"></div>
 
         <!-- Right Column - Product Information -->
