@@ -22,39 +22,32 @@
     <link rel="stylesheet" href="css/input.css" />
 
     <style>
-      /* Scrollbar on the left */
-      .rtl-scroll {
-        direction: rtl; /* scrollbar goes to left */
-        padding-left: 10px;
-      }
-      .rtl-scroll > * {
-        direction: ltr; /* keep content left-to-right */
+      :root {
+        --thumbs-sb-gap: 5px;
       }
 
-      /* Desktop & tablet: style the scrollbar */
-      @media (min-width: 640px) {
-        .rtl-scroll::-webkit-scrollbar {
-          width: 5px;
-        }
-        .rtl-scroll::-webkit-scrollbar-track {
-          background: #f3f4f6;
-          border-radius: 8px;
-        }
-        .rtl-scroll::-webkit-scrollbar-thumb {
-          background: #9ca3af;
-          border-radius: 8px;
-        }
-      }
+      .thumbs-scrollbar {
+        position: absolute;
+        right: 100% !important;
+        left: auto !important;
+        margin-right: var(--thumbs-sb-gap);
 
-      /* Mobile: hide scrollbar but keep scroll working */
-      @media (max-width: 639px) {
-        .rtl-scroll::-webkit-scrollbar {
-          display: none; /* Chrome, Safari */
-        }
-        .rtl-scroll {
-          -ms-overflow-style: none; /* IE & Edge */
-          scrollbar-width: none; /* Firefox */
-        }
+        /* track */
+        width: 4px;
+        background: #e5e7eb;
+        border-radius: 9999px;
+        z-index: 1;
+
+        --swiper-scrollbar-sides-offset: 0px;
+        top: 0 !important;
+        bottom: 0 !important;
+
+        pointer-events: none;
+      }
+      .thumbs-scrollbar .swiper-scrollbar-drag {
+        background: #e6b847;
+        border-radius: 9999px;
+        pointer-events: auto;
       }
     </style>
   </head>
@@ -279,97 +272,143 @@
 
     <!-- PRODUCT DETAILS SECTION -->
     <section class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6 bg-white">
-      <div class="grid grid-cols-1 lg:grid-cols-[1.8fr_1fr] xl:grid-cols-[1.6fr_1fr] gap-12 lg:gap-12">
-        <!-- Left Column - Image Gallery -->
-        <div class="flex flex-col sm:flex-row gap-4 h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[630px]">
-          <!-- Thumbnails -->
-          <div
-            id="thumbsScroll"
-            class="hidden sm:flex sm:flex-col gap-2 order-2 sm:order-1 overflow-x-auto sm:overflow-y-auto sm:overflow-x-hidden sm:pr-1 rtl-scroll"
-          >
-            <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-[#e6b847] cursor-pointer overflow-hidden thumb"
-            >
-              <img src="images/spiderman.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
-            </div>
-            <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors thumb"
-            >
-              <img src="images/drone-1.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
-            </div>
-            <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors thumb"
-            >
-              <img src="images/drone-2.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
-            </div>
-            <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors thumb"
-            >
-              <img src="images/drone-3.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
-            </div>
-            <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors thumb"
-            >
-              <img src="images/drone-4.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
-            </div>
-            <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors thumb"
-            >
-              <img src="images/drone-5.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
-            </div>
-            <div
-              class="flex-shrink-0 w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 cursor-pointer overflow-hidden hover:border-[#e6b847] transition-colors thumb"
-            >
-              <img src="images/drone-6.webp" alt="Product thumbnail" class="w-full h-full object-contain" />
-            </div>
-          </div>
+      <div class="grid grid-cols-1 lg:grid-cols-[1.8fr_1fr] xl:grid-cols-[1.6fr_1fr] gap-6 lg:gap-12 min-w-0">
+        <!-- Left Column (Gallery) -->
+        <div class="flex flex-col sm:flex-row gap-4 h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[630px] min-w-0">
+          <!-- Thumbs -->
+          <div class="hidden sm:block order-2 sm:order-1 shrink-0 w-26 min-w-26 relative overflow-visible z-0">
+            <!-- Swiper scrollbar -->
+            <div class="swiper-scrollbar thumbs-scrollbar"></div>
 
-          <!-- Main Image  -->
-          <div class="flex-1 order-1 sm:order-2">
-            <div
-              id="stage"
-              class="relative bg-[#f0f0f0] rounded-lg h-[300px] sm:h-full overflow-hidden flex items-center justify-center touch-pan-y select-none cursor-grab"
-            >
-              <img
-                id="mainImage"
-                src="/images/spiderman.webp"
-                alt="Main product image"
-                class="w-full h-full object-contain"
-                draggable="false"
-              />
-
-              <!-- Navigation Arrows -->
-              <button
-                id="prevBtn"
-                class="hidden sm:flex items-center justify-center absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/70 text-white rounded-full shadow-lg cursor-pointer transition-all duration-300 ease-in-out hover:bg-black hover:scale-110 hover:ring-2 hover:ring-offset-2 hover:ring-black/50"
-              >
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-
-              <button
-                id="nextBtn"
-                class="hidden sm:flex items-center justify-center absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/70 text-white rounded-full shadow-lg cursor-pointer transition-all duration-300 ease-in-out hover:bg-black hover:scale-110 hover:ring-2 hover:ring-offset-2 hover:ring-black/50"
-              >
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-
-              <!-- Action Buttons (Top Right) -->
-              <div class="hidden sm:flex absolute top-4 right-4 gap-2">
-                <button
-                  class="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-white rounded-lg flex items-center justify-center shadow cursor-pointer transition-all duration-300 ease-in-out hover:scale-105 sm:hover:scale-110 hover:ring-2 hover:ring-black/40 hover:ring-offset-1 sm:hover:ring-offset-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2"
-                >
-                  <img src="/images/expand-arrow.svg" alt="expand-arrow" class="w-4 h-4 sm:w-5 sm:h-5" />
-                </button>
+            <div class="swiper thumbs-swiper h-full">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide group !w-26 !h-26">
+                  <div
+                    class="w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 overflow-hidden cursor-pointer opacity-60 hover:opacity-100 hover:border-[#e6b847] transition"
+                  >
+                    <img src="images/spiderman.webp" class="w-full h-full object-contain" alt="thumb 1" />
+                  </div>
+                </div>
+                <div class="swiper-slide !w-26 !h-26">
+                  <div
+                    class="w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 overflow-hidden cursor-pointer opacity-60 hover:opacity-100 hover:border-[#e6b847] transition"
+                  >
+                    <img src="images/goku.webp" class="w-full h-full object-contain" alt="thumb 2" />
+                  </div>
+                </div>
+                <div class="swiper-slide !w-26 !h-26">
+                  <div
+                    class="w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 overflow-hidden cursor-pointer opacity-60 hover:opacity-100 hover:border-[#e6b847] transition"
+                  >
+                    <img src="images/lego-classic.webp" class="w-full h-full object-contain" alt="thumb 3" />
+                  </div>
+                </div>
+                <div class="swiper-slide !w-26 !h-26">
+                  <div
+                    class="w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 overflow-hidden cursor-pointer opacity-60 hover:opacity-100 hover:border-[#e6b847] transition"
+                  >
+                    <img src="images/barbie-2.webp" class="w-full h-full object-contain" alt="thumb 4" />
+                  </div>
+                </div>
+                <div class="swiper-slide !w-26 !h-26">
+                  <div
+                    class="w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 overflow-hidden cursor-pointer opacity-60 hover:opacity-100 hover:border-[#e6b847] transition"
+                  >
+                    <img src="images/naruto.webp" class="w-full h-full object-contain" alt="thumb 4" />
+                  </div>
+                </div>
+                <div class="swiper-slide !w-26 !h-26">
+                  <div
+                    class="w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 overflow-hidden cursor-pointer opacity-60 hover:opacity-100 hover:border-[#e6b847] transition"
+                  >
+                    <img src="images/drone-3.webp" class="w-full h-full object-contain" alt="thumb 4" />
+                  </div>
+                </div>
+                <div class="swiper-slide !w-26 !h-26">
+                  <div
+                    class="w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 overflow-hidden cursor-pointer opacity-60 hover:opacity-100 hover:border-[#e6b847] transition"
+                  >
+                    <img src="images/goku.webp" class="w-full h-full object-contain" alt="thumb 4" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <!-- MOBILE DOTS -->
-          <div id="pager" class="sm:hidden flex items-center justify-center gap-3 order-4"></div>
+
+          <!-- Main Swiper -->
+          <div class="flex-1 order-1 sm:order-2 min-w-0">
+            <div class="relative bg-[#f0f0f0] rounded-lg h-[300px] sm:h-full overflow-hidden flex items-center justify-center">
+              <div class="swiper main-swiper [--swiper-navigation-color:#fff] [--swiper-theme-color:#fff] w-full h-full min-w-0">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide flex items-center justify-center min-w-0">
+                    <img src="images/spiderman.webp" alt="Main 1" class="h-full w-full object-contain" />
+                  </div>
+                  <div class="swiper-slide flex items-center justify-center min-w-0">
+                    <img src="images/goku.webp" alt="Main 2" class="h-full w-full object-contain" />
+                  </div>
+                  <div class="swiper-slide flex items-center justify-center min-w-0">
+                    <img src="images/lego-classic.webp" alt="Main 3" class="h-full w-full object-contain" />
+                  </div>
+                  <div class="swiper-slide flex items-center justify-center min-w-0">
+                    <img src="images/barbie-2.webp" alt="Main 4" class="h-full w-full object-contain" />
+                  </div>
+                  <div class="swiper-slide flex items-center justify-center min-w-0">
+                    <img src="images/naruto.webp" alt="Main 4" class="h-full w-full object-contain" />
+                  </div>
+                  <div class="swiper-slide flex items-center justify-center min-w-0">
+                    <img src="images/drone-3.webp" alt="Main 4" class="h-full w-full object-contain" />
+                  </div>
+                  <div class="swiper-slide flex items-center justify-center min-w-0">
+                    <img src="images/goku.webp" alt="Main 4" class="h-full w-full object-contain" />
+                  </div>
+                </div>
+
+                <!-- Expand button (top-right) -->
+                <button
+                  type="button"
+                  class="hidden sm:flex absolute top-2 right-2 z-10 p-2 rounded-xl bg-black/60 text-white hover:bg-black/70 transition focus:outline-none focus:ring-2 focus:ring-white/70 cursor-pointer"
+                  aria-label="Expand image"
+                  data-expand
+                >
+                  <!-- Expand Arrows SVG -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 3h6m0 0v6m0-6l-7 7M9 21H3m0 0v-6m0 6l7-7" />
+                  </svg>
+                </button>
+
+                <!-- Arrows -->
+                <div class="hidden sm:flex">
+                  <!-- Prev -->
+                  <div
+                    class="swiper-button-prev !left-4 after:!content-[''] !w-12 !h-12 bg-black/70 text-white rounded-full flex items-center justify-center hover:bg-black/80 transition"
+                  >
+                    <svg class="!w-6 !h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </div>
+
+                  <!-- Next -->
+                  <div
+                    class="swiper-button-next !right-4 after:!content-[''] !w-12 !h-12 bg-black/70 text-white rounded-full flex items-center justify-center hover:bg-black/80 transition"
+                  >
+                    <svg class="!w-6 !h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- Pagination ở ngoài main-swiper -->
+        <div class="main-pagination sm:hidden flex justify-center"></div>
 
         <!-- Right Column - Product Information -->
         <div class="flex flex-col gap-4">
@@ -552,41 +591,176 @@
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Product Description Tabs -->
-      <div class="mt-12 border-t border-gray-200">
-        <div class="flex gap-8 border-b border-gray-200">
-          <button class="py-4 text-blue-600 font-semibold border-b-2 border-blue-600">Description</button>
-          <button class="py-4 text-gray-600 hover:text-gray-900 transition-colors">Shipping & Returns</button>
-          <button class="py-4 text-gray-600 hover:text-gray-900 transition-colors">Reviews (45)</button>
+    <!-- PRODUCT DETAILS: DESCRIPTION / SPEC / REVIEW -->
+    <section class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 m-10">
+      <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+        <!-- Tabs -->
+        <div class="border-b border-gray-200">
+          <div class="flex sm:justify-center flex-wrap gap-6 sm:gap-10 px-4 sm:px-6 pt-4">
+            <!-- DESC -->
+            <button
+              type="button"
+              class="tab-btn group pb-3 text-sm sm:text-base font-semibold text-gray-900 data-[active=true]:text-gray-900 cursor-pointer"
+              data-tab-target="tab-desc"
+              data-active="true"
+              aria-controls="tab-desc"
+            >
+              <span>DESCRIPTION</span>
+              <span
+                class="block h-0.5 bg-[#FDB913] w-16 mx-auto mt-2 opacity-100 group-data-[active=false]:opacity-0 transition-opacity"
+              ></span>
+            </button>
+
+            <!-- SPEC -->
+            <button
+              type="button"
+              class="tab-btn group pb-3 text-sm sm:text-base font-semibold text-gray-500 hover:text-gray-900 data-[active=true]:text-gray-900 cursor-pointer"
+              data-tab-target="tab-spec"
+              data-active="false"
+              aria-controls="tab-spec"
+            >
+              <span>SPECIFICATION</span>
+              <span
+                class="block h-0.5 bg-[#FDB913] w-16 mx-auto mt-2 opacity-0 group-data-[active=true]:opacity-100 transition-opacity"
+              ></span>
+            </button>
+
+            <!-- REVIEW -->
+            <button
+              type="button"
+              class="tab-btn group pb-3 text-sm sm:text-base font-semibold text-gray-500 hover:text-gray-900 data-[active=true]:text-gray-900 cursor-pointer"
+              data-tab-target="tab-review"
+              data-active="false"
+              aria-controls="tab-review"
+            >
+              <span>REVIEW</span>
+              <span
+                class="block h-0.5 bg-[#FDB913] w-16 mx-auto mt-2 opacity-0 group-data-[active=true]:opacity-100 transition-opacity"
+              ></span>
+            </button>
+          </div>
         </div>
 
-        <div class="py-8">
-          <h2 class="text-xl font-semibold mb-4">Product Description</h2>
-          <div class="prose max-w-none text-gray-700">
-            <p class="mb-4">
-              Experience the legendary warrior Guan Yu from the Three Kingdoms era with this exceptional 1/6 scale action figure
-              from JSTOYS. This 2024 Wonder Festival exclusive release showcases incredible attention to detail and craftsmanship.
-            </p>
-            <h3 class="text-lg font-semibold mt-6 mb-3">Key Features:</h3>
-            <ul class="list-disc pl-6 space-y-2">
-              <li>1/6 Scale (approximately 12 inches tall)</li>
-              <li>Highly detailed head sculpt with authentic facial features</li>
-              <li>Fully articulated body with over 30 points of articulation</li>
-              <li>Authentic Three Kingdoms era armor and clothing</li>
-              <li>Multiple interchangeable hands</li>
-              <li>Signature Green Dragon Crescent Blade weapon</li>
-              <li>Display stand included</li>
-            </ul>
-            <h3 class="text-lg font-semibold mt-6 mb-3">Package Contents:</h3>
-            <ul class="list-disc pl-6 space-y-2">
-              <li>1x Guan Yu figure</li>
-              <li>1x Detailed armor set</li>
-              <li>6x Interchangeable hands</li>
-              <li>1x Green Dragon Crescent Blade</li>
-              <li>1x Display base</li>
-              <li>1x Certificate of authenticity</li>
-            </ul>
+        <!-- Panels -->
+        <div class="p-4 sm:p-6 lg:p-8">
+          <!-- DESCRIPTION PANEL -->
+          <div id="tab-desc" class="tab-panel grid grid-cols-1 lg:grid-cols-12 gap-8" data-open="true">
+            <!-- Left: Description -->
+            <div class="lg:col-span-6">
+              <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Description</h3>
+              <div class="space-y-5 text-gray-700 leading-7">
+                <p class="uppercase tracking-wide text-[13px] sm:text-sm text-gray-700">
+                  The most powerful macbook pro ever is here. With the blazing-fast M1 Pro or M1 Max chip — the first Apple
+                  silicon designed for pros — you get groundbreaking performance and amazing battery life. Add to that a stunning
+                  Liquid Retina XDR display, the best camera and audio ever in a Mac notebook, and all the ports you need.
+                </p>
+                <p class="uppercase tracking-wide text-[13px] sm:text-sm text-gray-700">
+                  Even the most ambitious projects are easily handled with up to 10 CPU cores, up to 16 GPU cores, a 16-core
+                  neural engine, and dedicated encode/decode media engines that support H.264, HEVC, and ProRes codecs.
+                </p>
+              </div>
+            </div>
+
+            <!-- Middle: Feature list -->
+            <div class="lg:col-span-3">
+              <h4 class="text-lg font-semibold text-gray-900 mb-4">Feature</h4>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <!-- icon -->
+                  <svg class="w-5 h-5 mt-0.5 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v8m-4-4h8M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10Z"
+                    />
+                  </svg>
+                  <span class="text-gray-700">Free 1 Year Warranty</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 mt-0.5 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 7h18l-2 8H5L3 7Zm5 8v2a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2"
+                    />
+                  </svg>
+                  <span class="text-gray-700">Free Shipping &amp; Fast Delivery</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 mt-0.5 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8c1.657 0 3-1.79 3-4s-1.343-4-3-4-3 1.79-3 4 1.343 4 3 4Zm0 2c-4 0-8 2-8 6v4h16v-4c0-4-4-6-8-6Z"
+                    />
+                  </svg>
+                  <span class="text-gray-700">100% Money-back Guarantee</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 mt-0.5 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20V8a3 3 0 1 1 6 0v12m4 0H5" />
+                  </svg>
+                  <span class="text-gray-700">24/7 Customer Support</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 mt-0.5 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 7h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Zm0 0l4-4h8l4 4"
+                    />
+                  </svg>
+                  <span class="text-gray-700">Secure Payment Method</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right: Shipping Info -->
+            <div class="lg:col-span-3 lg:pl-8 lg:border-l lg:border-gray-200">
+              <h4 class="text-lg font-semibold text-gray-900 mb-4">Shipping Information</h4>
+              <ul class="space-y-3 text-gray-700">
+                <li><span class="font-semibold">Courier:</span> 2–4 days, free shipping</li>
+                <li><span class="font-semibold">Local Shipping:</span> up to one week, ₹19.00</li>
+                <li><span class="font-semibold">UPS Ground Shipping:</span> 4–6 days, ₹29.00</li>
+                <li><span class="font-semibold">Unishop Global Export:</span> 3–4 days, ₹39.00</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- SPEC PANEL -->
+          <div id="tab-spec" class="tab-panel hidden" data-open="false">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="rounded-lg border border-gray-200 p-6">
+                <h4 class="text-base font-semibold mb-4">General</h4>
+                <ul class="text-gray-700 space-y-2 text-sm">
+                  <li>Model: MBP 16 (2024)</li>
+                  <li>Chip: Apple M1 Pro / Max</li>
+                  <li>Display: 16.2″ Liquid Retina XDR</li>
+                  <li>Ports: HDMI, SDXC, MagSafe, 3× Thunderbolt 4</li>
+                </ul>
+              </div>
+              <div class="rounded-lg border border-gray-200 p-6">
+                <h4 class="text-base font-semibold mb-4">Inside the Box</h4>
+                <ul class="text-gray-700 space-y-2 text-sm">
+                  <li>MacBook Pro</li>
+                  <li>USB-C to MagSafe 3 Cable</li>
+                  <li>140W USB-C Power Adapter</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- REVIEW PANEL -->
+          <div id="tab-review" class="tab-panel hidden" data-open="false">
+            <div class="space-y-4">
+              <p class="text-gray-700">Reviews (45) — coming soon.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -816,146 +990,83 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-      // Elements
-      const thumbsWrap = document.getElementById("thumbsScroll");
-      const thumbBoxes = Array.from(document.querySelectorAll(".thumb"));
-      const thumbs = thumbBoxes.map((b) => b.querySelector("img"));
-      const mainImage = document.getElementById("mainImage");
-      const prevBtn = document.getElementById("prevBtn");
-      const nextBtn = document.getElementById("nextBtn");
-      const stage = document.getElementById("stage"); // <-- now exists
-      const pager = document.getElementById("pager");
-
-      // Build image list from thumbs
-      const images = thumbs.map((t) => t.src);
-      let current = 0;
-
-      // Build dots dynamically
-      const dots = images.map((_, i) => {
-        const d = document.createElement("span");
-        d.className = "dot h-2.5 w-2.5 rounded-full " + (i ? "bg-gray-300" : "bg-gray-900");
-        d.role = "button";
-        d.tabIndex = 0;
-        d.addEventListener("click", () => goTo(i));
-        pager?.appendChild(d);
-        return d;
+      // Thumbs: vertical on sm+, free scroll, watch progress
+      const thumbs = new Swiper(".thumbs-swiper", {
+        direction: "vertical",
+        slidesPerView: "auto", // each slide is sized via Tailwind !w-26 !h-26
+        spaceBetween: 8,
+        freeMode: true,
+        watchSlidesProgress: true,
+        slideToClickedSlide: true,
+        mousewheel: { forceToAxis: true },
+        a11y: true,
+        scrollbar: {
+          el: ".thumbs-scrollbar",
+          draggable: true,
+        },
+        // On very small heights
+        breakpoints: {
+          0: { direction: "horizontal", spaceBetween: 8 }, //mobile
+          640: { direction: "vertical", spaceBetween: 8 }, // sm+
+        },
       });
 
-      // --- Helpers ---
-      function setActive(i) {
-        // thumbs
-        thumbBoxes.forEach((box, idx) => {
-          box.classList.toggle("border-[#e6b847]", idx === i);
-          box.classList.toggle("border-gray-300", idx !== i);
-        });
-        // dots
-        dots.forEach((d, idx) => {
-          d.classList.toggle("bg-gray-900", idx === i);
-          d.classList.toggle("bg-gray-300", idx !== i);
-        });
-        // center active thumb
-        if (thumbsWrap) {
-          const el = thumbBoxes[i];
-          const wrap = thumbsWrap.getBoundingClientRect();
-          const rect = el.getBoundingClientRect();
-          const vertical = getComputedStyle(thumbsWrap).flexDirection.includes("column");
-          if (vertical) {
-            const targetTop = thumbsWrap.scrollTop + (rect.top - wrap.top) - (thumbsWrap.clientHeight / 2 - el.offsetHeight / 2);
-            thumbsWrap.scrollTo({ top: targetTop, behavior: "smooth" });
-          } else {
-            const targetLeft =
-              thumbsWrap.scrollLeft + (rect.left - wrap.left) - (thumbsWrap.clientWidth / 2 - el.offsetWidth / 2);
-            thumbsWrap.scrollTo({ left: targetLeft, behavior: "smooth" });
-          }
-        }
-      }
-
-      function goTo(i) {
-        const n = images.length;
-        current = (i + n) % n; // wrap around
-        mainImage.src = images[current];
-        setActive(current);
-      }
-
-      // --- Events ---
-      thumbs.forEach((t, i) => t.addEventListener("click", () => goTo(i)));
-      prevBtn?.addEventListener("click", () => goTo(current - 1));
-      nextBtn?.addEventListener("click", () => goTo(current + 1));
-
-      // --- Swipe (touch + mouse) ---
-      (() => {
-        if (!stage) return;
-        stage.style.touchAction = "pan-y";
-        stage.classList.add("cursor-grab");
-
-        let sx = 0,
-          sy = 0,
-          dx = 0,
-          dy = 0,
-          tracking = false,
-          axis = null,
-          t0 = 0;
-        const DIST = 50,
-          TIME = 600;
-
-        function isInteractive(el) {
-          return !!el.closest("button, a, input, textarea, select, [role='button']");
-        }
-
-        function down(e) {
-          // Skip if pressing on arrows/buttons
-          if (isInteractive(e.target)) return;
-
-          tracking = true;
-          axis = null;
-          t0 = Date.now();
-          sx = e.clientX;
-          sy = e.clientY;
-          dx = dy = 0;
-
-          stage.setPointerCapture?.(e.pointerId);
-          stage.classList.remove("cursor-grab");
-          stage.classList.add("cursor-grabbing");
-        }
-
-        function move(e) {
-          if (!tracking) return;
-          dx = e.clientX - sx;
-          dy = e.clientY - sy;
-          if (!axis && (Math.abs(dx) > 10 || Math.abs(dy) > 10)) axis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
-          if (axis === "x") e.preventDefault();
-        }
-
-        function up(e) {
-          if (!tracking) return;
-          tracking = false;
-          stage.releasePointerCapture?.(e.pointerId);
-          stage.classList.remove("cursor-grabbing");
-          stage.classList.add("cursor-grab");
-
-          const isH = Math.abs(dx) > Math.abs(dy);
-          const fast = Date.now() - t0 < TIME;
-          const far = Math.abs(dx) > DIST;
-          if (isH && fast && far) goTo(current + (dx < 0 ? 1 : -1));
-
-          dx = dy = 0;
-          axis = null;
-        }
-
-        stage.addEventListener("pointerdown", down, { passive: true });
-        stage.addEventListener("pointermove", move, { passive: false });
-        stage.addEventListener("pointerup", up, { passive: true });
-        stage.addEventListener("pointercancel", up, { passive: true });
-      })();
-
-      // Prevent arrows from being swallowed by swipe
-      [prevBtn, nextBtn].forEach((btn) => {
-        btn?.classList.add("z-10");
-        btn?.addEventListener("pointerdown", (e) => e.stopPropagation());
+      // Main gallery: contain images, arrows on sm+, pagination on mobile, swipe
+      const main = new Swiper(".main-swiper", {
+        spaceBetween: 0,
+        speed: 350,
+        grabCursor: true,
+        a11y: true,
+        keyboard: { enabled: true },
+        // link with thumbs
+        thumbs: { swiper: thumbs },
+        // arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        // mobile dots
+        pagination: {
+          el: ".main-pagination",
+          clickable: true,
+        },
       });
 
-      // Init
-      goTo(0);
+      // helper to sync borders + opacity
+      function syncThumbs() {
+        const idx = main.activeIndex;
+        document.querySelectorAll(".thumbs-swiper .swiper-slide > div").forEach((card, i) => {
+          card.classList.toggle("border-[#e6b847]", i === idx);
+          card.classList.toggle("border-gray-300", i !== idx);
+          card.classList.toggle("opacity-60", i !== idx);
+        });
+      }
+
+      // call once on load + on change
+      syncThumbs();
+      main.on("slideChange", syncThumbs);
+    </script>
+
+    <script>
+      // Simple tabs (no dependency)
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const panels = document.querySelectorAll(".tab-panel");
+
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-tab-target");
+
+          // update buttons
+          tabBtns.forEach((b) => b.setAttribute("data-active", String(b === btn)));
+
+          // show selected panel
+          panels.forEach((p) => {
+            const open = p.id === id;
+            p.classList.toggle("hidden", !open);
+            p.setAttribute("data-open", String(open));
+          });
+        });
+      });
     </script>
 
     <!-- Main JS -->
