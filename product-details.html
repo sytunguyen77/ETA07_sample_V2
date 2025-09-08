@@ -289,6 +289,28 @@
                     <img src="images/spiderman.webp" class="w-full h-full object-contain" alt="thumb 1" />
                   </div>
                 </div>
+                <div class="swiper-slide !w-26 !h-26" data-media="video">
+                  <div
+                    class="relative w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 overflow-hidden cursor-pointer opacity-60 hover:opacity-100 hover:border-[#e6b847] transition"
+                  >
+                    <img
+                      src="images/eta07-nav.svg"
+                      alt="Preview: product video"
+                      class="w-full h-full object-contain rounded"
+                      loading="lazy"
+                      width="104"
+                      height="104"
+                    />
+                    <!-- Play badge -->
+                    <span class="pointer-events-none absolute inset-0 grid place-items-center">
+                      <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow">
+                        <svg class="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                          <path d="M8 5v14l11-7z"></path>
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </div>
                 <div class="swiper-slide !w-26 !h-26">
                   <div
                     class="w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 overflow-hidden cursor-pointer opacity-60 hover:opacity-100 hover:border-[#e6b847] transition"
@@ -324,13 +346,6 @@
                     <img src="images/drone-3.webp" class="w-full h-full object-contain" alt="thumb 4" />
                   </div>
                 </div>
-                <div class="swiper-slide !w-26 !h-26">
-                  <div
-                    class="w-26 h-26 bg-[#f0f0f0] rounded p-1 border-2 border-gray-300 overflow-hidden cursor-pointer opacity-60 hover:opacity-100 hover:border-[#e6b847] transition"
-                  >
-                    <img src="images/goku.webp" class="w-full h-full object-contain" alt="thumb 4" />
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -342,6 +357,15 @@
                 <div class="swiper-wrapper">
                   <div class="swiper-slide flex items-center justify-center min-w-0">
                     <img src="images/spiderman.webp" alt="Main 1" class="h-full w-full object-contain" />
+                  </div>
+                  <div class="swiper-slide flex items-center justify-center min-w-0">
+                    <video
+                      src="video/ETA07_Video.mp4"
+                      controls
+                      muted
+                      poster="images/drone-demo-poster.webp"
+                      class="h-full w-full object-contain rounded-lg"
+                    ></video>
                   </div>
                   <div class="swiper-slide flex items-center justify-center min-w-0">
                     <img src="images/goku.webp" alt="Main 2" class="h-full w-full object-contain" />
@@ -357,9 +381,6 @@
                   </div>
                   <div class="swiper-slide flex items-center justify-center min-w-0">
                     <img src="images/drone-3.webp" alt="Main 4" class="h-full w-full object-contain" />
-                  </div>
-                  <div class="swiper-slide flex items-center justify-center min-w-0">
-                    <img src="images/goku.webp" alt="Main 4" class="h-full w-full object-contain" />
                   </div>
                 </div>
 
