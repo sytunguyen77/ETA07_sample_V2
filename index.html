@@ -21,51 +21,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/input.css" />
     <title>ETA07</title>
-    <style>
-      /* CUSTOM STYLE FOR BRANDS SECTION */
-      .brandPagination {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 2rem;
-        z-index: 5;
-      }
-
-      .brandPagination.swiper-pagination-bullets {
-        display: flex;
-        gap: 0.75rem;
-      }
-
-      .brandPagination .swiper-pagination-bullet {
-        width: 10px;
-        height: 10px;
-        margin: 0 !important;
-        border-radius: 9999px;
-        background: #d1d5db;
-        opacity: 1;
-        border: 2px solid transparent;
-        transition: width 0.25s ease, height 0.25s ease, background 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
-      }
-
-      .brandPagination .swiper-pagination-bullet:hover {
-        background: #cbd5e1;
-        transform: scale(1.1);
-      }
-
-      .brandPagination .swiper-pagination-bullet-active {
-        width: 25px;
-        height: 10px;
-        border-radius: 9999px;
-        background: #292c2d;
-      }
-
-      @media (min-width: 1024px) {
-        .brandPagination .swiper-pagination-bullet-active {
-          width: 26px;
-        }
-      }
-    </style>
+    <style></style>
   </head>
   <body class="">
     <!-- TOP NAVIGATION BAR -->
@@ -95,7 +51,7 @@
           <div class="flex items-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-5">
             <!-- Sell on ETA07 -->
             <a href="seller-page.html" class="flex items-center space-x-1 sm:space-x-2 hover:text-[#929FA5] transition-colors">
-              <img src="images/sell.svg" alt="discount" class="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 mx-1 sm:mx-2" />
+              <img src="images/svg/sell.svg" alt="discount" class="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 mx-1 sm:mx-2" />
               <span class="text-xs sm:text-sm lg:text-sm hidden sm:inline">Sell on ETA07</span>
               <span class="text-xs sm:hidden">Sell</span>
             </a>
@@ -105,7 +61,7 @@
 
             <!-- Track your order -->
             <a href="#" class="flex items-center space-x-1 sm:space-x-2 hover:text-[#929FA5] transition-colors">
-              <img src="images/delivery-truck.svg" alt="delivery-truck" class="h-4 w-4 sm:h-4 sm:w-4 lg:h-6 lg:w-6" />
+              <img src="images/svg/delivery-truck.svg" alt="delivery-truck" class="h-4 w-4 sm:h-4 sm:w-4 lg:h-6 lg:w-6" />
               <span class="text-xs sm:text-sm lg:text-sm hidden sm:inline">Track your order</span>
               <span class="text-xs sm:hidden">Track</span>
             </a>
@@ -115,7 +71,7 @@
 
             <!-- All Offers -->
             <a href="#" class="flex items-center hover:text-gray-300 transition-colors">
-              <img src="images/discount.svg" alt="discount" class="h-4 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 mx-1 sm:mx-2" />
+              <img src="images/svg/discount.svg" alt="discount" class="h-4 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 mx-1 sm:mx-2" />
               <span class="text-xs sm:text-sm lg:text-sm hidden sm:inline">All Offers</span>
               <span class="text-xs sm:hidden">Offers</span>
             </a>
@@ -131,7 +87,7 @@
           <!-- Logo -->
           <div class="flex items-center flex-shrink-0">
             <a href="index.html">
-              <img src="images/eta07-nav.svg" alt="ETA07 Logo" class="h-8 w-auto sm:h-10 md:h-11 lg:h-12" />
+              <img src="images/svg/eta07-nav.svg" alt="ETA07 Logo" class="h-8 w-auto sm:h-10 md:h-11 lg:h-12" />
             </a>
           </div>
 
@@ -139,7 +95,7 @@
           <div class="flex-1 max-w-2xl lg:max-w-3xl mx-1 sm:mx-2">
             <div class="flex items-center gap-2">
               <!-- Flash icon -->
-              <img src="images/flash.svg" alt="Flash Sale" class="hidden sm:block flex-shrink-0" />
+              <img src="images/svg/flash.svg" alt="Flash Sale" class="hidden sm:block flex-shrink-0" />
 
               <!-- Search Input -->
               <div class="flex-1 relative">
@@ -155,7 +111,7 @@
                   role="combobox"
                 />
                 <img
-                  src="images/search.svg"
+                  src="images/svg/search.svg"
                   alt="search"
                   class="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5"
                 />
@@ -175,7 +131,7 @@
           <div class="flex items-center gap-3 sm:gap-3 flex-shrink-0">
             <!-- My Deals -->
             <a href="#" class="hidden lg:flex items-center space-x-1 sm:space-x-2 hover:opacity-80 transition-opacity">
-              <img src="images/deal.svg" alt="deal" class="h-5 sm:h-6 w-5 sm:w-6" />
+              <img src="images/svg/deal.svg" alt="deal" class="h-5 sm:h-6 w-5 sm:w-6" />
               <span class="text-sm sm:text-base font-bold text-[#FC7901] whitespace-nowrap">My Deals</span>
             </a>
 
@@ -191,7 +147,7 @@
             <!-- Cart -->
             <a href="#" class="flex items-center hover:opacity-80 transition-opacity">
               <div class="relative">
-                <img src="images/cart.svg" alt="cart" class="h-5 w-5 sm:h-6 sm:w-6" />
+                <img src="images/svg/cart.svg" alt="cart" class="h-5 w-5 sm:h-6 sm:w-6" />
                 <span
                   class="absolute -top-2 -right-2 h-4 w-4 sm:h-5 sm:w-5 flex items-center justify-center bg-red-500 text-white text-xs font-bold rounded-full"
                   >0</span
@@ -221,11 +177,11 @@
             <div class="flex-1 px-6 py-40">
               <div>
                 <a href="#" class="flex items-center px-4 rounded-lg transition-colors">
-                  <img src="images/deal.svg" alt="deals" class="h-6 w-6 mr-4" />
+                  <img src="images/svg/deal.svg" alt="deals" class="h-6 w-6 mr-4" />
                   <span class="text-sm font-semibold text-[#FC7901] hover:text-[#E67A00] transition-colors">My Deals</span>
                 </a>
                 <div id="authMobile" class="flex items-center p-4 rounded-lg">
-                  <img src="images/user.svg" alt="user" class="h-6 w-6 mr-4" />
+                  <img src="images/svg/user.svg" alt="user" class="h-6 w-6 mr-4" />
                   <div class="flex items-center space-x-2">
                     <a href="login.html" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
                       >Sign In</a
@@ -317,9 +273,9 @@
                     <div
                       class="absolute right-0 top-0 h-full flex items-end justify-center w-[70%] sm:w-[45%] lg:w-[50%] xl:w-[45%]"
                     >
-                      <img src="images/ellipse-hero.svg" alt="" class="absolute top-20 sm:top-15" />
+                      <img src="images/svg/ellipse-hero.svg" alt="" class="absolute top-20 sm:top-15" />
                       <img
-                        src="images/ellipse.svg"
+                        src="images/svg/ellipse.svg"
                         alt=""
                         class="absolute left-55 bottom-0 translate-y-full sm:translate-y-10 lg:translate-y-11 xl:translate-y-8 sm:-translate-x-30 md:-translate-x-20 lg:translate-x-0"
                       />
@@ -328,7 +284,7 @@
                         <div
                           class="w-[200px] sm:w-[250px] lg:w-[420px] xl:w-[580px] translate-x-7 lg:translate-x-6 xl:translate-x-30"
                         >
-                          <img src="images/card.svg" alt="drone" loading="lazy" class="relative bottom-0" />
+                          <img src="images/svg/card.svg" alt="drone" loading="lazy" class="relative bottom-0" />
                         </div>
                       </div>
                     </div>
@@ -343,14 +299,14 @@
             <section class="relative w-full bg-[#e8c14a] h-[300px] sm:h-[350px] md:h-[350px] lg:h-[450px]">
               <!-- Mobile Image (visible on small screens) -->
               <img
-                src="images/bg-buyer-mobile.webp"
+                src="images/webp/bg-buyer-mobile.webp"
                 alt="Banner"
                 class="absolute inset-0 w-full h-full object-contain object-bottom sm:hidden"
               />
 
               <!-- Desktop Image (hidden on small screens, visible on sm and up) -->
               <img
-                src="images/bg-buyer.webp"
+                src="images/webp/bg-buyer.webp"
                 alt="Banner"
                 class="absolute inset-0 w-full h-full object-scale-down object-bottom hidden sm:block"
               />
@@ -382,42 +338,42 @@
               <!-- Background Images -->
               <!-- Mobile Image (visible on small screens) -->
               <img
-                src="images/bg-seller-mobile.webp"
+                src="images/webp/bg-seller-mobile.webp"
                 alt="Banner"
                 class="absolute inset-0 w-full h-full object-cover sm:hidden"
               />
 
               <!-- Bottom Overlay for Mobile - Positioned at bottom like left overlay -->
               <img
-                src="images/bottom-overlay.svg"
+                src="images/svg/bottom-overlay.svg"
                 alt="Bottom Overlay"
                 class="absolute bottom-0 left-0 w-full h-[14.4%] object-cover z-[5] sm:hidden"
               />
 
               <!-- Bottom Overlay Blur for Mobile - Positioned above bottom overlay -->
               <img
-                src="images/bottom-overlay-blur.svg"
+                src="images/svg/bottom-overlay-blur.svg"
                 alt="Bottom Overlay Blur"
                 class="absolute bottom-[14.285%] left-0 w-full h-[100%] object-cover z-[5] sm:hidden"
               />
 
               <!-- Desktop Image (hidden on small screens, visible on sm and up) -->
               <img
-                src="images/bg-seller.webp"
+                src="images/webp/bg-seller.webp"
                 alt="Banner"
                 class="absolute inset-0 w-full h-full object-cover 2xl:object-scale-down 2xl:object-right hidden sm:block"
               />
 
               <!-- Left Overlay Image - Sticks to left side (Desktop only)-->
               <img
-                src="images/left-overlay.svg"
+                src="images/svg/left-overlay.svg"
                 alt="Overlay"
                 class="hidden sm:flex absolute left-0 top-0 h-full w-full sm:w-[0%] lg:w-[21%] object-cover z-[5]"
               />
 
               <!-- Left Overlay Blur - Positioned right next to left overlay -->
               <img
-                src="images/left-overlay-blur.svg"
+                src="images/svg/left-overlay-blur.svg"
                 alt="Overlay Blur"
                 class="hidden sm:flex absolute lg:left-[20.5%] top-0 h-full w-[50%] sm:w-[100%] lg:w-[100%] object-cover z-[5]"
               />
@@ -470,7 +426,7 @@
                         <div
                           class="w-[280px] sm:w-[350px] md:w-[400px] lg:w-[420px] xl:w-[590px] -translate-x-1 sm:-translate-x-5 lg:translate-x-6 xl:translate-x-8"
                         >
-                          <img src="images/bg-share.webp" alt="drone" loading="lazy" class="relative bottom-0" />
+                          <img src="images/webp/bg-share.webp" alt="drone" loading="lazy" class="relative bottom-0" />
                         </div>
                       </div>
                     </div>
@@ -484,7 +440,7 @@
           <div class="swiper-slide">
             <section class="relative w-full bg-[#e8c14a]">
               <img
-                src="images/banner.webp"
+                src="images/webp/banner.webp"
                 alt="Banner"
                 class="w-full h-[300px] sm:h-[350px] md:h-[350px] lg:h-[450px] object-contain"
               />
@@ -553,7 +509,7 @@
               <span class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-16 lg:h-20 w-px bg-gray-200"></span>
               <div class="flex items-center space-x-3 sm:space-x-4">
                 <div class="flex-shrink-0">
-                  <img src="images/package.svg" alt="Package" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+                  <img src="images/svg/package.svg" alt="Package" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
                 </div>
                 <div>
                   <h3 class="text-xs sm:text-sm lg:text-base font-medium text-[#191C1F] uppercase tracking-wide">
@@ -569,7 +525,7 @@
               <span class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-16 lg:h-20 w-px bg-gray-200"></span>
               <div class="flex items-center space-x-3 sm:space-x-4">
                 <div class="flex-shrink-0">
-                  <img src="images/trophy.svg" alt="Trophy" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+                  <img src="images/svg/trophy.svg" alt="Trophy" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
                 </div>
                 <div>
                   <h3 class="text-xs sm:text-sm lg:text-base font-medium text-[#191C1F] uppercase tracking-wide">
@@ -585,7 +541,7 @@
               <span class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-16 lg:h-20 w-px bg-gray-200"></span>
               <div class="flex items-center space-x-3 sm:space-x-4">
                 <div class="flex-shrink-0">
-                  <img src="images/creditcard.svg" alt="Credit Card" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+                  <img src="images/svg/creditcard.svg" alt="Credit Card" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
                 </div>
                 <div>
                   <h3 class="text-xs sm:text-sm lg:text-base font-medium text-[#191C1F] uppercase tracking-wide">
@@ -600,7 +556,7 @@
             <div class="flex items-center justify-center py-8 sm:py-10 lg:py-12 pr-6">
               <div class="flex items-center space-x-3 sm:space-x-4">
                 <div class="flex-shrink-0">
-                  <img src="images/headphones.svg" alt="Headphones" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+                  <img src="images/svg/headphones.svg" alt="Headphones" class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
                 </div>
                 <div>
                   <h3 class="text-xs sm:text-sm lg:text-base font-medium text-[#191C1F] uppercase tracking-wide">Support 24/7</h3>
@@ -667,7 +623,7 @@
                   >
                     <!-- Product Image -->
                     <img
-                      src="images/spiderman.webp"
+                      src="images/webp/spiderman.webp"
                       alt="deal 1"
                       class="max-h-full max-w-full object-contain transform transition-transform duration-300 group-hover:scale-110"
                     />
@@ -795,11 +751,11 @@
               >
                 <div class="relative w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                   <!-- Thunder on top -->
-                  <img src="images/thunder.svg" alt="thunder" class="w-full h-full relative z-10" />
+                  <img src="images/svg/thunder.svg" alt="thunder" class="w-full h-full relative z-10" />
 
                   <!-- Circle in center -->
                   <img
-                    src="images/circle.svg"
+                    src="images/svg/circle.svg"
                     alt="circle"
                     class="absolute top-1/2 left-1/2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 -translate-x-1/2 -translate-y-1/2 z-0"
                   />
@@ -825,7 +781,7 @@
                   >
                     <!-- Product Image -->
                     <img
-                      src="images/labubu.webp"
+                      src="images/webp/labubu.webp"
                       alt="deal 1"
                       class="max-h-full max-w-full object-contain transform transition-transform duration-300 group-hover:scale-110"
                     />
@@ -953,11 +909,11 @@
               >
                 <div class="relative w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                   <!-- Thunder on top -->
-                  <img src="images/thunder.svg" alt="thunder" class="w-full h-full relative z-10" />
+                  <img src="images/svg/thunder.svg" alt="thunder" class="w-full h-full relative z-10" />
 
                   <!-- Circle in center -->
                   <img
-                    src="images/circle.svg"
+                    src="images/svg/circle.svg"
                     alt="circle"
                     class="absolute top-1/2 left-1/2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 -translate-x-1/2 -translate-y-1/2 z-0"
                   />
@@ -983,7 +939,7 @@
                   >
                     <!-- Product Image -->
                     <img
-                      src="images/drone-6.webp"
+                      src="images/webp/drone-6.webp"
                       alt="deal 1"
                       class="max-h-full max-w-full object-contain transform transition-transform duration-300 group-hover:scale-110"
                     />
@@ -1111,11 +1067,11 @@
               >
                 <div class="relative w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                   <!-- Thunder on top -->
-                  <img src="images/thunder.svg" alt="thunder" class="w-full h-full relative z-10" />
+                  <img src="images/svg/thunder.svg" alt="thunder" class="w-full h-full relative z-10" />
 
                   <!-- Circle in center -->
                   <img
-                    src="images/circle.svg"
+                    src="images/svg/circle.svg"
                     alt="circle"
                     class="absolute top-1/2 left-1/2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 -translate-x-1/2 -translate-y-1/2 z-0"
                   />
@@ -1140,7 +1096,7 @@
                     class="bg-gray-200 rounded-2xl sm:rounded-3xl flex items-center justify-center h-[160px] sm:h-[200px] md:h-[320px]"
                   >
                     <!-- Product Image -->
-                    <img src="images/barbie.webp" alt="deal 1" class="max-h-full max-w-full object-contain" />
+                    <img src="images/webp/barbie.webp" alt="deal 1" class="max-h-full max-w-full object-contain" />
                   </a>
 
                   <!-- New Badge (top left)  -->
@@ -1263,11 +1219,11 @@
               >
                 <div class="relative w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
                   <!-- Thunder on top -->
-                  <img src="images/thunder.svg" alt="thunder" class="w-full h-full relative z-10" />
+                  <img src="images/svg/thunder.svg" alt="thunder" class="w-full h-full relative z-10" />
 
                   <!-- Circle in center -->
                   <img
-                    src="images/circle.svg"
+                    src="images/svg/circle.svg"
                     alt="circle"
                     class="absolute top-1/2 left-1/2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 -translate-x-1/2 -translate-y-1/2 z-0"
                   />
@@ -1396,7 +1352,7 @@
                   class="relative w-28 h-28 sm:w-30 sm:h-30 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center overflow-hidden group-hover:bg-gray-100 group-focus-visible:bg-gray-100 transition-colors duration-200"
                 >
                   <img
-                    src="images/drone-1.webp"
+                    src="images/webp/drone-1.webp"
                     alt="category-1"
                     class="w-22 h-22 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-30 xl:h-28 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
                   />
@@ -1421,7 +1377,7 @@
                   class="relative w-28 h-28 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-gray-100 transition-colors duration-200"
                 >
                   <img
-                    src="images/batman-lego.webp"
+                    src="images/webp/batman-lego.webp"
                     alt="category-2"
                     class="w-20 h-20 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-25 xl:h-25 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
                   />
@@ -1445,7 +1401,7 @@
                   class="relative w-28 h-28 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-gray-100 transition-colors duration-200"
                 >
                   <img
-                    src="images/spiderman.webp"
+                    src="images/webp/spiderman.webp"
                     alt="category-3"
                     class="w-23 h-23 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-28 xl:h-28 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
                   />
@@ -1469,7 +1425,7 @@
                   class="relative w-28 h-28 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-gray-100 transition-colors duration-200"
                 >
                   <img
-                    src="images/barbie.webp"
+                    src="images/webp/barbie.webp"
                     alt="category-4"
                     class="w-20 h-20 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-30 xl:h-30 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
                   />
@@ -1493,7 +1449,7 @@
                   class="relative w-28 h-28 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-gray-100 transition-colors duration-200"
                 >
                   <img
-                    src="images/cars.webp"
+                    src="images/webp/cars.webp"
                     alt="category-5"
                     class="w-20 h-20 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-22 xl:h-22 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
                   />
@@ -1517,7 +1473,7 @@
                   class="relative w-28 h-28 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-gray-100 transition-colors duration-200"
                 >
                   <img
-                    src="images/pokemon.webp"
+                    src="images/webp/pokemon.webp"
                     alt="category-6"
                     class="w-20 h-20 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-30 xl:h-30 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
                   />
@@ -1541,7 +1497,7 @@
                   class="relative w-28 h-28 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-gray-100 transition-colors duration-200"
                 >
                   <img
-                    src="images/labubu.webp"
+                    src="images/webp/labubu.webp"
                     alt="category-7"
                     class="w-20 h-20 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-25 lg:h-25 xl:w-30 xl:h-30 text-gray-600 group-hover:scale-110 group-focus-visible:scale-110 transition-transform duration-200"
                   />
@@ -1589,7 +1545,7 @@
                       <div class="bg-[#494949] p-2 sm:p-2.5 md:p-3 rounded-lg w-fit mb-3 sm:mb-4 md:mb-5">
                         <p class="text-white text-xs sm:text-sm md:text-base font-medium opacity-90">#1</p>
                       </div>
-                      <img src="images/lego-logo.svg" alt="brand-1" class="w-12 sm:w-auto md:w-auto lg:w-auto" />
+                      <img src="images/svg/lego-logo.svg" alt="brand-1" class="w-12 sm:w-auto md:w-auto lg:w-auto" />
                     </div>
                     <p class="text-white text-sm sm:text-base md:text-lg lg:text-xl font-semibold">UP to 80% OFF</p>
                   </div>
@@ -1597,7 +1553,7 @@
                   <!-- Right Content  -->
                   <div class="absolute right-2 sm:right-4 md:right-6 top-3/6 -translate-y-1/2 translate-x-1/6 flex z-4">
                     <img
-                      src="images/mario.webp"
+                      src="images/webp/mario.webp"
                       alt="iPhone"
                       class="h-[150px] sm:h-[220px] md:h-[250px] xl:h-[250px] w-auto drop-shadow-xl"
                     />
@@ -1606,7 +1562,7 @@
                   <!-- Top Right Circle -->
                   <div>
                     <img
-                      src="images/topbrand-rounded-black.svg"
+                      src="images/svg/topbrand-rounded-black.svg"
                       alt="topbrand-rounded-black"
                       class="absolute top-0 right-0 z-0 w-22 sm:w-30 md:w-40 xl:w-auto"
                     />
@@ -1627,7 +1583,7 @@
                       <div class="bg-[#F6DE8D] p-2 sm:p-2.5 md:p-3 rounded-lg w-fit mb-3 sm:mb-4 md:mb-5">
                         <p class="text-black text-xs sm:text-sm md:text-base font-medium opacity-90">#2</p>
                       </div>
-                      <img src="images/bandai-namco.svg" alt="brand-2" class="w-12 sm:w-auto md:w-auto lg:w-auto" />
+                      <img src="images/svg/bandai-namco.svg" alt="brand-2" class="w-12 sm:w-auto md:w-auto lg:w-auto" />
                     </div>
                     <p class="text-black text-sm sm:text-base md:text-lg lg:text-xl font-semibold">UP to 80% OFF</p>
                   </div>
@@ -1637,7 +1593,7 @@
                     class="absolute right-2 sm:right-4 md:right-6 top-2/6 sm:top-3/6 -translate-y-1/2 translate-x-1/6 flex z-4"
                   >
                     <img
-                      src="images/zoro.webp"
+                      src="images/webp/zoro.webp"
                       alt="Realme"
                       class="h-[150px] sm:h-[220px] md:h-[250px] xl:h-[250px] w-auto drop-shadow-xl"
                     />
@@ -1646,7 +1602,7 @@
                   <!-- Top Right Circle -->
                   <div>
                     <img
-                      src="images/topbrand-rounded-yellow.svg"
+                      src="images/svg/topbrand-rounded-yellow.svg"
                       alt="topbrand-rounded-yellow"
                       class="absolute top-0 right-0 z-0 w-22 sm:w-30 md:w-40 xl:w-auto"
                     />
@@ -1667,7 +1623,7 @@
                       <div class="bg-[#FFD1B0] p-2 sm:p-2.5 md:p-3 rounded-lg w-fit mb-3 sm:mb-4 md:mb-5">
                         <p class="text-black text-xs sm:text-sm md:text-base font-medium opacity-90">#3</p>
                       </div>
-                      <img src="images/barbie.svg" alt="top brand xiaomi" class="w-12 sm:w-auto md:w-auto lg:w-auto" />
+                      <img src="images/svg/barbie.svg" alt="top brand xiaomi" class="w-12 sm:w-auto md:w-auto lg:w-auto" />
                     </div>
                     <p class="text-[#333] text-sm sm:text-base md:text-lg lg:text-xl font-semibold">UP to 80% OFF</p>
                   </div>
@@ -1675,7 +1631,7 @@
                   <!-- Right Content  -->
                   <div class="absolute right-2 sm:right-4 md:right-6 top-3/6 -translate-y-1/2 translate-x-1/6 flex z-4">
                     <img
-                      src="images/barbie-brand.webp"
+                      src="images/webp/barbie-brand.webp"
                       alt="Xiaomi"
                       class="h-[150px] sm:h-[220px] md:h-[250px] xl:h-[250px] w-auto drop-shadow-xl"
                     />
@@ -1684,7 +1640,7 @@
                   <!-- Top Right Circle -->
                   <div>
                     <img
-                      src="images/topbrand-rounded-pink.svg"
+                      src="images/svg/topbrand-rounded-pink.svg"
                       alt="topbrand-rounded-pink"
                       class="absolute top-0 right-0 z-0 w-22 sm:w-30 md:w-40 xl:w-auto"
                     />
@@ -1705,7 +1661,11 @@
                       <div class="bg-[#AED581] p-2 sm:p-2.5 md:p-3 rounded-lg w-fit mb-3 sm:mb-4 md:mb-5">
                         <p class="text-black text-xs sm:text-sm md:text-base font-medium opacity-90">#4</p>
                       </div>
-                      <img src="images/hot-wheels-logo.svg" alt="top brand realme" class="w-16 sm:w-auto md:w-auto lg:w-auto" />
+                      <img
+                        src="images/svg/hot-wheels-logo.svg"
+                        alt="top brand realme"
+                        class="w-16 sm:w-auto md:w-auto lg:w-auto"
+                      />
                     </div>
                     <p class="text-black text-sm sm:text-base md:text-lg lg:text-xl font-semibold">UP to 80% OFF</p>
                   </div>
@@ -1715,7 +1675,7 @@
                     class="absolute right-5 sm:right-6 md:right-10 top-2/6 md:top-2.5/6 -translate-y-1/2 translate-x-1/6 flex z-4"
                   >
                     <img
-                      src="images/hot-wheels.webp"
+                      src="images/webp/hot-wheels.webp"
                       alt="Card 4"
                       class="h-[100px] sm:h-[150px] md:h-[150px] xl:h-[230px] w-auto drop-shadow-xl"
                     />
@@ -1724,7 +1684,7 @@
                   <!-- Top Right Circle -->
                   <div>
                     <img
-                      src="images/topbrand-rounded-green.svg"
+                      src="images/svg/topbrand-rounded-green.svg"
                       alt="topbrand-rounded-green"
                       class="absolute top-0 right-0 z-0 w-22 sm:w-30 md:w-40 xl:w-auto"
                     />
@@ -1782,7 +1742,7 @@
                 <!-- Image -->
                 <a href="product-details.html" class="relative block bg-[#f4f4f4] rounded-xl">
                   <div class="rounded-xl h-40 sm:h-70 md:h-80 flex items-center justify-center overflow-hidden">
-                    <img src="images/naruto.webp" alt="Naruto Figure" class="h-full w-full object-full" />
+                    <img src="images/webp/naruto.webp" alt="Naruto Figure" class="h-full w-full object-full" />
                   </div>
                 </a>
               </div>
@@ -1847,7 +1807,7 @@
                 <!-- Image -->
                 <a href="product-details.html" class="relative block bg-[#f4f4f4] rounded-xl">
                   <div class="rounded-xl h-40 sm:h-70 md:h-80 flex items-center justify-center overflow-hidden">
-                    <img src="images/goku.webp" alt="Goku Figure" class="h-full w-full object-full" />
+                    <img src="images/webp/goku.webp" alt="Goku Figure" class="h-full w-full object-full" />
                   </div>
                 </a>
               </div>
@@ -1910,7 +1870,7 @@
                 </button>
                 <a href="product-details.html" class="relative block bg-[#f4f4f4] rounded-xl">
                   <div class="rounded-xl h-40 sm:h-70 md:h-80 flex items-center justify-center overflow-hidden">
-                    <img src="images/lego-classic.webp" alt="LEGO Classic" class="h-full w-full object-full" />
+                    <img src="images/webp/lego-classic.webp" alt="LEGO Classic" class="h-full w-full object-full" />
                   </div>
                 </a>
               </div>
@@ -1976,7 +1936,7 @@
                 <!-- Image -->
                 <a href="product-details.html" class="relative block bg-[#f4f4f4] rounded-xl">
                   <div class="rounded-xl h-40 sm:h-70 md:h-80 flex items-center justify-center overflow-hidden">
-                    <img src="images/lego-one-piece.webp" alt="LEGO One Piece" class="h-full w-full object-full" />
+                    <img src="images/webp/lego-one-piece.webp" alt="LEGO One Piece" class="h-full w-full object-full" />
                   </div>
                 </a>
               </div>
@@ -2042,7 +2002,7 @@
                 <!-- Image -->
                 <a href="product-details.html" class="relative block bg-[#f4f4f4] rounded-xl">
                   <div class="rounded-xl h-40 sm:h-70 md:h-80 flex items-center justify-center overflow-hidden">
-                    <img src="images/drone-1.webp" alt="DJI Mini 4K" class="h-full w-full object-contain" />
+                    <img src="images/webp/drone-1.webp" alt="DJI Mini 4K" class="h-full w-full object-contain" />
                   </div>
                 </a>
               </div>
@@ -2113,7 +2073,7 @@
                 <!-- Image -->
                 <a href="product-details.html" class="relative block bg-[#f4f4f4] rounded-xl">
                   <div class="rounded-xl h-40 sm:h-70 md:h-80 flex items-center justify-center overflow-hidden">
-                    <img src="images/barbie-2.webp" alt="Barbie Movie Doll" class="h-full w-full object-full" />
+                    <img src="images/webp/barbie-2.webp" alt="Barbie Movie Doll" class="h-full w-full object-full" />
                   </div>
                 </a>
               </div>
@@ -2192,7 +2152,7 @@
           <div class="sm:col-span-2 lg:col-span-1">
             <!-- Logo -->
             <a href="index.html">
-              <img src="images/eta07-footer.svg" alt="ETA07" class="h-8 w-auto sm:h-10 md:h-11 lg:h-12 mb-6" />
+              <img src="images/svg/eta07-footer.svg" alt="ETA07" class="h-8 w-auto sm:h-10 md:h-11 lg:h-12 mb-6" />
             </a>
 
             <!-- Customer Support -->
@@ -2310,12 +2270,12 @@
               <div class="flex flex-col space-y-3">
                 <!-- Google Play Button -->
                 <a href="#" class="inline-flex items-center justify-center transition-colors duration-200 group w-40 sm:w-44">
-                  <img src="images/google-playstore.svg" alt="Google Store" class="w-full h-auto" />
+                  <img src="images/svg/google-playstore.svg" alt="Google Store" class="w-full h-auto" />
                 </a>
 
                 <!-- App Store Button -->
                 <a href="#" class="inline-flex items-center justify-center transition-colors duration-200 group w-40 sm:w-44">
-                  <img src="images/apple-store.svg" alt="Apple Store" class="w-full h-auto" />
+                  <img src="images/svg/apple-store.svg" alt="Apple Store" class="w-full h-auto" />
                 </a>
               </div>
             </div>

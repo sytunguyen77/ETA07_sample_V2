@@ -278,7 +278,7 @@ function show(items) {
       (text) => `
       <li onclick="pick('${text}')"
           class="flex items-center gap-2 px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 cursor-pointer">
-        <img src="images/search.svg" class="h-4 w-4 text-gray-500" alt="search"/>
+        <img src="images/svg/search.svg" class="h-4 w-4 text-gray-500" alt="search"/>
         <span>${text}</span>
       </li>`
     )
