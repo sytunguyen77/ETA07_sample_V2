@@ -81,7 +81,7 @@ const brandSwiper = new Swiper(".brandSwiper", {
   },
 });
 
-// ============================= PRODUCT SWIPER (peek carousel) ===================== //
+// ============================= PRODUCT SWIPER (peek carousel) (FREQUENLY BOUGHT TOGETHER) ===================== //
 const productsSwiper = new Swiper(".productsSwiper", {
   slidesPerView: 3, //
   spaceBetween: 12,
@@ -90,14 +90,52 @@ const productsSwiper = new Swiper(".productsSwiper", {
   slidesOffsetBefore: 0,
   slidesOffsetAfter: 0,
   breakpoints: {
-    0: { slidesPerView: 2.3, spaceBetween: 12 }, // mobile
-    480: { slidesPerView: 2.5, spaceBetween: 14 }, // small mobile / portrait
-    640: { slidesPerView: 2.5, spaceBetween: 20 }, // tablet
-    1024: { slidesPerView: 3.5, spaceBetween: 24 }, // desktop
-    1280: { slidesPerView: 4.5, spaceBetween: 15 }, // large desktop
+    0: { slidesPerView: 2.3, spaceBetween: 12 },
+    480: { slidesPerView: 2.5, spaceBetween: 14 },
+    640: { slidesPerView: 2.5, spaceBetween: 20 },
+    1024: { slidesPerView: 3.5, spaceBetween: 24 },
+    1280: { slidesPerView: 4.5, spaceBetween: 15 },
   },
   navigation: { nextEl: ".productsNext", prevEl: ".productsPrev" },
   pagination: { el: ".productsPagination", clickable: true },
+});
+
+// ============================= THINGS SWIPER (THINGS YOU MAY LIKE) ===================== //
+const thingsSwiper = new Swiper(".thingsSwiper", {
+  slidesPerView: 3,
+  spaceBetween: 12,
+  speed: 260,
+  centeredSlides: false,
+  slidesOffsetBefore: 0,
+  slidesOffsetAfter: 0,
+  breakpoints: {
+    0: { slidesPerView: 2.3, spaceBetween: 12 },
+    480: { slidesPerView: 2.5, spaceBetween: 14 },
+    640: { slidesPerView: 2.5, spaceBetween: 20 },
+    1024: { slidesPerView: 3.5, spaceBetween: 24 },
+    1280: { slidesPerView: 4.5, spaceBetween: 15 },
+  },
+  navigation: { nextEl: ".thingsNext", prevEl: ".thingsPrev" },
+  pagination: { el: ".thingsPagination", clickable: true },
+});
+
+// ============================= SIMILAR PRODUCTS SWIPER ===================== //
+const similarSwiper = new Swiper(".similarSwiper", {
+  slidesPerView: 3,
+  spaceBetween: 12,
+  speed: 260,
+  centeredSlides: false,
+  slidesOffsetBefore: 0,
+  slidesOffsetAfter: 0,
+  breakpoints: {
+    0: { slidesPerView: 2.3, spaceBetween: 12 },
+    480: { slidesPerView: 2.5, spaceBetween: 14 },
+    640: { slidesPerView: 2.5, spaceBetween: 20 },
+    1024: { slidesPerView: 3.5, spaceBetween: 24 },
+    1280: { slidesPerView: 4.5, spaceBetween: 15 },
+  },
+  navigation: { nextEl: ".similarNext", prevEl: ".similarPrev" },
+  pagination: { el: ".similarPagination", clickable: true },
 });
 
 // ====================== HERO VIDEO CONTROLS ====================== //
