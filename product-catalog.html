@@ -242,6 +242,767 @@
       </div>
     </header>
 
+    <!-- Breadcrumb Section - Place this after the header and before main content -->
+    <section class="bg-[#F8F8F8] border-b border-[#E4E7E9]">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <nav aria-label="Breadcrumb" class="py-3 sm:py-4">
+          <ol class="flex items-center flex-wrap gap-1 sm:gap-2">
+            <!-- Home -->
+            <li class="flex items-center">
+              <a href="index.html" class="flex items-center text-[#929FA5] hover:text-[#666666] transition-colors group">
+                <svg
+                  class="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  />
+                </svg>
+                <span class="text-xs sm:text-sm font-semibold">HOME</span>
+              </a>
+            </li>
+
+            <!-- Separator -->
+            <li class="flex items-center" aria-hidden="true">
+              <svg
+                class="w-3 h-3 sm:w-4 sm:h-4 text-[#929FA5] flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </li>
+
+            <!-- Shop -->
+            <li class="flex items-center">
+              <a href="shop.html" class="text-xs sm:text-sm font-medium text-[#929FA5] hover:text-[#666666] transition-colors">
+                Shop
+              </a>
+            </li>
+
+            <!-- Separator -->
+            <li class="flex items-center" aria-hidden="true">
+              <svg
+                class="w-3 h-3 sm:w-4 sm:h-4 text-[#929FA5] flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </li>
+
+            <!-- Frequently Bought Together -->
+            <li class="flex items-center">
+              <span class="text-xs sm:text-sm font-medium text-[#292C2D]" aria-current="page"> Frequently Bought Together </span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- SHOP: Filters + Products -->
+    <section class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6 bg-white">
+      <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
+        <!-- LEFT: Filters sidebar -->
+        <aside class="space-y-2 lg:sticky lg:top-24 self-start">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-semibold text-[#292C2D]">Filters</h2>
+            <button class="text-sm text-gray-500 hover:text-gray-700 cursor-pointer">Clear all</button>
+          </div>
+
+          <!-- Brand -->
+          <details open class="border-t border-gray-200 py-4 group">
+            <summary class="flex items-center justify-between cursor-pointer text-sm font-medium text-[#292C2D] list-none">
+              <span class="font-semibold">Brand</span>
+              <span class="text-lg select-none group-open:hidden">+</span>
+              <span class="text-lg select-none hidden group-open:inline">−</span>
+            </summary>
+            <div class="mt-3 space-y-3">
+              <label class="flex items-center gap-3 text-sm text-gray-700">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" /> Bandai Namco
+              </label>
+              <label class="flex items-center gap-3 text-sm text-gray-700">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" /> LEGO
+              </label>
+              <label class="flex items-center gap-3 text-sm text-gray-700">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" /> Barbie
+              </label>
+              <label class="flex items-center gap-3 text-sm text-gray-700">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" /> Mattel
+              </label>
+              <label class="flex items-center gap-3 text-sm text-gray-700">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" /> Hot Wheels
+              </label>
+              <label class="flex items-center gap-3 text-sm text-gray-700">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" /> Funko
+              </label>
+              <label class="flex items-center gap-3 text-sm text-gray-700">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" /> Star Wars
+              </label>
+              <label class="flex items-center gap-3 text-sm text-gray-700">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" /> Hello Kitty
+              </label>
+            </div>
+          </details>
+
+          <!-- Character -->
+          <details open class="border-t border-gray-200 py-4 group">
+            <summary class="flex items-center justify-between cursor-pointer text-sm font-medium text-[#292C2D] list-none">
+              <span class="font-semibold">Character </span>
+              <span class="text-lg select-none group-open:hidden">+</span>
+              <span class="text-lg select-none hidden group-open:inline">−</span>
+            </summary>
+
+            <div class="mt-3 space-y-2 text-sm text-gray-700">
+              <label class="flex items-center gap-3">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" />
+                Spiderman
+              </label>
+              <label class="flex items-center gap-3">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" />
+                Goku
+              </label>
+              <label class="flex items-center gap-3">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" />
+                Luffy
+              </label>
+              <label class="flex items-center gap-3">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" />
+                Naruto
+              </label>
+              <label class="flex items-center gap-3">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" />
+                Batman
+              </label>
+              <label class="flex items-center gap-3">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" />
+                Iron Man
+              </label>
+            </div>
+          </details>
+
+          <!-- Price Range -->
+          <details open class="border-t border-gray-200 py-4 group">
+            <summary class="flex items-center justify-between cursor-pointer text-sm font-medium text-[#292C2D] list-none">
+              <span class="font-semibold">Price Range</span>
+              <span class="text-lg select-none group-open:hidden">+</span>
+              <span class="text-lg select-none hidden group-open:inline">−</span>
+            </summary>
+            <div class="mt-3 text-sm text-gray-600 space-y-4">
+              <!-- Custom input row -->
+              <div class="flex items-center gap-2">
+                <input type="number" placeholder="$ Min" class="w-24 px-2 py-1 border rounded" />
+                <span>–</span>
+                <input type="number" placeholder="$ Max" class="w-24 px-2 py-1 border rounded" />
+              </div>
+
+              <!-- Quick options -->
+              <div class="space-y-2 text-gray-700">
+                <label class="flex items-center gap-3">
+                  <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" />
+                  Under $50
+                </label>
+                <label class="flex items-center gap-3">
+                  <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" />
+                  $50 – $100
+                </label>
+                <label class="flex items-center gap-3">
+                  <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" />
+                  Over $100
+                </label>
+              </div>
+            </div>
+          </details>
+
+          <!-- Discount -->
+          <details open class="border-t border-gray-200 py-4 group">
+            <summary class="flex items-center justify-between cursor-pointer text-sm font-medium text-[#292C2D] list-none">
+              <span class="font-semibold">Discount</span>
+              <span class="text-lg select-none group-open:hidden">+</span>
+              <span class="text-lg select-none hidden group-open:inline">−</span>
+            </summary>
+            <div class="mt-3 space-y-2 text-sm text-gray-700">
+              <label class="flex items-center gap-3"
+                ><input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" /> 10% or more</label
+              >
+              <label class="flex items-center gap-3"
+                ><input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" /> 25% or more</label
+              >
+              <label class="flex items-center gap-3"
+                ><input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" /> 50% or more</label
+              >
+            </div>
+          </details>
+
+          <!-- Availability -->
+          <details open class="border-t border-gray-200 py-4 group">
+            <summary class="flex items-center justify-between cursor-pointer text-sm font-medium text-[#292C2D] list-none">
+              <span class="font-semibold">Availability</span>
+              <span class="text-lg select-none group-open:hidden">+</span>
+              <span class="text-lg select-none hidden group-open:inline">−</span>
+            </summary>
+            <div class="mt-3 space-y-2 text-sm text-gray-700">
+              <label class="flex items-center gap-3"
+                ><input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" /> In stock</label
+              >
+              <label class="flex items-center gap-3"
+                ><input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" /> Pre-order</label
+              >
+            </div>
+          </details>
+
+          <!-- Shipping & Pickup -->
+          <details open class="border-t border-gray-200 py-4 group">
+            <summary class="flex items-center justify-between cursor-pointer text-sm font-medium text-[#292C2D] list-none">
+              <span class="font-semibold">Shipping & Pickup</span>
+              <span class="text-lg select-none group-open:hidden">+</span>
+              <span class="text-lg select-none hidden group-open:inline">−</span>
+            </summary>
+
+            <div class="mt-3 space-y-2 text-sm text-gray-700">
+              <label class="flex items-center gap-3">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" />
+                Free Shipping
+              </label>
+              <label class="flex items-center gap-3">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" />
+                Expedited Shipping
+              </label>
+              <label class="flex items-center gap-3">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" />
+                In-Store Pickup
+              </label>
+              <label class="flex items-center gap-3">
+                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded accent-[#FDB913]" />
+                Curbside Pickup
+              </label>
+            </div>
+          </details>
+        </aside>
+
+        <!-- RIGHT: Product list -->
+        <div>
+          <!-- Toolbar -->
+          <div class="flex flex-wrap items-center gap-4 sm:gap-6 mb-5 text-sm text-gray-600">
+            <!-- View switcher + count -->
+            <div class="flex items-center gap-3">
+              <!-- Grid button -->
+              <a
+                href="?view=grid"
+                class="relative group inline-flex items-center justify-center w-8 h-8 rounded-md border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#FDB913]"
+                aria-label="Grid view"
+                aria-pressed="true"
+              >
+                <!-- active styles when grid is selected -->
+                <img src="images/svg/grid-view.svg" alt="grid view" class="w-4 h-4" />
+                <!-- tooltip -->
+                <span
+                  class="pointer-events-none absolute -bottom-9 left-1/2 -translate-x-1/2 whitespace-nowrap px-2 py-1 rounded bg-black/80 text-white text-xs opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition"
+                >
+                  Grid view
+                </span>
+              </a>
+
+              <!-- List button -->
+              <a
+                href="?view=list"
+                class="relative group inline-flex items-center justify-center w-8 h-8 rounded-md border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#FDB913]"
+                aria-label="List view"
+                aria-pressed="false"
+              >
+                <img src="images/svg/list-view.svg" alt="list view" class="w-5 h-5" />
+                <span
+                  class="pointer-events-none absolute -bottom-9 left-1/2 -translate-x-1/2 whitespace-nowrap px-2 py-1 rounded bg-black/80 text-white text-xs opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition"
+                >
+                  List view
+                </span>
+              </a>
+
+              <span class="ml-1">
+                Showing <strong class="text-gray-800">1–40</strong> of <strong class="text-gray-800">145</strong> items
+              </span>
+            </div>
+
+            <!-- Right controls (unchanged) -->
+            <div class="ml-auto flex items-center gap-4">
+              <label class="flex items-center gap-2">
+                <span class="text-gray-500">To Show</span>
+                <select class="border rounded px-2 py-1 bg-white">
+                  <option>9</option>
+                  <option>12</option>
+                  <option>24</option>
+                  <option>48</option>
+                </select>
+              </label>
+              <label class="flex items-center gap-2">
+                <span class="text-gray-500">Sort By</span>
+                <select class="border rounded px-2 py-1 bg-white">
+                  <option>Position</option>
+                  <option>Price: Low to High</option>
+                  <option>Price: High to Low</option>
+                  <option>Rating</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#292C2D] mb-4">Products</h2>
+
+          <!-- Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
+            <!-- CARD 1 -->
+            <article>
+              <div
+                class="group relative block bg-gray-50 rounded-xl border border-[#E4E7E9] cursor-pointer hover:border-gray-400 transition-colors duration-200 p-1 sm:p-1.5"
+              >
+                <!-- Wishlist -->
+                <button
+                  class="absolute right-2 sm:right-3 md:right-3 top-2 sm:top-3 md:top-3 z-10 bg-white rounded-full p-1.5 sm:p-2 md:p-2.5 shadow-md cursor-pointer transition-colors duration-200 group hover:bg-red-50 hover:ring-1 hover:ring-red-200"
+                  aria-label="Add to wishlist"
+                >
+                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    />
+                  </svg>
+                </button>
+
+                <!-- Image -->
+                <a href="product-details.html" class="relative block bg-[#f4f4f4] rounded-xl">
+                  <div class="rounded-xl h-40 sm:h-70 md:h-80 flex items-center justify-center overflow-hidden">
+                    <img src="images/webp/naruto.webp" alt="Naruto Figure" class="h-full w-full object-cover" />
+                  </div>
+                </a>
+              </div>
+
+              <!-- Content -->
+              <div class="pb-4 mt-3">
+                <h3 class="text-sm md:text-base font-medium text-[#292C2D] line-clamp-2">
+                  Naruto Shippuden - Naruto Uzumaki - The Jinchuriki Entrusted with Hope, Bandai Spirits S.H.Figuarts Action
+                  Figure
+                </h3>
+                <div class="flex items-center gap-1 mt-1">
+                  <div class="flex">
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                  </div>
+                  <span class="text-xs text-gray-500">(127)</span>
+                </div>
+                <div class="mt-2 text-[#292C2D] font-semibold">$2,300</div>
+              </div>
+            </article>
+
+            <!-- CARD 2 (VIDEO) -->
+            <article>
+              <div
+                class="group relative block bg-gray-50 rounded-xl border border-[#E4E7E9] overflow-hidden cursor-pointer hover:border-gray-400 transition-colors duration-200 p-1 sm:p-1.5"
+              >
+                <!-- Wishlist -->
+                <button
+                  class="absolute right-2 sm:right-3 md:right-3 top-2 sm:top-3 md:top-3 z-10 bg-white rounded-full p-1.5 sm:p-2 md:p-2.5 shadow-md cursor-pointer transition-colors duration-200 group hover:bg-red-50 hover:ring-1 hover:ring-red-200"
+                  aria-label="Add to wishlist"
+                >
+                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    />
+                  </svg>
+                </button>
+
+                <!-- Video -->
+                <a href="product-details.html" class="relative block rounded-xl">
+                  <div class="relative rounded-xl h-40 sm:h-70 md:h-80 flex items-center justify-center overflow-hidden">
+                    <video
+                      class="h-full w-full object-cover rounded-xl"
+                      src="video/moshow.mp4"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                    ></video>
+
+                    <!-- Play / Pause -->
+                    <button
+                      type="button"
+                      class="absolute right-1.5 bottom-0 mb-1.5 z-10 bg-black/60 rounded-full p-1.5 sm:p-2 md:p-2.5 shadow-md cursor-pointer transition-colors duration-200 hover:bg-black/75 hover:ring-1 hover:ring-gray-700 focus:outline-none focus:ring-2 focus:ring-[#FDB913]"
+                      aria-label="Play/Pause"
+                      onclick="
+                  event.preventDefault(); event.stopPropagation();
+                  const vid=this.parentElement.querySelector('video');
+                  const [pauseIcon, playIcon] = this.querySelectorAll('svg');
+                  if (vid.paused) { vid.play(); playIcon.classList.add('hidden'); pauseIcon.classList.remove('hidden'); this.setAttribute('aria-pressed','true'); }
+                  else { vid.pause(); pauseIcon.classList.add('hidden'); playIcon.classList.remove('hidden'); this.setAttribute('aria-pressed','false'); }
+                "
+                    >
+                      <!-- Pause (default) -->
+                      <svg class="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 4h4v16H6zm8 0h4v16h-4z" />
+                      </svg>
+                      <!-- Play -->
+                      <svg class="w-3 h-3 sm:w-4 sm:h-4 text-white hidden" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </button>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Content -->
+              <div class="pb-4 mt-3">
+                <h3 class="text-sm md:text-base font-medium text-[#292C2D] line-clamp-2">
+                  MoShow MCT_AP04 Noble Class Progenitor Effect Wei Guogong Mecha 04
+                </h3>
+                <div class="flex items-center gap-1 mt-1">
+                  <div class="flex">
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                  </div>
+                  <span class="text-xs text-gray-500">(127)</span>
+                </div>
+                <div class="mt-2 text-[#292C2D] font-semibold">$2,300</div>
+              </div>
+            </article>
+
+            <!-- CARD 3 -->
+            <article>
+              <div
+                class="group relative block bg-gray-50 rounded-xl border border-[#E4E7E9] overflow-hidden cursor-pointer hover:border-gray-400 transition-colors duration-200 p-1 sm:p-1.5"
+              >
+                <!-- Wishlist -->
+                <button
+                  class="absolute right-2 sm:right-3 md:right-3 top-2 sm:top-3 md:top-3 z-10 bg-white rounded-full p-1.5 sm:p-2 md:p-2.5 shadow-md cursor-pointer transition-colors duration-200 group hover:bg-red-50 hover:ring-1 hover:ring-red-200"
+                  aria-label="Add to wishlist"
+                >
+                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    />
+                  </svg>
+                </button>
+                <!-- Image -->
+                <a href="product-details.html" class="relative block bg-[#f4f4f4] rounded-xl">
+                  <div class="rounded-xl h-40 sm:h-70 md:h-80 flex items-center justify-center overflow-hidden">
+                    <img src="images/webp/goku.webp" alt="Goku Figure" class="h-full w-full object-cover" />
+                  </div>
+                </a>
+              </div>
+
+              <!-- Content -->
+              <div class="pb-4 mt-3">
+                <h3 class="text-sm md:text-base font-medium text-[#292C2D] line-clamp-2">
+                  Dragon Ball Z Super Saiyan Son Goku 6.5-inch Action Figure Model Toy Gift
+                </h3>
+                <div class="flex items-center gap-1 mt-1">
+                  <div class="flex">
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                  </div>
+                  <span class="text-xs text-gray-500">(89)</span>
+                </div>
+                <div class="mt-2 text-[#292C2D] font-semibold">$300</div>
+              </div>
+            </article>
+
+            <!-- CARD 4 -->
+            <article>
+              <div
+                class="group relative block bg-gray-50 rounded-xl border border-[#E4E7E9] overflow-hidden cursor-pointer hover:border-gray-400 transition-colors duration-200 p-1 sm:p-1.5"
+              >
+                <!-- Wishlist -->
+                <button
+                  class="absolute right-2 sm:right-3 md:right-3 top-2 sm:top-3 md:top-3 z-10 bg-white rounded-full p-1.5 sm:p-2 md:p-2.5 shadow-md cursor-pointer transition-colors duration-200 group hover:bg-red-50 hover:ring-1 hover:ring-red-200"
+                  aria-label="Add to wishlist"
+                >
+                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    />
+                  </svg>
+                </button>
+
+                <!-- Image -->
+                <a href="product-details.html" class="relative block bg-[#f4f4f4] rounded-xl">
+                  <div class="rounded-xl h-40 sm:h-70 md:h-80 flex items-center justify-center overflow-hidden">
+                    <img src="images/webp/lego-classic.webp" alt="LEGO Classic" class="h-full w-full object-cover" />
+                  </div>
+                </a>
+              </div>
+
+              <!-- Content -->
+              <div class="pb-4 mt-3">
+                <h3 class="text-sm md:text-base font-medium text-[#292C2D] line-clamp-2">
+                  LEGO Classic Large Creative Brick Box 10698 Building Toy Set, Toy Storage Solution
+                </h3>
+                <div class="flex items-center gap-1 mt-1">
+                  <div class="flex">
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                  </div>
+                  <span class="text-xs text-gray-500">(245)</span>
+                </div>
+                <div class="mt-2 text-[#292C2D] font-semibold">$300</div>
+              </div>
+            </article>
+
+            <!-- CARD 5 -->
+            <article>
+              <div
+                class="group relative block bg-gray-50 rounded-xl border border-[#E4E7E9] overflow-hidden cursor-pointer hover:border-gray-400 transition-colors duration-200 p-1 sm:p-1.5"
+              >
+                <!-- Wishlist -->
+                <button
+                  class="absolute right-2 sm:right-3 md:right-3 top-2 sm:top-3 md:top-3 z-10 bg-white rounded-full p-1.5 sm:p-2 md:p-2.5 shadow-md cursor-pointer transition-colors duration-200 group hover:bg-red-50 hover:ring-1 hover:ring-red-200"
+                  aria-label="Add to wishlist"
+                >
+                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    />
+                  </svg>
+                </button>
+
+                <!-- Image -->
+                <a href="product-details.html" class="relative block bg-[#f4f4f4] rounded-xl">
+                  <div class="rounded-xl h-40 sm:h-70 md:h-80 flex items-center justify-center overflow-hidden">
+                    <img src="images/webp/lego-one-piece.webp" alt="LEGO One Piece" class="h-full w-full object-cover" />
+                  </div>
+                </a>
+              </div>
+
+              <!-- Content -->
+              <div class="pb-4 mt-3">
+                <h3 class="text-sm md:text-base font-medium text-[#292C2D] line-clamp-2">
+                  LEGO ONE Piece Windmill Village Hut Building Blocks - Pretend Play Building Toy for Boys & Girls, Ages 8+
+                </h3>
+                <div class="flex items-center gap-1 mt-1">
+                  <div class="flex">
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                  </div>
+                  <span class="text-xs text-gray-500">(312)</span>
+                </div>
+                <div class="mt-2 text-[#292C2D] font-semibold">$300</div>
+              </div>
+            </article>
+
+            <!-- CARD 6 -->
+            <article>
+              <div
+                class="group relative block bg-gray-50 rounded-xl border border-[#E4E7E9] overflow-hidden cursor-pointer hover:border-gray-400 transition-colors duration-200 p-1 sm:p-1.5"
+              >
+                <!-- Wishlist -->
+                <button
+                  class="absolute right-2 sm:right-3 md:right-3 top-2 sm:top-3 md:top-3 z-10 bg-white rounded-full p-1.5 sm:p-2 md:p-2.5 shadow-md cursor-pointer transition-colors duration-200 group hover:bg-red-50 hover:ring-1 hover:ring-red-200"
+                  aria-label="Add to wishlist"
+                >
+                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    />
+                  </svg>
+                </button>
+
+                <!-- Image -->
+                <a href="product-details.html" class="relative block bg-[#f4f4f4] rounded-xl">
+                  <div class="rounded-xl h-40 sm:h-70 md:h-80 flex items-center justify-center overflow-hidden">
+                    <img src="images/webp/drone-1.webp" alt="DJI Mini 4K" class="h-full w-full object-contain" />
+                  </div>
+                </a>
+              </div>
+
+              <!-- Content -->
+              <div class="pb-4 mt-3">
+                <h3 class="text-sm md:text-base font-medium text-[#292C2D] line-clamp-2">
+                  DJI Mini 4K, Drone with 4K UHD Camera for Adults, Under 249 g, 3-Axis Gimbal
+                </h3>
+                <div class="flex items-center gap-1 mt-1">
+                  <div class="flex">
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                    <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
+                      <path
+                        d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                      />
+                    </svg>
+                  </div>
+                  <span class="text-xs text-gray-500">(156)</span>
+                </div>
+                <div class="mt-2 text-[#292C2D] font-semibold">$300</div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Pagination (simple) -->
+          <div class="mt-8 flex items-center justify-center gap-2">
+            <a href="#" class="px-3 py-1.5 border rounded hover:bg-gray-50">Prev</a>
+            <a href="#" class="px-3 py-1.5 border rounded bg-[#FDB913] text-[#292C2D] font-semibold">1</a>
+            <a href="#" class="px-3 py-1.5 border rounded hover:bg-gray-50">2</a>
+            <a href="#" class="px-3 py-1.5 border rounded hover:bg-gray-50">3</a>
+            <a href="#" class="px-3 py-1.5 border rounded hover:bg-gray-50">Next</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer id="footer" class="bg-[#191C1F] text-white">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
