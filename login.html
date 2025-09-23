@@ -333,6 +333,8 @@
                       type="button"
                       onclick="togglePassword()"
                       class="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-[#292C2D] transition-colors p-1"
+                      aria-label="Show password"
+                      aria-controls="password"
                     >
                       <svg id="eye-open" class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
@@ -654,6 +656,7 @@
               <a
                 href="#"
                 class="text-gray-400 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-110 hover:-translate-y-0.5"
+                aria-label="Facebook"
               >
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-label="Facebook">
                   <path
@@ -666,6 +669,7 @@
               <a
                 href="#"
                 class="text-gray-400 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-110 hover:-translate-y-0.5"
+                aria-label="X (Twitter)"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path
@@ -678,6 +682,7 @@
               <a
                 href="#"
                 class="text-gray-400 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-110 hover:-translate-y-0.5"
+                aria-label="LinkedIn"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path
@@ -734,15 +739,24 @@
         const passwordInput = document.getElementById("password");
         const eyeOpen = document.getElementById("eye-open");
         const eyeClosed = document.getElementById("eye-closed");
+        const toggleButton = document.querySelector('button[onclick="togglePassword()"]');
 
         if (passwordInput.type === "password") {
           passwordInput.type = "text";
           eyeOpen.classList.add("hidden");
           eyeClosed.classList.remove("hidden");
+          if (toggleButton) {
+            toggleButton.setAttribute("aria-label", "Hide password");
+            toggleButton.setAttribute("aria-pressed", "true");
+          }
         } else {
           passwordInput.type = "password";
           eyeOpen.classList.remove("hidden");
           eyeClosed.classList.add("hidden");
+          if (toggleButton) {
+            toggleButton.setAttribute("aria-label", "Show password");
+            toggleButton.setAttribute("aria-pressed", "false");
+          }
         }
       }
       window.togglePassword = togglePassword;
