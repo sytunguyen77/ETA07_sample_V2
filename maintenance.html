@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sy Tu Nguyen" />
+    <title>ETA07 - We'll Be Right Back</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+      * {
+        font-family: "Lato", sans-serif;
+      }
+
+      /* Custom animations */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(232, 193, 74, 0.3);
+          transform: scale(1);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(232, 193, 74, 0.6);
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .float-animation {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .pulse-glow {
+        animation: pulse-glow 2s ease-in-out infinite;
+      }
+
+      .bounce-animation {
+        animation: bounce 2s infinite;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(135deg, #292c2d 0%, #1a1d1e 50%, #292c2d 100%);
+      }
+
+      .text-gradient {
+        background: linear-gradient(135deg, #e8c14a 0%, #fdb913 50%, #e8c14a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    </style>
+  </head>
+  <body class="gradient-bg min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <!-- Floating geometric shapes -->
+      <div
+        class="absolute top-20 left-10 w-4 h-4 bg-[#E8C14A] opacity-20 rounded-full float-animation"
+        style="animation-delay: 0s"
+      ></div>
+      <div
+        class="absolute top-40 right-20 w-6 h-6 bg-[#E8C14A] opacity-15 rounded-full float-animation"
+        style="animation-delay: 1s"
+      ></div>
+      <div
+        class="absolute bottom-40 left-20 w-3 h-3 bg-[#E8C14A] opacity-25 rounded-full float-animation"
+        style="animation-delay: 2s"
+      ></div>
+      <div
+        class="absolute bottom-20 right-10 w-5 h-5 bg-[#E8C14A] opacity-20 rounded-full float-animation"
+        style="animation-delay: 0.5s"
+      ></div>
+
+      <!-- Grid pattern overlay -->
+      <div
+        class="absolute inset-0 opacity-5"
+        style="background-image: radial-gradient(circle, #e8c14a 1px, transparent 1px); background-size: 50px 50px"
+      ></div>
+    </div>
+
+    <!-- Main content container -->
+    <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <!-- Logo -->
+      <div class="mb-8">
+        <div class="inline-block pulse-glow p-6 rounded-full bg-white/10 backdrop-blur-sm">
+          <svg width="150" height="60" viewBox="0 0 118 47" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto">
+            <g clip-path="url(#clip0_3_9026)">
+              <path
+                d="M0 0.653931H19.6171V7.18281H7.19391V19.2597H17.0669V25.7886H7.19391V39.8173H19.6171V46.3462H0V0.653931Z"
+                fill="#E8C14A"
+              />
+              <path
+                d="M29.3514 7.18281H21.8301V0.653931H44.0568V7.18281H36.5354V46.3462H29.3415V7.18281H29.3514Z"
+                fill="#E8C14A"
+              />
+              <path
+                d="M50.079 0.653931H59.823L67.2749 46.3462H60.081L58.7712 37.2711V37.3999H50.595L49.2852 46.3462H42.6172L50.079 0.653931ZM57.9179 31.198L54.7129 8.60945H54.5839L51.4483 31.198H57.9179Z"
+                fill="#E8C14A"
+              />
+              <path
+                d="M73.021 43.9981C71.1456 41.9968 70.2129 39.1633 70.2129 35.5175V11.4924C70.2129 7.83662 71.1456 5.01305 73.021 3.01178C74.8964 1.01052 77.5953 0.0098877 81.1278 0.0098877C84.6603 0.0098877 87.3592 1.01052 89.2346 3.01178C91.11 5.01305 92.0427 7.84652 92.0427 11.4924V35.5175C92.0427 39.1733 91.1 41.9968 89.2346 43.9981C87.3592 45.9994 84.6603 47 81.1278 47C77.5953 47 74.8964 45.9994 73.021 43.9981ZM84.8587 35.9633V11.0268C84.8587 8.02485 83.6184 6.51895 81.1278 6.51895C78.6372 6.51895 77.3969 8.02485 77.3969 11.0268V35.9633C77.3969 38.9652 78.6372 40.4711 81.1278 40.4711C83.6184 40.4711 84.8587 38.9751 84.8587 35.9633Z"
+                fill="white"
+              />
+              <path
+                d="M110.935 7.18281H96.418V0.653931H117.99V6.91531L106.747 46.3363H99.4245L110.935 7.1729V7.18281Z"
+                fill="white"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_3_9026">
+                <rect width="118" height="47" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Main message -->
+      <div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Sorry for the Inconvenience</h1>
+      </div>
+
+      <!-- Subtitle -->
+      <div>
+        <p class="text-xl sm:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+          We're currently performing some maintenance to improve your experience.
+          <span class="text-gradient font-semibold">ETA07</span> will be back online shortly!
+        </p>
+      </div>
+
+      <!-- Contact info -->
+      <div>
+        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+          <h3 class="text-lg font-semibold text-white mb-4">Need Help?</h3>
+          <p class="text-gray-300 mb-4">If you have any urgent inquiries, please contact us:</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6">
+            <a
+              href="mailto:info@eta07.com"
+              class="text-[#E8C14A] hover:text-[#FDB913] transition-colors duration-300 flex items-center space-x-2"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+              <span>info@eta07.com</span>
+            </a>
+            <span class="text-gray-500 hidden sm:block">•</span>
+            <a
+              href="tel:+18329326279"
+              class="text-[#E8C14A] hover:text-[#FDB913] transition-colors duration-300 flex items-center space-x-2"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                ></path>
+              </svg>
+              <span>832 932 6279</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive effects script -->
+    <script>
+      document.addEventListener("mousemove", (e) => {
+        const shapes = document.querySelectorAll(".float-animation");
+        shapes.forEach((shape, index) => {
+          const speed = (index + 1) * 0.01;
+          const x = e.clientX * speed - 50;
+          const y = e.clientY * speed - 50;
+          shape.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      });
+    </script>
+  </body>
+</html>

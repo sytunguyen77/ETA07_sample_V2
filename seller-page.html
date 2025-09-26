@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,-100..900&display=swap"
       rel="stylesheet"
     />
     <!-- Iconify -->
@@ -28,30 +28,14 @@
     <nav id="top" class="bg-[#292C2D] text-white">
       <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-12 sm:h-10 md:h-12">
-          <!-- Left Side - Sign In/Sign Up Message -->
-          <div class="text-xs sm:text-sm md:text-sm" id="auth-links">
-            Welcome (
-            <a
-              href="login.html"
-              class="relative text-[#ECC450] transition-all duration-300 before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[1px] before:bg-[#ECC450]/70 before:transition-all before:duration-500 hover:before:w-full"
-            >
-              Sign in
-            </a>
-            /
-            <a
-              href="register.html"
-              class="relative text-[#ECC450] transition-all duration-300 before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[1px] before:bg-[#ECC450]/70 before:transition-all before:duration-500 hover:before:w-full"
-            >
-              Sign up
-            </a>
-            )
-          </div>
+          <!-- Left Side - Welcome Message -->
+          <div class="text-xs sm:text-sm md:text-sm">Welcome to ETA07!</div>
 
           <!-- Right Side - Navigation Links -->
           <div class="flex items-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-5">
             <!-- Sell on ETA07 -->
             <a href="seller-page.html" class="flex items-center space-x-1 sm:space-x-2 hover:text-[#929FA5] transition-colors">
-              <img src="images/svg/sell.svg" alt="discount" class="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 mx-1 sm:mx-2" />
+              <img src="images/sell.svg" alt="discount" class="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 mx-1 sm:mx-2" />
               <span class="text-xs sm:text-sm lg:text-sm hidden sm:inline">Sell on ETA07</span>
               <span class="text-xs sm:hidden">Sell</span>
             </a>
@@ -61,7 +45,7 @@
 
             <!-- Track your order -->
             <a href="#" class="flex items-center space-x-1 sm:space-x-2 hover:text-[#929FA5] transition-colors">
-              <img src="images/svg/delivery-truck.svg" alt="delivery-truck" class="h-4 w-4 sm:h-4 sm:w-4 lg:h-6 lg:w-6" />
+              <img src="images/delivery-truck.svg" alt="delivery-truck" class="h-4 w-4 sm:h-4 sm:w-4 lg:h-6 lg:w-6" />
               <span class="text-xs sm:text-sm lg:text-sm hidden sm:inline">Track your order</span>
               <span class="text-xs sm:hidden">Track</span>
             </a>
@@ -71,7 +55,7 @@
 
             <!-- All Offers -->
             <a href="#" class="flex items-center hover:text-gray-300 transition-colors">
-              <img src="images/svg/discount.svg" alt="discount" class="h-4 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 mx-1 sm:mx-2" />
+              <img src="images/discount.svg" alt="discount" class="h-4 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 mx-1 sm:mx-2" />
               <span class="text-xs sm:text-sm lg:text-sm hidden sm:inline">All Offers</span>
               <span class="text-xs sm:hidden">Offers</span>
             </a>
@@ -87,7 +71,7 @@
           <!-- Logo -->
           <div class="flex items-center flex-shrink-0">
             <a href="index.html">
-              <img src="images/svg/eta07-nav.svg" alt="ETA07 Logo" class="h-8 w-auto sm:h-10 md:h-11 lg:h-12" />
+              <img src="images/eta07-nav.svg" alt="ETA07 Logo" class="h-8 w-auto sm:h-10 md:h-11 lg:h-12" />
             </a>
           </div>
 
@@ -95,7 +79,7 @@
           <div class="flex-1 max-w-2xl lg:max-w-3xl mx-1 sm:mx-2">
             <div class="flex items-center gap-2">
               <!-- Flash icon -->
-              <img src="images/svg/flash.svg" alt="Flash Sale" class="hidden sm:block flex-shrink-0" />
+              <img src="images/flash.svg" alt="Flash Sale" class="hidden sm:block flex-shrink-0" />
 
               <!-- Search Input -->
               <div class="flex-1 relative">
@@ -111,7 +95,7 @@
                   role="combobox"
                 />
                 <img
-                  src="images/svg/search.svg"
+                  src="images/search.svg"
                   alt="search"
                   class="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5"
                 />
@@ -128,32 +112,42 @@
           </div>
 
           <!-- Right Section -->
-          <div class="flex items-center gap-3 sm:gap-3 flex-shrink-0">
+          <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <!-- My Deals -->
             <a href="#" class="hidden lg:flex items-center space-x-1 sm:space-x-2 hover:opacity-80 transition-opacity">
-              <img src="images/svg/deal.svg" alt="deal" class="h-5 sm:h-6 w-5 sm:w-6" />
+              <img src="images/deal.svg" alt="deal" class="h-5 sm:h-6 w-5 sm:w-6" />
               <span class="text-sm sm:text-base font-bold text-[#FC7901] whitespace-nowrap">My Deals</span>
             </a>
 
             <div class="hidden lg:block h-6 w-px bg-gray-300"></div>
 
-            <!-- Services -->
-            <a href="#" class="hidden lg:flex items-center space-x-1 sm:space-x-2 hover:opacity-80 transition-opacity">
-              <span class="text-sm sm:text-base font-bold text-[#666666] whitespace-nowrap">Services</span>
-            </a>
+            <!-- Sign Up/Sign In -->
+            <div id="authDesktop" class="hidden md:flex items-center space-x-1 sm:space-x-2">
+              <a href="profile-details.html">
+                <img src="images/user.svg" alt="user" class="h-5 sm:h-6 w-5 sm:w-6" />
+              </a>
+              <div class="flex items-center space-x-1">
+                <a href="register.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity"
+                  >Sign Up</a
+                >
+                <span class="text-sm sm:text-base text-[#666666] font-bold">/</span>
+                <a href="login.html" class="text-sm sm:text-base text-[#666666] font-bold hover:opacity-80 transition-opacity"
+                  >Sign In</a
+                >
+              </div>
+            </div>
 
-            <div class="hidden lg:block h-6 w-px bg-gray-300"></div>
+            <div class="hidden md:block h-6 w-px bg-gray-300"></div>
 
             <!-- Cart -->
             <a href="#" class="flex items-center hover:opacity-80 transition-opacity">
               <div class="relative">
-                <img src="images/svg/cart.svg" alt="cart" class="h-5 w-5 sm:h-6 sm:w-6" />
+                <img src="images/cart.svg" alt="cart" class="h-5 w-5 sm:h-6 sm:w-6" />
                 <span
                   class="absolute -top-2 -right-2 h-4 w-4 sm:h-5 sm:w-5 flex items-center justify-center bg-red-500 text-white text-xs font-bold rounded-full"
                   >0</span
                 >
               </div>
-              <span class="text-sm sm:text-base text-[#666666] font-bold hidden lg:inline ml-1">Cart</span>
             </a>
 
             <!-- Hamburger Menu -->
@@ -177,11 +171,11 @@
             <div class="flex-1 px-6 py-40">
               <div>
                 <a href="#" class="flex items-center px-4 rounded-lg transition-colors">
-                  <img src="images/svg/deal.svg" alt="deals" class="h-6 w-6 mr-4" />
+                  <img src="images/deal.svg" alt="deals" class="h-6 w-6 mr-4" />
                   <span class="text-sm font-semibold text-[#FC7901] hover:text-[#E67A00] transition-colors">My Deals</span>
                 </a>
                 <div id="authMobile" class="flex items-center p-4 rounded-lg">
-                  <img src="images/svg/user.svg" alt="user" class="h-6 w-6 mr-4" />
+                  <img src="images/user.svg" alt="user" class="h-6 w-6 mr-4" />
                   <div class="flex items-center space-x-2">
                     <a href="login.html" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
                       >Sign In</a
@@ -280,7 +274,7 @@
           <!-- Background Image -->
           <div class="absolute inset-0 z-0">
             <img
-              src="images/webp/seller-hero-bg.webp"
+              src="images/seller-hero-bg.webp"
               alt="Become a Seller Background"
               class="w-full h-full object-cover hidden sm:block"
             />
@@ -404,7 +398,7 @@
           <!-- Image Container - Hidden on mobile, shown on lg and up -->
           <div class="hidden lg:block lg:w-1/2 lg:h-full">
             <img
-              src="images/webp/business-launch.webp"
+              src="images/business-launch.webp"
               alt="Business owner managing inventory"
               class="w-full h-full rounded-l-2xl lg:rounded-l-3xl object-fill"
             />
@@ -412,7 +406,7 @@
 
           <!-- Blur Overlay Image -->
           <img
-            src="images/svg/seller-overlay.svg"
+            src="images/seller-overlay.svg"
             alt=""
             class="hidden lg:block absolute lg:left-[38.88%] xl:left-[39.33%] top-0 bottom-0 h-full w-auto -translate-x-1/2 z-10"
           />
@@ -628,7 +622,7 @@
           <div
             class="peek-overlay hidden sm:flex pointer-events-none absolute inset-y-0 -right-1 sm:w-[30%] md:w-[30%] lg:w-[22%] xl:w-[25%] z-20"
             style="
-              background-image: url('images/svg/peek-overlay.svg');
+              background-image: url('images/peek-overlay.svg');
               background-size: cover;
               background-position: left center;
               background-repeat: no-repeat;
@@ -864,11 +858,7 @@
             <!-- <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent z-10"></div> -->
 
             <!-- Background Image -->
-            <img
-              src="images/webp/start-selling.webp"
-              alt="Business partners working together"
-              class="w-full h-full object-cover"
-            />
+            <img src="images/start-selling.webp" alt="Business partners working together" class="w-full h-full object-cover" />
 
             <!-- Content Overlay -->
             <div class="absolute inset-0 flex items-center z-20">
@@ -911,72 +901,20 @@
           <div class="sm:col-span-2 lg:col-span-1">
             <!-- Logo -->
             <a href="index.html">
-              <img src="images/svg/eta07-footer.svg" alt="ETA07" class="h-8 w-auto sm:h-10 md:h-11 lg:h-12 mb-6" />
+              <img src="images/eta07-footer.svg" alt="ETA07" class="h-8 w-auto sm:h-10 md:h-11 lg:h-12 mb-6" />
             </a>
 
             <!-- Customer Support -->
             <div class="space-y-3 text-gray-300">
               <p class="text-xs font-medium text-[#929FA5]">Customer Supports:</p>
-              <div class="flex items-center gap-2">
-                <!-- Phone  -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4 text-[#ffffff]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-                <p class="text-base font-medium text-[#ffffff]">(832) 932-6279</p>
+              <p class="text-base font-medium text-[#ffffff]">(832) 932-6279</p>
+
+              <div class="text-sm space-y-1 text-[#929FA5]">
+                <p>396 Greens Rd Ste 200</p>
+                <p>Houston, Tx 77067</p>
               </div>
 
-              <div class="flex items-start gap-2">
-                <!-- Location -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4 text-[#ffffff] mt-0.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <div class="text-sm space-y-1 text-[#ffffff]">
-                  <p>396 Greens Rd Ste 200</p>
-                  <p>Houston, Tx 77067</p>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-2">
-                <!-- Email -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4 text-[#ffffff]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-                <p class="text-sm text-[#ffffff]">info@eta07.com</p>
-              </div>
+              <p class="text-sm text-[#ffffff]">info@eta07.com</p>
             </div>
           </div>
 
@@ -1029,12 +967,12 @@
               <div class="flex flex-col space-y-3">
                 <!-- Google Play Button -->
                 <a href="#" class="inline-flex items-center justify-center transition-colors duration-200 group w-40 sm:w-44">
-                  <img src="images/svg/google-playstore.svg" alt="Google Store" class="w-full h-auto" />
+                  <img src="images/google-playstore.svg" alt="Google Store" class="w-full h-auto" />
                 </a>
 
                 <!-- App Store Button -->
                 <a href="#" class="inline-flex items-center justify-center transition-colors duration-200 group w-40 sm:w-44">
-                  <img src="images/svg/apple-store.svg" alt="Apple Store" class="w-full h-auto" />
+                  <img src="images/apple-store.svg" alt="Apple Store" class="w-full h-auto" />
                 </a>
               </div>
             </div>
@@ -1160,6 +1098,7 @@
         </div>
       </div>
     </footer>
+
     <!-- Alert Modal -->
     <div id="alertModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
       <div class="bg-white rounded-lg shadow-lg p-6 w-80 text-center">
