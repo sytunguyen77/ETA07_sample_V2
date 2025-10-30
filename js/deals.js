@@ -113,7 +113,7 @@ function renderDealCard(deal) {
               >
                 <!-- Heart Icon (outline) -->
                 <svg
-                  class="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 transition-colors heart-outline"
+                  class="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 transition-colors heart-outline"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -128,7 +128,7 @@ function renderDealCard(deal) {
                 </svg>
                 <!-- Heart Icon (filled) - hidden by default -->
                 <svg
-                  class="w-3 h-3 sm:w-4 sm:h-4 text-red-500 hidden heart-filled"
+                  class="w-5 h-5 sm:w-6 sm:h-6 text-red-500 hidden heart-filled"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"

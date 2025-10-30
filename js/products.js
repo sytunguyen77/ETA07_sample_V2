@@ -43,7 +43,7 @@ function renderVideoProductCard(product) {
           aria-label="Add to wishlist"
           data-product-id="${product.id}"
         >
-          <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 product-heart-outline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 product-heart-outline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -51,7 +51,7 @@ function renderVideoProductCard(product) {
               d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
             />
           </svg>
-          <svg class="w-3 h-3 sm:w-4 sm:h-4 text-red-500 hidden product-heart-filled" fill="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-red-500 hidden product-heart-filled" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
             />
@@ -78,11 +78,11 @@ function renderVideoProductCard(product) {
               aria-label="Play/Pause"
             >
               <!-- Pause icon (default when autoplay is on) -->
-              <svg class="w-3 h-3 sm:w-4 sm:h-4 text-white video-pause-icon" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white video-pause-icon" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6 4h4v16H6zm8 0h4v16h-4z" />
               </svg>
               <!-- Play icon (hidden initially) -->
-              <svg class="w-3 h-3 sm:w-4 sm:h-4 text-white hidden video-play-icon" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white hidden video-play-icon" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
             </button>
@@ -120,7 +120,7 @@ function renderProductCard(product) {
           aria-label="Add to wishlist"
           data-product-id="${product.id}"
         >
-          <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 product-heart-outline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 product-heart-outline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -128,7 +128,7 @@ function renderProductCard(product) {
               d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
             />
           </svg>
-          <svg class="w-3 h-3 sm:w-4 sm:h-4 text-red-500 hidden product-heart-filled" fill="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-red-500 hidden product-heart-filled" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
             />
